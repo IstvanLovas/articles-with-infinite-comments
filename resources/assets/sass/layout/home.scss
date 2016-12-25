@@ -1,0 +1,30 @@
+/* =======================================
+   Home
+   =======================================*/
+
+#home {
+	.masthead {
+		text-transform: uppercase;
+	    display: flex;
+	    align-items: center;
+	    text-align: center;
+	    @include viewport-unit(height, 100vh);
+   	}
+   	.why-campaign {
+   		color:#fff;
+   		background-color:green;
+   	}
+   	.list-of-articles {
+		
+   	}
+   	.footer {
+   		ul {
+   			li {
+   				display: inline-block;
+   			}
+   		}
+   	}
+   	.copy {
+   		text-align: center;
+   	}
+}
