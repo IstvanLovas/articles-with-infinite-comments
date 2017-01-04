@@ -7,7 +7,7 @@ html, body {
 	height:100%;
 }
 body {
-    background-color: $body-bg;
+    background-color: #fff;
     color: $text-color;
     font-family: $font-family-sans-serif;
     margin: 0;
@@ -37,25 +37,70 @@ ul, ul li {
     padding:0;
 }
 
-#app {
-    padding-top:50px;
+.flex-vertical {
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction: column;
+}
+
+.flex-horizontal {
+    display: flex;
+    align-items:center;
+    justify-content:center;
+}
+
+#app > section,
+#app > footer {
+    width:100%;
 }
 
 .page-row {
+    position: relative;
     padding-top:$margin *2;
     padding-bottom:$margin *2;
 }
 
+.triangle-wrapper {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    left:0;
+    bottom: -$margin;
+    width: 100%;
+    z-index: 100;
+    .triangle {
+        width:0;
+        height:0;
+        border-style: solid;
+        border-width: $margin $margin 0 $margin;
+        border-color: #333 transparent transparent transparent;
+        -webkit-transform:rotate(360deg);
+    }
+}
+
+.border-bottom {
+    border-bottom: 1px solid #767676;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
 .section {
-    text-align: center;
-    h3 {
+    h2 {
+        font-size:26px;
+        margin:0 0 10px;
         text-transform: uppercase;
     }
-    p {
-        font-size: 16px;
-    }
-    button {
+    h4 {
+        font-size:16px;
         text-transform: uppercase;
+        margin-bottom: $margin;
+    }
+    hr {
+        margin-top:$margin;
+        margin-bottom: 0;
     }
 }
 

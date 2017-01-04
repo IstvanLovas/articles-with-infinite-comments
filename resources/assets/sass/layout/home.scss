@@ -3,28 +3,81 @@
    =======================================*/
 
 #home {
-	.masthead {
-		text-transform: uppercase;
-	    display: flex;
-	    align-items: center;
-	    text-align: center;
-	    @include viewport-unit(height, 100vh);
-   	}
-   	.why-campaign {
-   		color:#fff;
-   		background-color:green;
-   	}
-   	.list-of-articles {
-		
-   	}
-   	.footer {
-   		ul {
-   			li {
-   				display: inline-block;
-   			}
-   		}
-   	}
-   	.copy {
-   		text-align: center;
-   	}
+   	.our-goals {
+        .list-of-goals {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            li {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                text-align: center;
+                margin-bottom:$margin;
+                .circle {
+                    width:80px;
+                    height:80px;
+                    border-radius: 50%;
+                    background:#333;
+                    margin-bottom:10px;
+                }
+            }
+            li:last-child {
+                margin-bottom:0;
+            }
+        }
+    }
+    .stay-updated-and-why {
+        .form, .cta-button {
+            padding-bottom: $margin *2;
+        }
+    }
+    .get-the-latest {
+        .latest-news {
+            margin-bottom: $margin;
+            article {
+                padding:$margin 15px;
+            }
+            .cta-button {
+                margin-top:$margin;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    #home {
+        .why-it-matters {
+            .nav-buttons {
+                ul {
+                    li {
+                        display: inline-block;
+                        margin-right:10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    #home {
+        .our-goals {
+            .list-of-goals {
+                flex-direction: row;
+                justify-content: space-around;
+                li {
+                    flex-direction: column;
+                    margin-bottom:0;
+                }
+            }
+        }
+        .stay-updated-and-why {
+            .form {
+                padding-bottom:0;
+            }
+        }
+    }
 }

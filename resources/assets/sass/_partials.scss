@@ -1,0 +1,172 @@
+/* =======================================
+   Partials
+   =======================================*/
+
+// Masthead
+#masthead {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    @include viewport-unit(height, 100vh);
+    .container {
+        margin-top: auto;
+        margin-bottom: auto;
+        h1 {
+            font-size:56px;
+            text-transform: uppercase;
+        }
+        p {
+            font-size:24px;
+        }
+        .cta-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    #masthead {
+	    .container {
+	        margin-left: 0;
+	    }
+	}
+}
+
+@media (max-width: 991px) {
+	#get-the-facts {
+		.list-box {
+			margin-top: $margin;
+		}
+	}
+}
+
+// The Issue
+.the-issue {
+    padding-bottom: 0;
+    hr {
+        margin:50px 0 0; // Consider last <p>'s 10px margin-bottom
+    }
+}
+
+// Block-Quote
+.quote {
+    position: relative;
+    &:before {
+        position: absolute;
+        left:15px;
+        top: -5px;
+        font-family: Georgia, serif;
+        content: "\201C";
+        font-size: 40px;
+    }
+    blockquote {
+        padding: 10px 20px;
+        margin: 0 0 $margin;
+        border-left: 0;
+    }
+}
+
+// Our current challenge
+.our-current-challenge {
+    .section h2 {
+    	margin-bottom: $margin;
+    }
+}
+
+.people-affected {
+    h2 {
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 768px) {
+	.the-issue {
+        p {
+            margin-bottom:0;
+        }
+    }
+}
+
+// Forms
+.form {
+	form {
+		.form-group {
+			input {
+				width:70%;
+			}
+		}
+	}
+}
+
+// Stay up to date and get in touch
+.stay-updated-and-get-in-touch {
+	position: relative;
+	.left {
+		position: absolute;
+		top:0;
+		left:0;
+		width:50%;
+		height:100%;
+		background: #141414;
+	}
+	.right {
+		position: absolute;
+		top:0;
+		right:0;
+		width:50%;
+		height:100%;
+		background: #e5e5e5;
+	}
+	.flex-wrapper {
+        display: flex;
+        flex-direction: column;
+        .section {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			padding-top:$margin *2;
+			padding-bottom: $margin *2;
+			.contact-links {
+				margin-bottom: $margin;
+			}
+			footer {
+		    	font-size: 10px;
+		    }
+		}
+		.stay-updated {
+			background: #141414;
+		}
+		.get-in-touch {
+			background: #e5e5e5;
+			padding-bottom: $margin;
+		}
+    }
+}
+
+@media (min-width: 768px) {
+	.stay-updated-and-get-in-touch {
+	    .flex-wrapper {
+			flex-direction: row;
+	    }
+	}
+}
+
+// Join the conversation
+@media (min-width: 992px) {
+	.join-the-conversation {
+	    display: flex;
+	    align-items: center;
+	    justify-content: flex-start;
+	    .h4 {
+	    	margin:0;
+	    }
+	    p {
+	    	margin:0;
+	        padding-right:10px;
+	    }
+	}
+}

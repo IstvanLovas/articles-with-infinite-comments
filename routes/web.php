@@ -16,8 +16,11 @@ Route::get('/', function () {
  //    $user->roles()->attach($role);
  //    return \App\User::with('roles')->find(1);
 
-    return view('welcome');
+    return view('public.welcome');
 });
+
+Route::get('/get-the-facts', 'PublicPagesController@showGetTheFacts');
+Route::get('/meet-those-most-impacted', 'PublicPagesController@showMeetThoseMostImpacted');
 
 Route::resource('articles', 'ArticlesController');
 

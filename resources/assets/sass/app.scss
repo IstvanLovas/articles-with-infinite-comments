@@ -1,16 +1,20 @@
 // Fonts
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
 
+// vh unit fix for IOS
+@import 'mixins/vh_unit_workaround';
+
 // Variables
 @import 'variables';
+
+// Partials
+@import 'partials';
 
 // Bootstrap
 @import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
 
-// vh unit fix for IOS
-@import 'mixins/vh_unit_workaround';
-
 @import 'layout/general';
 @import 'layout/header';
 @import 'layout/home';
-@import 'layout/about';
+@import 'layout/get-the-facts';
+@import 'layout/meet-those-most-impacted';

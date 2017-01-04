@@ -2,6 +2,7 @@ window._ = require('lodash');
 
 window.$ = window.jQuery = require('jquery');
 require('bootstrap-sass');
+window.gsap = require('gsap');
 
 window.Vue = require('vue');
 require('vue-resource');
