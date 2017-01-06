@@ -25,9 +25,12 @@
 			<div class="row">
 				<article class="col-xs-12">
 					<h2>{{ $article->title }}</h2>
-					<h6>by <span>{{ $article->user->name }}</span></h6>
+					<h6>Created by <span>{{ $article->user->name }}</span>
+					{{ $article->updated_at->diffForHumans() }}</h6>
 					<p class="lead">{!! nl2br($article->lead) !!}</p>
 					<div>{!! nl2br($article->body) !!}</div>
+
+
 
 					<div class="leave-comment">
 						<h2>Leave a comment:</h2>

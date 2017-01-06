@@ -1,0 +1,33 @@
+/* =======================================
+   Articles
+   =======================================*/
+#articles {
+	.articles-header-and-filters {
+		padding-bottom:45px;
+		.header-wrapper {
+			display:flex;
+			align-items:center;
+			justify-content:space-between;
+		}
+		#filters {
+			.list-inline {
+				li {
+					margin-bottom: 15px;
+				}
+			}
+		}
+	}
+	.articles {
+		.article-wrapper {
+			padding:15px;
+			article {
+				border:1px solid $text-color;
+				h3 {
+					a {
+						color:$text-color;
+					}
+				}
+			}
+		}
+	}
+}

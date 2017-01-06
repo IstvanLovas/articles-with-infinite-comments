@@ -3,10 +3,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">Create a new Article</div>
             <div class="panel-body">
-                <form   action="/articles"
-                        method="POST"
-                        @submit.prevent="submitForm"
-                >
+                <form  @submit.prevent="submitForm">
                     <div class="form-group">
                         <label for="title" class="control-label">Title:</label>
                         <input  class="form-control"
@@ -73,7 +70,7 @@
                     </div>
                     
                     <div class="form-group">
-                        <button class="btn btn-primary" disabled="validating || any()">
+                        <button class="btn btn-primary" :disabled="validating || any()">
                         {{ validating ? 'Creating Article' : 'Create Article' }}
                         </button>
                     </div>
@@ -106,13 +103,13 @@
             }
         },
         mounted() {
-            this.$nextTick(function () {
+            this.$nextTick(() => {
                 //this.$http.get('/api/fetchTags').then(response => this.tags = response.data)
-            });
+            })
         },
         methods: {
             toggleFocus() {
-                this.focused = !this.focused;
+                this.focused = !this.focused
 
                 if(this.getError('published_at')) {
                     if(this.inputs.published_at != '') {
@@ -121,33 +118,34 @@
                 }
             },
             record(errors) {
-                this.errors = errors;
+                this.errors = errors
             },
             getError(field) {
                 if(this.errors[field]) {
                     return this.errors[field][0];
                 }
 
-                return false;
+                return false
             },
             any() {
-                return Object.keys(this.errors).length > 0;
+                return Object.keys(this.errors).length > 0
             },
-            onSuccess() {
-                this.validating = false;
-                // this.inputs = {};
-                this.errors = {};
+            onSuccess(id) {
+                this.validating = false
+                this.errors = {}
+                
+                location.href = '/articles/' + id;
             },
             onFail(errors) {
-                this.record(errors);
-                this.validating = false;
+                this.record(errors)
+                this.validating = false
             },
             clear(field) {
-                delete this.errors[field];
+                delete this.errors[field]
             },
             submitForm() {
-                if(this.validating) return;
-                this.validating = true;
+                if(this.validating) return
+                this.validating = true
 
                 axios.post('/articles',{
                     title:this.inputs.title,
@@ -156,15 +154,14 @@
                     published_at:this.inputs.published_at,
                     tagList: this.inputs.tagList
                 })
-                    .then(response => this.onSuccess())
-                    // .catch(error => this.onFail(error.response.data));
-                    .catch(error => console.log(error));
+                .then(response => this.onSuccess(response.data))
+                .catch(error => this.onFail(error.response.data));
             },
             addTag(newTag) {
                 const tag = { name: newTag }
 
-                this.inputs.tagList.push(tag);
-                this.tags.push(tag);
+                this.inputs.tagList.push(tag)
+                this.tags.push(tag)
             }
         }
     }

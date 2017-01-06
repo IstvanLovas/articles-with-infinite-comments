@@ -13,7 +13,7 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
 
                     <ul class="nav navbar-nav">
-                        <li><a href="#home">Our campaign</a></li>
+                        <li><a href="/">Our campaign</a></li>
                         <li><a href="/get-the-facts">Get the facts</a></li>
                         <li><a href="/meet-those-most-impacted">Meet those most impacted</a></li>
                         <li><a href="/articles">Get the latest</a></li>

@@ -27,7 +27,7 @@ class ArticlesController extends Controller
      */
     public function index()
     {
-        $articles = Article::latest('published_at')->published()->get();
+        $articles = Article::latest('published_at')->published()->paginate(1);
 
         return view('articles.index',compact('articles'));
     }
@@ -63,9 +63,22 @@ class ArticlesController extends Controller
      */
     public function store(ArticleRequest $request)
     {
-        $this->createArticle($request);
+        // $this->createArticle($request);
+        $tagIds = [];
+        $tags = $request->input('tagList');
+        $article = Auth::user()->articles()->create($request->all());
+        
+        if(count($tags) > 0)
+        {
+            foreach($tags as $tag)
+            {
+                $tagIds[] = Tag::firstOrCreate(['name' => $tag['name']])->id;
+            }
 
-        return redirect('articles');
+            $this->syncTags($article, $tagIds);
+        }
+
+        return $article->id;
     }
 
     /**

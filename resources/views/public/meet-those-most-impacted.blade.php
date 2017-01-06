@@ -4,23 +4,22 @@
 @section('meta_description')CQC is ... @endsection
 
 @section('content')
-	<section id="meet-those-most-impacted">
+<section id="meet-those-most-impacted">
 	<masthead>
 		<h1 slot="header">Short key<br>Statements 2</h1>
 		<button slot="button" class="btn btn-primary btn-large text-uppercase">Stay updated</button>
 	</masthead>
 
-	<section-row class="case-studies">
-		<template slot="body">
+	<div class="case-studies">	
+		{{-- @foreach($caseStudies as $caseStudy) --}}
 			<case-study>
-				<h2 slot="header">Johns having to move</h2>
+				<h2 slot="case-header">Johns having to move</h2>
 				<p slot="quote">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
 				</p>
 				<p slot="fact">IMPACT FACT ABOUT JOHN’S LIFE AND HOW AFFECTS HIM.</p>
 				<button slot="button" class="btn btn-primary btn-large text-uppercase">Read Johns story</button>
-			</case-study>
-		</template>
-	</section-row>
+		{{-- @endforeach --}}
+	</div>
 
 	<section-row class="the-issue">
 		<template slot="header">
