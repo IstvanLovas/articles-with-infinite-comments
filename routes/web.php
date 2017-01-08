@@ -45,5 +45,24 @@ Route::get('/api/authUser', function() {
 Route::get('/account', 'AccountController@index');
 
 Route::group(['namespace' => 'Admin'], function() {
-	Route::get('/admin', 'AdminController@dashboard');
+
+	Route::get('/admin', [
+		'as' => 'dashboard',
+		'uses' => 'AdminController@dashboard'
+	]);
+
+	Route::get('/admin/welcome', [
+		'as' => 'edit-welcome',
+		'uses' => 'AdminController@editWelcome'
+	]);
+
+	Route::get('/admin/get-the-facts', [
+		'as' => 'edit-get-the-facts',
+		'uses' => 'AdminController@editGetTheFacts'
+	]);
+
+	Route::get('/admin/meet-those-most-impacted', [
+		'as' => 'edit-meet-those-most-impacted',
+		'uses' => 'AdminController@editMeetThoseMostImpacted'
+	]);
 });

@@ -15,12 +15,23 @@ class AdminController extends Controller
         $this->middleware('admin');
     }
 
-	/**
-	 * Show the admin Dashboard.
-	 * @return void
-	 */
     public function dashboard()
     {
     	return view('admin.dashboard');
+    }
+
+    public function editWelcome()
+    {
+        return view('admin.welcome');
+    }
+
+    public function editGetTheFacts()
+    {
+        return view('admin.get-the-facts');
+    }
+
+    public function editMeetThoseMostImpacted()
+    {
+        return view('admin.meet-those-most-impacted');
     }
 }

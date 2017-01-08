@@ -2,6 +2,8 @@ require('./bootstrap');
 
 window.Event = new Vue();
 
+import autosize from 'autosize';
+
 autosize(document.querySelectorAll('textarea'));
 
 const admin = new Vue({
