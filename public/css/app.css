@@ -139,7 +139,7 @@
   margin-bottom: 30px;
 }
 
-.people-affected h2 {
+.some-fact h2 {
   margin-bottom: 0;
 }
 
@@ -151,6 +151,20 @@
 
 .form form .form-group input {
   width: 70%;
+}
+
+textarea {
+  max-width: 100%;
+}
+
+.stay-updated-and-why .form, .stay-updated-and-why .cta-button {
+  padding-bottom: 60px;
+}
+
+@media (min-width: 992px) {
+  .stay-updated-and-why .form {
+    padding-bottom: 0;
+  }
 }
 
 .stay-updated-and-get-in-touch {
@@ -7978,6 +7992,18 @@ ul, ul li {
   flex-direction: column;
 }
 
+.flex-horizontal-space-between {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+}
+
 .flex-horizontal {
   display: -webkit-box;
   display: flex;
@@ -7987,8 +8013,49 @@ ul, ul li {
   justify-content: center;
 }
 
-#app > section,
-#app > footer {
+main {
+  position: relative;
+  min-height: 100vh;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+  main {
+    min-height: 1024px;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+  main {
+    min-height: 768px;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
+  main {
+    min-height: 480px;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
+  main {
+    min-height: 320px;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
+  main {
+    min-height: 568px;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
+  main {
+    min-height: 320px;
+  }
+}
+
+main > section,
+main > footer {
   width: 100%;
 }
 
@@ -8052,21 +8119,21 @@ ul, ul li {
 /* =======================================
    Header
    =======================================*/
-#appHeader {
+#main-header {
   width: 100%;
 }
 
-#appHeader .navbar {
+#main-header .navbar {
   margin-bottom: 0;
   border: 0;
 }
 
-#appHeader .navbar .navbar-default {
+#main-header .navbar .navbar-default {
   background-color: #fff;
   border: 0;
 }
 
-#appHeader .navbar .navbar-toggle {
+#main-header .navbar .navbar-toggle {
   border: 0;
   float: left;
   margin-left: -10px;
@@ -8083,6 +8150,67 @@ ul, ul li {
     -webkit-box-pack: justify;
     justify-content: space-between;
   }
+}
+
+/* =======================================
+   Login Panel
+   =======================================*/
+#loginPanel {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+#loginPanel .panel {
+  opacity: 0;
+  -webkit-transform: translateY(40px);
+  transform: translateY(40px);
+  -webkit-transition: opacity .3s ease-in-out .2s, -webkit-transform .15 ease-in-out 0s;
+  transition: opacity .3s ease-in-out .2s, -webkit-transform .15 ease-in-out 0s;
+  transition: opacity .3s ease-in-out .2s, transform .15 ease-in-out 0s;
+  transition: opacity .3s ease-in-out .2s, transform .15 ease-in-out 0s, -webkit-transform .15 ease-in-out 0s;
+}
+
+#loginPanel .panel .panel-heading {
+  padding: 10px 15px 15px 0;
+}
+
+#loginPanel .overlay {
+  background-color: #000;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: opacity .3s ease-in-out 0s;
+  transition: opacity .3s ease-in-out 0s;
+}
+
+#loginPanel.isOpen {
+  z-index: 100;
+}
+
+#loginPanel.isOpen .panel {
+  padding: 30px;
+  opacity: 1;
+  z-index: 999;
+  -webkit-transform: translateY(0px);
+  transform: translateY(0px);
+  -webkit-transition: opacity .3s ease-in-out 0.2s, -webkit-transform .15 ease-in-out 0s;
+  transition: opacity .3s ease-in-out 0.2s, -webkit-transform .15 ease-in-out 0s;
+  transition: opacity .3s ease-in-out 0.2s, transform .15 ease-in-out 0s;
+  transition: opacity .3s ease-in-out 0.2s, transform .15 ease-in-out 0s, -webkit-transform .15 ease-in-out 0s;
+}
+
+#loginPanel.isOpen .overlay {
+  opacity: .5;
+  -webkit-transition: opacity .3s ease-in-out 0s;
+  transition: opacity .3s ease-in-out 0s;
 }
 
 /* =======================================
@@ -8126,10 +8254,6 @@ ul, ul li {
   margin-bottom: 0;
 }
 
-#home .stay-updated-and-why .form, #home .stay-updated-and-why .cta-button {
-  padding-bottom: 60px;
-}
-
 #home .get-the-latest .latest-news {
   margin-bottom: 30px;
 }
@@ -8161,9 +8285,6 @@ ul, ul li {
     -webkit-box-direction: normal;
     flex-direction: column;
     margin-bottom: 0;
-  }
-  #home .stay-updated-and-why .form {
-    padding-bottom: 0;
   }
 }
 
@@ -8273,11 +8394,16 @@ ul, ul li {
   margin-bottom: 15px;
 }
 
+#articles .articles {
+  padding-top: 0;
+}
+
 #articles .articles .article-wrapper {
   padding: 15px;
 }
 
 #articles .articles .article-wrapper article {
+  padding: 15px;
   border: 1px solid #636b6f;
 }
 

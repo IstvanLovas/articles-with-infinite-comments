@@ -1,18 +1,28 @@
-require('./bootstrap')
+require('./bootstrap');
 
-import autosize from 'autosize'
+window.Event = new Vue();
 
-autosize(document.querySelectorAll('textarea'))
+import autosize from 'autosize';
 
-import Masthead from './components/Masthead.vue'
-import SectionRow from './components/SectionRow.vue'
-import BlockQuote from './components/BlockQuote.vue'
-import CaseStudy from './components/CaseStudy.vue'
-import CreateArticle from './components/layout/CreateArticle.vue'
+autosize(document.querySelectorAll('textarea'));
+
+import AppContainer from './AppContainer.vue';
+import JoinTheConversation from './components/JoinTheConversation.vue';
+import Masthead from './components/Masthead.vue';
+import SectionRow from './components/SectionRow.vue';
+import BlockQuote from './components/BlockQuote.vue';
+import CaseStudy from './components/CaseStudy.vue';
+import AppHeader from './components/AppHeader.vue';
+import AppFooter from './components/AppFooter.vue';
+import CreateArticle from './components/layout/CreateArticle.vue';
 
 const app = new Vue({
     el: '#app',
     components: {
+        AppContainer,
+        JoinTheConversation,
+        AppHeader,
+        AppFooter,
     	Masthead,
     	SectionRow,
         BlockQuote,
@@ -35,5 +45,10 @@ const app = new Vue({
                 }
             })
         })
+    },
+    methods: {
+        openLoginWindow() {
+            Event.$emit('loginWindowIsOpen');
+        }
     }
-})
+});

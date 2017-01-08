@@ -10,6 +10,10 @@
 		<h1 slot="header">Every life<br>matters</h1>
 		<p class="lead" slot="text">Help us give the<br>gift of opportunity</p>
 		<button slot="button" class="btn btn-primary btn-large text-uppercase">Stay updated</button>
+
+		<template slot="main-header">
+			@include('partials.header')
+		</template>
 	</masthead>
 
 	<section-row class="over-1-million-people">
@@ -136,7 +140,7 @@
 		</template>
 	</section-row>
 
-	<section-row class="people-affected">
+	<section-row class="some-fact">
 		<template slot="header">
 			<div class="col-xs-12">
 				<h2>234,578 people are already involved.<br>Are You?</h2>

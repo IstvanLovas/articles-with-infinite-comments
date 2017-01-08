@@ -11,16 +11,11 @@
 		
 			</div>
 		</div>
-		<app-header></app-header>
+		<slot name="main-header"></slot>
 	</div>
 </template>
 
 <script>
-	import AppHeader from './layout/AppHeader.vue'
-
 	export default {
-		components:{
-			AppHeader
-		}
 	}
 </script>

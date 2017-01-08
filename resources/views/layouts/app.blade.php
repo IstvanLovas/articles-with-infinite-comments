@@ -25,13 +25,19 @@
     </script>
 </head>
 <body>
-    <div id="app" class="flex-vertical">
-        @yield('content')
 
-        @include('partials.footer')
+    <div id="app">
+        <app-container>
+            <template slot="content">
+            
+                @yield('content')
+
+                <app-footer></app-footer>
+                
+            </template>
+        </app-container>
     </div>
 
     <script src="/js/app.js"></script>
-    @yield('customJS')
 </body>
 </html>

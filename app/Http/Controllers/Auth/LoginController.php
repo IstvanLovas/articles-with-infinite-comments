@@ -26,7 +26,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/account';
+    // protected $redirectTo = '/account';
 
     /**
      * The user has been authenticated.
@@ -37,13 +37,16 @@ class LoginController extends Controller
      */
     protected function authenticated(Request $request, $user)
     {
-
         if (! $user->hasRole('admin'))
         {
-            return redirect()->intended('/account');
+            if($request->ajax()){
+                return $user;
+            }
+
+            return back();
         }
 
-        return redirect()->intended('/admin');
+        return redirect()->back();
     }
 
     /**

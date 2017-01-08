@@ -8,6 +8,9 @@
 	<masthead>
 		<h1 slot="header">Short key<br>Statements 3</h1>
 		<button slot="button" class="btn btn-primary btn-large text-uppercase">Stay updated</button>
+		<template slot="main-header">
+			@include('partials.header')
+		</template>
 	</masthead>
 
 	<section-row class="articles-header-and-filters">
@@ -19,7 +22,7 @@
 						<h4>with the campaign and beyond</h4>
 					</header>
 					<div class="hidden-xs hidden-sm join-the-conversation">
-						@include('partials.join-the-conversation')
+						<join-the-conversation></join-the-conversation>
 					</div>
 				</div>
 			</div>
@@ -58,8 +61,16 @@
 				</div>
 			</div>
 
-			<div class="col-xs-12 pagination">
+			<div class="col-xs-12">
 				{{ $articles->links() }}
+			</div>
+		</template>
+	</section-row>
+
+	<section-row class="some-fact">
+		<template slot="header">
+			<div class="col-xs-12">
+				<h2>Incredible fact about how important this issue is. <br class="hidden-xs hidden-sm">Don’t you want to hear more?</h2>
 			</div>
 		</template>
 	</section-row>

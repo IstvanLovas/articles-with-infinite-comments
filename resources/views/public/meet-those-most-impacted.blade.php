@@ -6,16 +6,19 @@
 @section('content')
 <section id="meet-those-most-impacted">
 	<masthead>
-		<h1 slot="header">Short key<br>Statements 2</h1>
+		<h1 slot="header">{{ Auth::check() ? Auth::user()->name : 'Not logged in' }}</h1>
 		<button slot="button" class="btn btn-primary btn-large text-uppercase">Stay updated</button>
+
+		<template slot="main-header">
+			@include('partials.header')
+		</template>
 	</masthead>
 
-	<div class="case-studies">	
+	<div class="case-studies">
 		{{-- @foreach($caseStudies as $caseStudy) --}}
 			<case-study>
 				<h2 slot="case-header">Johns having to move</h2>
-				<p slot="quote">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-				</p>
+				<p slot="quote">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
 				<p slot="fact">IMPACT FACT ABOUT JOHN’S LIFE AND HOW AFFECTS HIM.</p>
 				<button slot="button" class="btn btn-primary btn-large text-uppercase">Read Johns story</button>
 		{{-- @endforeach --}}
@@ -44,7 +47,7 @@
 		</template>
 	</section-row>
 
-	<section-row class="people-affected">
+	<section-row class="some-fact">
 		<template slot="header">
 			<div class="col-xs-12">
 				<h2>Incredible fact about how important this issue is. <br class="hidden-xs hidden-sm">Don’t you want to hear more?</h2>

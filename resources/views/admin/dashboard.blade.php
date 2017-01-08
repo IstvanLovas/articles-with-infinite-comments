@@ -6,11 +6,7 @@
 @section('content')
 
 <section id="dasboard">
-
+	
 </section>
-
-@endsection
-
-@section('customJS')
 
 @endsection

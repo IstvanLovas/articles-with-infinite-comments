@@ -32,6 +32,8 @@
                         <label for="body" class="control-label">Body:</label>
                         <textarea   id="body"
                                     name="body"
+                                    cols="30"
+                                    rows="10"
                                     class="form-control"
                                     v-model="inputs.body"
                                     @keydown="clear($event.target.name)"

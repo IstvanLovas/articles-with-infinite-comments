@@ -77,7 +77,7 @@
     }
 }
 
-.people-affected {
+.some-fact {
     h2 {
         margin-bottom: 0;
     }
@@ -100,6 +100,25 @@
 			}
 		}
 	}
+}
+
+textarea {
+	max-width: 100%;
+}
+
+// Stay up to date and why
+.stay-updated-and-why {
+    .form, .cta-button {
+        padding-bottom: $margin *2;
+    }
+}
+
+@media (min-width: 992px) {
+    .stay-updated-and-why {
+        .form {
+            padding-bottom:0;
+        }
+    }
 }
 
 // Stay up to date and get in touch

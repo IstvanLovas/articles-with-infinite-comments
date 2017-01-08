@@ -18,9 +18,11 @@
 		}
 	}
 	.articles {
+		padding-top:0;
 		.article-wrapper {
 			padding:15px;
 			article {
+				padding:15px;
 				border:1px solid $text-color;
 				h3 {
 					a {

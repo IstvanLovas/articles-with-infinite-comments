@@ -19,6 +19,9 @@ Route::get('/', function () {
     return view('public.welcome');
 });
 
+Route::get('auth/facebook', 'Auth\SocialAuthController@redirectToProvider');
+Route::get('auth/facebook/callback', 'Auth\SocialAuthController@handleProviderCallback');
+
 Route::get('/get-the-facts', 'PublicPagesController@showGetTheFacts');
 Route::get('/meet-those-most-impacted', 'PublicPagesController@showMeetThoseMostImpacted');
 
@@ -30,6 +33,14 @@ Route::post('articles/{article}/comments',[
 ]);
 
 Auth::routes();
+
+Route::get('/api/authUser', function() {
+    if(Auth::check()){
+    	return response()->json(['authUser' => Auth::user()]);
+    }
+
+    return response()->json(['authUser' => false]);
+});
 
 Route::get('/account', 'AccountController@index');
 

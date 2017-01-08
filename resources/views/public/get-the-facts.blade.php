@@ -9,6 +9,10 @@
 	<masthead>
 		<h1 slot="header">Every life<br>matters</h1>
 		<button slot="button" class="btn btn-primary btn-large text-uppercase">Stay updated</button>
+
+		<template slot="main-header">
+			@include('partials.header')
+		</template>
 	</masthead>
 
 	<section-row class="the-issue">
@@ -138,7 +142,7 @@
 		</template>
 	</section-row>
 
-	<section-row class="people-affected">
+	<section-row class="some-fact">
 		<template slot="header">
 			<div class="col-xs-12">
 				<h2>This issue affects over 10,000 people. <br class="hidden-xs hidden-sm">Don’t you want to hear more?</h2>

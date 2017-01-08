@@ -6,19 +6,10 @@
 @section('content')
 <section id="article-page">
 
-	<div class="masthead">
-		<div class="container">
-			<div class="row">
-				
-				<div class="col-xs-12 section">
-					<h1>Every life matters</h1>
-		
-					<button class="btn btn-primary btn-large">Get Involved</button>
-				</div>
-		
-			</div>
-		</div>
-	</div>
+	<masthead>
+		<h1 slot="header">Short key<br>Statements 2</h1>
+		<button slot="button" class="btn btn-primary btn-large text-uppercase">Stay updated</button>
+	</masthead>
 
 	<div class="article">
 		<div class="container">
