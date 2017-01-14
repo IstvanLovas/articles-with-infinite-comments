@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin Dashboard | @yield('title')</title>
+    <title>@yield('title') | CQC</title>
 
     <meta name="description" content="Admin Dashboard">
     <meta name="keywords" content="@yield('meta_keywords')">

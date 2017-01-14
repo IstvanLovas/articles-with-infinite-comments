@@ -1,11 +1,11 @@
 <?php
 
 Route::get('/', function () {
-	// \App\Tag::create(['name' => 'law']);
-	// \App\Tag::create(['name' => 'discussion']);
-	// \App\Tag::create(['name' => 'person']);
-	// \App\Tag::create(['name' => 'other']);
-	// \App\Role::create(['name' => 'admin']);
+    // \App\Tag::create(['name' => 'law']);
+    // \App\Tag::create(['name' => 'discussion']);
+    // \App\Tag::create(['name' => 'person']);
+    // \App\Tag::create(['name' => 'other']);
+    // \App\Role::create(['name' => 'admin']);
  //    $role = \App\Role::whereName('admin')->first();
  //    $user = \App\User::create([
  //     'name' => 'Istvan Lovas',
@@ -27,16 +27,16 @@ Route::get('/meet-those-most-impacted', 'PublicPagesController@showMeetThoseMost
 
 Route::resource('articles', 'ArticlesController');
 
-Route::post('articles/{article}/comments',[
-	'middleware' => 'auth',
-	'uses' => 'CommentsController@store'
+Route::post('articles/{article}/comments', [
+    'middleware' => 'auth',
+    'uses' => 'CommentsController@store'
 ]);
 
 Auth::routes();
 
-Route::get('/api/authUser', function() {
-    if(Auth::check()){
-    	return response()->json(['authUser' => Auth::user()]);
+Route::get('/api/authUser', function () {
+    if (Auth::check()) {
+        return response()->json(['authUser' => Auth::user()]);
     }
 
     return response()->json(['authUser' => false]);
@@ -44,25 +44,40 @@ Route::get('/api/authUser', function() {
 
 Route::get('/account', 'AccountController@index');
 
-Route::group(['namespace' => 'Admin'], function() {
+Route::group(['namespace' => 'Admin'], function () {
 
-	Route::get('/admin', [
-		'as' => 'dashboard',
-		'uses' => 'AdminController@dashboard'
-	]);
+    Route::get('/admin', [
+        'as' => 'dashboard',
+        'uses' => 'AdminController@dashboard'
+    ]);
 
-	Route::get('/admin/welcome', [
-		'as' => 'edit-welcome',
-		'uses' => 'AdminController@editWelcome'
-	]);
+    Route::get('/admin/welcome/edit', [
+        'as' => 'edit-welcome',
+        'uses' => 'WelcomePageDetailController@edit'
+    ]);
 
-	Route::get('/admin/get-the-facts', [
-		'as' => 'edit-get-the-facts',
-		'uses' => 'AdminController@editGetTheFacts'
-	]);
+    Route::patch('/admin/welcome/update', [
+        'as' => 'update-welcome',
+        'uses' => 'WelcomePageDetailController@update'
+    ]);
 
-	Route::get('/admin/meet-those-most-impacted', [
-		'as' => 'edit-meet-those-most-impacted',
-		'uses' => 'AdminController@editMeetThoseMostImpacted'
-	]);
+    Route::get('/admin/get-the-facts/edit', [
+        'as' => 'edit-get-the-facts',
+        'uses' => 'GetTheFactsPageDetailController@edit'
+    ]);
+
+    Route::patch('/admin/get-the-facts/update', [
+        'as' => 'update-get-the-facts',
+        'uses' => 'GetTheFactsPageDetailController@update'
+    ]);
+
+    Route::get('/admin/meet-those-most-impacted/edit', [
+        'as' => 'edit-meet-those-most-impacted',
+        'uses' => 'MeetThoseMostImpactedPageDetailController@edit'
+    ]);
+
+    Route::get('/admin/meet-those-most-impacted/update', [
+        'as' => 'update-meet-those-most-impacted',
+        'uses' => 'MeetThoseMostImpactedPageDetailController@update'
+    ]);
 });

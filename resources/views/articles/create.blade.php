@@ -8,7 +8,7 @@
         <div class="container">
             <div class="row">
             	<h1>Create a new Article</h1>
-                <create-article :tags="{{ $tags }}" class="col-md-8 col-md-offset-2"></create-article>
+                <create-article-form :tags="{{ $tags }}" class="col-md-8 col-md-offset-2"></create-article-form>
             </div>
         </div>
     </section>

@@ -90,7 +90,7 @@
 										<a href="/meet-those-most-impacted" class="text-uppercase" title="Link to Meet those most impacted page">Meet those most impacted</a>
 									</li>
 									<li>
-										<a href="/" class="text-uppercase" title="Link to Registration">Stay updated</a>
+										<a href="/login" class="text-uppercase" title="Link to Registration">Stay updated</a>
 									</li>
 								</ul>
 							</div>
@@ -133,7 +133,7 @@
 					</li>
 
 					<li>
-						<a href="/">Learn more</a>
+						<a href="/login">Learn more</a>
 					</li>
 				</ul>
 			</div>

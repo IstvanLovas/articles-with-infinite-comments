@@ -20,16 +20,6 @@ class AdminController extends Controller
     	return view('admin.dashboard');
     }
 
-    public function editWelcome()
-    {
-        return view('admin.welcome');
-    }
-
-    public function editGetTheFacts()
-    {
-        return view('admin.get-the-facts');
-    }
-
     public function editMeetThoseMostImpacted()
     {
         return view('admin.meet-those-most-impacted');

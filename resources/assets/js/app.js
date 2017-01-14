@@ -14,7 +14,7 @@ import BlockQuote from './components/BlockQuote.vue';
 import CaseStudy from './components/CaseStudy.vue';
 import AppHeader from './components/AppHeader.vue';
 import AppFooter from './components/AppFooter.vue';
-import CreateArticle from './components/layout/CreateArticle.vue';
+import CreateArticleForm from './admin/components/CreateArticleForm.vue';
 
 const app = new Vue({
     el: '#app',
@@ -27,7 +27,7 @@ const app = new Vue({
     	SectionRow,
         BlockQuote,
         CaseStudy,
-    	CreateArticle
+    	CreateArticleForm
     },
     mounted() {
         this.$nextTick(() => {
