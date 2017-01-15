@@ -38,6 +38,8 @@
         </app-container>
     </div>
 
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.js"></script>
     <script src="/js/app.js"></script>
 </body>
 </html>

@@ -16,19 +16,18 @@
                 <li>
                     <a href="{{ route('edit-meet-those-most-impacted') }}">Most impacted</a>
                 </li>
-                <li>
-                    {{-- <a href="{{ route('edit-articles') }}">News</a> --}}
-                </li>
             </ul>
         </li>
         <li>
-            <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
-        </li>
-        <li>
-            <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
-        </li>
-        <li>
-            <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
+            <a href="javascript:;" data-toggle="collapse" data-target="#case-studies"><i class="fa fa-fw fa-file"></i> Case Studies <i class="fa fa-fw fa-caret-down"></i></a>
+            <ul id="case-studies" class="collapse">
+                <li>
+                    <a href="{{ route('case-studies-index') }}">All</a>
+                </li>
+                <li>
+                    <a href="{{ route('case-studies-create') }}">Add new</a>
+                </li>
+            </ul>
         </li>
     </ul>
 </div>

@@ -31,6 +31,14 @@ const app = new Vue({
     },
     mounted() {
         this.$nextTick(() => {
+            var controller = new ScrollMagic.Controller({addIndicators: true});
+            var scene = new ScrollMagic.Scene({
+                triggerHook: 0,
+                triggerElement: "#main-header"
+            })
+            .setPin("#main-header")
+            .addTo(controller);
+
     	   // Smooth Scroll
             $('a[href*="#"]:not([href="#"])').click(function() {
                 if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {

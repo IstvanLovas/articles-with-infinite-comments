@@ -46,7 +46,7 @@ class ArticlesController extends Controller
     }
 
     /**
-     * Show the page the Create an Article Form.
+     * Show the Create an Article Form.
      * @return Response
      */
     public function create()

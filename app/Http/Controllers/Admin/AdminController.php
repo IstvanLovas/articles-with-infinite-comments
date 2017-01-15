@@ -19,9 +19,4 @@ class AdminController extends Controller
     {
     	return view('admin.dashboard');
     }
-
-    public function editMeetThoseMostImpacted()
-    {
-        return view('admin.meet-those-most-impacted');
-    }
 }

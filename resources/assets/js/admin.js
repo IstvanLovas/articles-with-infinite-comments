@@ -10,6 +10,7 @@ import OurCurrentChallenge from './admin/components/OurCurrentChallenge.vue';
 import WhyUs from './admin/components/WhyUs.vue';
 import GetTheLatest from './admin/components/GetTheLatest.vue';
 import KeyFactsAboutIssue from './admin/components/KeyFactsAboutIssue.vue';
+import CreateCaseStudyForm from './admin/partials/CreateCaseStudyForm.vue';
 
 window.Event = new Vue();
 
@@ -28,7 +29,8 @@ const admin = new Vue({
         OurCurrentChallenge,
         WhyUs,
         GetTheLatest,
-        KeyFactsAboutIssue
+        KeyFactsAboutIssue,
+        CreateCaseStudyForm
     },
     el: '#admin',
     mounted() {

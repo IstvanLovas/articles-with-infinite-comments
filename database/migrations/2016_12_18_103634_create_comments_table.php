@@ -19,7 +19,8 @@ class CreateCommentsTable extends Migration
             $table->integer('article_id')->index();
             $table->integer('parent_id')->index()->nullable();
             $table->text('text');
-            $table->boolean('approved')->default(0);
+            $table->boolean('approved')->default(false);
+            $table->string('emoji')->default('happy');
             $table->timestamps();
         });
     }

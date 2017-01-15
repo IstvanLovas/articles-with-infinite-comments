@@ -15,14 +15,15 @@ class CreateCaseStudiesTable extends Migration
     {
         Schema::create('case_studies', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
             $table->string('name');
             $table->string('header');
             $table->text('intro');
             $table->text('fact');
             $table->text('text_left');
             $table->text('text_right');
-            $table->string('image_path');
+            $table->string('image_path')->nullable();
+            $table->boolean('active')->default(false);
+            $table->timestamps();
         });
     }
 

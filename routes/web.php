@@ -80,4 +80,19 @@ Route::group(['namespace' => 'Admin'], function () {
         'as' => 'update-meet-those-most-impacted',
         'uses' => 'MeetThoseMostImpactedPageDetailController@update'
     ]);
+
+    Route::get('/admin/case-studies/index', [
+        'as' => 'case-studies-index',
+        'uses' => 'CaseStudyController@index'
+    ]);
+
+    Route::get('/admin/case-studies/create', [
+        'as' => 'case-studies-create',
+        'uses' => 'CaseStudyController@create'
+    ]);
+
+    Route::post('/admin/case-studies/store', [
+        'as' => 'case-studies-store',
+        'uses' => 'CaseStudyController@store'
+    ]);
 });

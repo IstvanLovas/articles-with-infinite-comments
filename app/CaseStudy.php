@@ -11,8 +11,9 @@ class CaseStudy extends Model
     	'header',
     	'intro',
     	'fact',
-    	'text-left',
-    	'text-right',
-    	'image_path'
+    	'text_left',
+    	'text_right',
+    	'image_path',
+    	'active'
     ];
 }
