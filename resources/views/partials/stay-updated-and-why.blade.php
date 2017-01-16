@@ -1,4 +1,4 @@
-<section-row class="stay-updated-and-why">
+<section-row id="newsletter-sign-up" class="stay-updated-and-why">
 	<template slot="header">
 		<div class="col-xs-12 col-md-6 section">
 			<h2>Stay Updated</h2>

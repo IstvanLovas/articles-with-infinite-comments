@@ -12,7 +12,7 @@ class WelcomePageDetailController extends Controller
     {
     	$page = WelcomePageDetail::first();
 
-        return view('admin.welcome',compact('page'));
+        return view('admin.our-campaign',compact('page'));
     }
 
     public function update(Request $request)

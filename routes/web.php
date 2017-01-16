@@ -16,14 +16,11 @@ Route::get('/', function () {
  //    $user->roles()->attach($role);
  //    return \App\User::with('roles')->find(1);
 
-    return view('public.welcome');
+    return view('public.our-campaign');
 });
 
-Route::get('auth/facebook', 'Auth\SocialAuthController@redirectToProvider');
-Route::get('auth/facebook/callback', 'Auth\SocialAuthController@handleProviderCallback');
-
-Route::get('/get-the-facts', 'PublicPagesController@showGetTheFacts');
-Route::get('/meet-those-most-impacted', 'PublicPagesController@showMeetThoseMostImpacted');
+Route::get('/the-facts', 'PublicPagesController@showTheFacts');
+Route::get('/meet-those-affected', 'PublicPagesController@showMeetThoseAffected');
 
 Route::resource('articles', 'ArticlesController');
 
@@ -33,6 +30,9 @@ Route::post('articles/{article}/comments', [
 ]);
 
 Auth::routes();
+
+Route::get('auth/facebook', 'Auth\SocialAuthController@redirectToProvider');
+Route::get('auth/facebook/callback', 'Auth\SocialAuthController@handleProviderCallback');
 
 Route::get('/api/authUser', function () {
     if (Auth::check()) {
@@ -51,33 +51,33 @@ Route::group(['namespace' => 'Admin'], function () {
         'uses' => 'AdminController@dashboard'
     ]);
 
-    Route::get('/admin/welcome/edit', [
-        'as' => 'edit-welcome',
+    Route::get('/admin/our-campaign/edit', [
+        'as' => 'edit-our-campaign',
         'uses' => 'WelcomePageDetailController@edit'
     ]);
 
-    Route::patch('/admin/welcome/update', [
-        'as' => 'update-welcome',
+    Route::patch('/admin/our-campaign/update', [
+        'as' => 'update-our-campaign',
         'uses' => 'WelcomePageDetailController@update'
     ]);
 
-    Route::get('/admin/get-the-facts/edit', [
-        'as' => 'edit-get-the-facts',
+    Route::get('/admin/the-facts/edit', [
+        'as' => 'edit-the-facts',
         'uses' => 'GetTheFactsPageDetailController@edit'
     ]);
 
-    Route::patch('/admin/get-the-facts/update', [
-        'as' => 'update-get-the-facts',
+    Route::patch('/admin/the-facts/update', [
+        'as' => 'update-the-facts',
         'uses' => 'GetTheFactsPageDetailController@update'
     ]);
 
-    Route::get('/admin/meet-those-most-impacted/edit', [
-        'as' => 'edit-meet-those-most-impacted',
+    Route::get('/admin/meet-those-affected/edit', [
+        'as' => 'edit-meet-those-affected',
         'uses' => 'MeetThoseMostImpactedPageDetailController@edit'
     ]);
 
-    Route::get('/admin/meet-those-most-impacted/update', [
-        'as' => 'update-meet-those-most-impacted',
+    Route::get('/admin/meet-those-affected/update', [
+        'as' => 'update-meet-those-affected',
         'uses' => 'MeetThoseMostImpactedPageDetailController@update'
     ]);
 

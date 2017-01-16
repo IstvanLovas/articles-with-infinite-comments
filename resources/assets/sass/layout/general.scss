@@ -37,6 +37,18 @@ ul, ul li {
     padding:0;
 }
 
+// Background Colors
+.brand-blue-bg { background:$brand-blue; }
+.brand-yellow-bg { background:$brand-yellow; }
+.brand-pink-bg { background:$brand-pink; }
+.brand-gray-bg { background:$brand-gray; }
+
+// Colors
+.brand-blue { color:$brand-blue; }
+.brand-yellow { color:$brand-yellow; }
+.brand-pink { color:$brand-pink; }
+.brand-gray { color:$brand-gray; }
+
 .flex-vertical {
     display: flex;
     align-items:center;
@@ -104,7 +116,6 @@ main > footer {
     h2 {
         font-size:26px;
         margin:0 0 10px;
-        text-transform: uppercase;
     }
     h4 {
         font-size:16px;

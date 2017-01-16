@@ -16,5 +16,6 @@ class MeetThoseMostImpactedPageDetail extends Model
     	'the_impact_is_huge_text_left',
     	'the_impact_is_huge_text_right',
     	'fact',
+        'fact_bold',
     ];
 }

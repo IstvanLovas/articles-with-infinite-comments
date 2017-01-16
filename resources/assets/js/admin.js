@@ -35,19 +35,25 @@ const admin = new Vue({
     el: '#admin',
     mounted() {
         this.$nextTick(() => {
-    	   // Smooth Scroll
+    	   let headerHeight = $('#main-header').height();
+
+            $(window).on('resize',() => {
+                headerHeight = $('#main-header').height();
+            });
+
+            // Smooth Scroll
             $('a[href*="#"]:not([href="#"])').click(function() {
                 if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
                 let target = $(this.hash);
                     target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
                     if (target.length) {
                         $('html, body').animate({
-                            scrollTop: target.offset().top
+                            scrollTop: target.offset().top - headerHeight
                         },1000);
                         return false;
                     }
                 }
-            })
-        })
+            });
+        });
     }
 });

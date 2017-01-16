@@ -6,13 +6,13 @@ use Illuminate\Http\Request;
 
 class PublicPagesController extends Controller
 {
-    public function showGetTheFacts()
+    public function showTheFacts()
     {
-    	return view('public.get-the-facts');
+    	return view('public.the-facts');
     }
 
-    public function showMeetThoseMostImpacted()
+    public function showMeetThoseAffected()
     {
-    	return view('public.meet-those-most-impacted');
+    	return view('public.meet-those-affected');
     }
 }

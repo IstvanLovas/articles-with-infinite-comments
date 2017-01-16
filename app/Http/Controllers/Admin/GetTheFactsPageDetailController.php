@@ -12,7 +12,7 @@ class GetTheFactsPageDetailController extends Controller
     {
     	$page = GetTheFactsPageDetail::first();
 
-        return view('admin.get-the-facts',compact('page'));
+        return view('admin.the-facts',compact('page'));
     }
 
     public function update(Request $request)

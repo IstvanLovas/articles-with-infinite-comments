@@ -1,31 +1,200 @@
 /* =======================================
    Header
    =======================================*/
-
 #main-header {
-	width:100%;
+	width:100% !important;
 	z-index:1000;
-	.navbar {
-	    margin-bottom: 0;
-	    border: 0;
-	    .navbar-default {
-		    background-color: #fff;
-		    border: 0;
+	color:#fff;
+	.navbar-toggle {
+    	border: 0;
+    	float:none;
+    	margin-left:0;
+    	margin-right:0;
+    	&:hover, &:focus {
+		    background:0;
 		}
-	    .navbar-toggle {
-	    	border: 0;
-	    	float:left;
-	    	margin-left:-10px;
-	    	margin-right:0;
+    }
+	.menu {
+		font-size:16px;
+		display: flex;
+		align-items:center;
+		justify-content:space-between;
+	    .toggle {
+	    	margin-right: 5px;
+		    width: 18px;
+		    height: 16px;
+		    position: relative;
+		    transform: rotate(0deg);
+		    transition: all .5s ease-in-out;
+		    cursor: pointer;
+		    span {
+		        display: block;
+			    position: absolute;
+			    height: 3px;
+			    width: 100%;
+			    background: #fff;
+			    opacity: 1;
+			    left: 0;
+			    transform: rotate(0deg);
+			    transition: all .27s ease-in-out;
+		    }
+	    }
+	    .toggle span:nth-child(1) {
+		    top: 0px;
+		}
+		.toggle span:nth-child(2) {
+		    top: 6px;
+		}
+		.toggle span:nth-child(3) {
+		    top: 12px;
+		}
+	}
+	nav {
+		.navbar-collapse {
+	    	border:0;
+	    	box-shadow:none;
+	    }
+	    .navbar-nav {
+		    margin: 0 -15px;
+		}
+	    .navbar-nav > li > a {
+	    	position: relative;
+		    color: #fff;
+		    &:hover,&:focus {
+			    background: 0;
+			}
+	    }
+	    .navbar-nav > li > a.primary-link,
+	    .navbar-nav > li > a.secondary-link {
+			&:before {
+		    	content: '';
+		    	position:absolute;
+		    	top:0;
+		    	left:0;
+		    }
+	    }
+	    .navbar-nav > li > a[href="#newsletter-sign-up"] {
+	    	font-size:18px;
+		    color: $brand-blue;
+		    &:hover,&:focus {
+			    color: $brand-blue;
+			    background: $brand-yellow;
+			}
+	    }
+	}
+	.primary-nav {
+		background-color: $brand-blue;
+		.primary-toggle {
+			display: none;
+		}
+		.navbar-nav > li > a.primary-link {
+			&:before {
+		    	background-color:$brand-pink;
+		    }
+		    &:hover,&:focus {
+			    color: $brand-pink;
+			}
+	    }
+	}
+	.secondary-nav {
+		.navbar-nav > li > a.secondary-link {
+			&:before {
+		    	background-color:#fff;
+		    }
+		    &:hover,&:focus {
+			    color: $brand-blue;
+			}
 	    }
 	}
 }
 
+@media (max-width: 767px) {
+	#main-header {
+		.primary-nav {
+			.primary-toggle {
+				display: flex;
+				align-items:center;
+				justify-content:space-between;
+				.logo {
+					margin-right: auto;
+				}
+			}
+			.navbar-nav > li > a.primary-link.active:before {
+				height:100%;
+			}
+			.navbar-nav > li > a.primary-link {
+				&:before {
+			    	height:0;
+			    	width:5px;
+			    	transition: height 0.15s ease-in-out;
+			    }
+			    &:hover,&:focus {
+				    color: $brand-pink;
+				    background: 0;
+				}
+				&:hover:before, &:focus:before {
+				    height:100%;
+				}
+			}
+		}
+		.secondary-nav {
+			.navbar-nav {
+				width:90%;
+				float:right;
+				background-color: $brand-pink;
+			}
+			.navbar-nav > li.active > a.secondary-link {
+				&:before {
+					height:100%;
+				}
+			}
+			.navbar-nav > li > a.secondary-link {
+				&:before {
+			    	height:0;
+			    	width:5px;
+			    	transition: height 0.15s ease-in-out;
+			    }
+				&:hover:before, &:focus:before {
+				    height:100%;
+				}
+		    }
+		}
+	}
+}
+
 @media (min-width: 768px) {
-    .navbar-nav {
-    	margin-left:-30px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
+	#main-header {
+		#app-navbar-collapse {
+			display: flex !important;
+	        align-items: center;
+	        .logo {
+	        	margin-left:-15px;
+	        }
+	        .navbar-nav {
+		        display: flex;
+		        align-items: center;
+		        justify-content: space-between;
+		        margin-left: auto;
+		        margin-right: -30px;
+		    }
+		}
+		.primary-nav .navbar-nav > li > a.primary-link.active:before,
+		.secondary-nav .navbar-nav > li.active > a.secondary-link:before {
+			width:100%;
+		}
+		.primary-nav .navbar-nav > li > a.primary-link,
+		.secondary-nav .navbar-nav > li > a.secondary-link {
+			&:before {
+		    	height:5px;
+		    	width:0;
+		    	transition: width 0.15s ease-in-out;
+		    }
+			&:hover:before, &:focus:before {
+			    width:100%;
+			}
+		}
+		.secondary-nav {
+			background-color: $brand-pink;
+		}
+	}
 }

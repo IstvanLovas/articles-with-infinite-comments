@@ -13,7 +13,7 @@
 	                    </div>
 	                        
 	                    <div class="cta-button">
-	                        <a href="/login" class="text-center text-uppercase">Sign up</a>
+	                        <a href="#newsletter-sign-up" class="btn btn-primary btn-large text-uppercase">Sign up</a>
 	                    </div>
 	                    
 	                    <join-the-conversation></join-the-conversation>

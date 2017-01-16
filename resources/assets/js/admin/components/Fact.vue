@@ -13,6 +13,16 @@
                     ></textarea>
                     <span v-if="form.errors.has('fact')" class="error" v-text="form.errors.get('fact')"></span>
                 </div>
+
+                <div class="form-group">
+                    <label for="fact_bold" class="control-label">Fact / Bold:</label>
+                    <textarea  class="form-control"
+                            id="fact_bold"
+                            name="fact_bold"
+                            v-model="form.fact_bold"
+                    ></textarea>
+                    <span v-if="form.errors.has('fact_bold')" class="error" v-text="form.errors.get('fact_bold')"></span>
+                </div>
                 
                 <div class="form-group">
                     <button class="btn btn-primary" :disabled="form.errors.any()">
@@ -26,11 +36,12 @@
 
 <script>
     export default {
-        props:['patchLink','fact'],
+        props:['patchLink','fact','factBold',],
         data() {
             return {
                 form: new Form({
-                    fact:this.fact
+                    fact:this.fact,
+                    fact_bold:this.factBold
                 })
             }
         },
@@ -41,6 +52,7 @@
             },
             updateInputs(response) {
                 this.form.fact = response.fact
+                this.form.fact_bold = response.fact_bold
             }
         }
     }

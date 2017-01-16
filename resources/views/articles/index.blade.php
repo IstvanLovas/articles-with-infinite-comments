@@ -7,7 +7,7 @@
 <section id="articles">
 	<masthead>
 		<h1 slot="header">Short key<br>Statements 3</h1>
-		<button slot="button" class="btn btn-primary btn-large text-uppercase">Stay updated</button>
+		<a href="#newsletter-sign-up" slot="button" class="btn btn-primary btn-large text-uppercase">Stay updated</a>
 		<template slot="main-header">
 			@include('partials.header')
 		</template>

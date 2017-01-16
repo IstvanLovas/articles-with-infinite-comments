@@ -21,6 +21,7 @@ class CreateWelcomePageDetailsTable extends Migration
             $table->string('banner_subheader')->nullable();
 
             $table->text('fact')->nullable();
+            $table->text('fact_bold')->nullable();
 
             $table->string('the_issue_header')->nullable();
             $table->string('the_issue_subheader')->nullable();

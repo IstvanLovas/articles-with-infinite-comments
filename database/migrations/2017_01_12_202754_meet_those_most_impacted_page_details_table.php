@@ -26,6 +26,7 @@ class MeetThoseMostImpactedPageDetailsTable extends Migration
             $table->text('the_impact_is_huge_text_right')->nullable();
 
             $table->text('fact')->nullable();
+            $table->text('fact_bold')->nullable();
 
             $table->timestamps();
         });

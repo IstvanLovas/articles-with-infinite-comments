@@ -24,7 +24,7 @@
         ]); ?>
     </script>
 </head>
-<body>
+<body data-spy="scroll" data-target="#secondary-navigation-bar" data-offset="100">
 
     <div id="app">
         <app-container>

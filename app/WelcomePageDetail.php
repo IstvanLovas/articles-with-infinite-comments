@@ -12,6 +12,7 @@ class WelcomePageDetail extends Model
     	'banner_header',
     	'banner_subheader',
     	'fact',
+        'fact_bold',
     	'the_issue_header',
     	'the_issue_subheader',
     	'the_issue_text_left',

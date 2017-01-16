@@ -51,6 +51,7 @@ class CreateGetTheFactsPageDetailsTable extends Migration
             $table->text('our_current_challenge_text_right')->nullable();
 
             $table->text('fact')->nullable();
+            $table->text('fact_bold')->nullable();
 
             $table->string('why_us_header')->nullable();
             $table->string('why_us_subheader')->nullable();

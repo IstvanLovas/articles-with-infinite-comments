@@ -38,6 +38,7 @@ class GetTheFactsPageDetail extends Model
     	'our_curren_challenge_header_text_left',
     	'our_curren_challenge_header_text_right',
     	'fact',
+        'fact_bold',
     	'why_us_header',
     	'why_us_subheader',
     	'why_us_text',

@@ -8,13 +8,13 @@
             <a href="javascript:;" data-toggle="collapse" data-target="#pages"><i class="fa fa-fw fa-file"></i> Pages <i class="fa fa-fw fa-caret-down"></i></a>
             <ul id="pages" class="collapse">
                 <li>
-                    <a href="{{ route('edit-welcome') }}">Welcome</a>
+                    <a href="{{ route('edit-our-campaign') }}">Our Campaign</a>
                 </li>
                 <li>
-                    <a href="{{ route('edit-get-the-facts') }}">Get the facts</a>
+                    <a href="{{ route('edit-the-facts') }}">The facts</a>
                 </li>
                 <li>
-                    <a href="{{ route('edit-meet-those-most-impacted') }}">Most impacted</a>
+                    <a href="{{ route('edit-meet-those-affected') }}">Most affected</a>
                 </li>
             </ul>
         </li>

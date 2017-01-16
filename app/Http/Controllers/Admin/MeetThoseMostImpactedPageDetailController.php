@@ -12,7 +12,7 @@ class MeetThoseMostImpactedPageDetailController extends Controller
     {
     	$page = MeetThoseMostImpactedPageDetail::first();
 
-        return view('admin.meet-those-most-impacted',compact('page'));
+        return view('admin.meet-those-affected',compact('page'));
     }
 
     public function update(Request $request)
