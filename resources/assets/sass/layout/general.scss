@@ -114,13 +114,18 @@ main > footer {
 
 .section {
     h2 {
+        color:$brand-pink;
         font-size:26px;
         margin:0 0 10px;
     }
     h4 {
+        color:$brand-blue;
         font-size:16px;
         text-transform: uppercase;
         margin-bottom: $margin;
+    }
+    p {
+        color:#fff;
     }
     hr {
         margin-top:$margin;
@@ -132,4 +137,8 @@ main > footer {
     a {
         font-size:40px;
     }
+}
+
+.scrollmagic-pin-spacer {
+    min-height:auto;
 }

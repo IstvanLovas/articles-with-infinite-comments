@@ -2,7 +2,97 @@
    Footer
    =======================================*/
 #app-footer {
+	background-color:$brand-yellow;
+	p {
+		color:$brand-blue !important;
+	}
+	hr {
+		margin:0;
+	}
 	.join-the-conversation {
 		margin-top:$margin;
+		color:#fff !important;
+		.h4 {
+			color:#fff !important;
+		}
 	}
+	.form {
+        padding-bottom: $margin *2;
+    }
+    .get-involved-and-query {
+		position: relative;
+		.left {
+			position: absolute;
+			top:0;
+			left:0;
+			width:50%;
+			height:100%;
+			background: $brand-blue;
+		}
+		.right {
+			position: absolute;
+			top:0;
+			right:0;
+			width:50%;
+			height:100%;
+			background: $brand-pink;
+		}
+		.flex-wrapper {
+	        display: flex;
+	        flex-direction: column;
+	        .section {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				padding-top:$margin *2;
+				padding-bottom: $margin *2;
+				.contact-links {
+					margin-bottom: $margin;
+				}
+				footer {
+			    	font-size: 10px;
+			    }
+			}
+			.get-involved {
+				background: $brand-blue;
+				h4 {
+					color:#fff;
+				}
+			}
+			.query {
+				background: $brand-pink;
+				padding-bottom: $margin;
+				h2 {
+					color:#fff;
+				}
+				h4 {
+					margin-bottom:0;
+				}
+				.email-us {
+					font-size:26px;
+					color:#fff;
+					display: inline-block;
+					margin:$margin 0;
+				}
+			}
+	    }
+	}
+}
+
+@media (min-width: 768px) {
+	#app-footer {
+		.get-involved-and-query {
+		    .flex-wrapper {
+				flex-direction: row;
+		    }
+		}
+	}
+}
+
+@media (min-width: 992px) {
+    #app-footer {
+        .form {
+            padding-bottom:0;
+        }
+    }
 }

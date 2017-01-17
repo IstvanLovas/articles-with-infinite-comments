@@ -14,6 +14,7 @@ import BlockQuote from './components/BlockQuote.vue';
 import CaseStudy from './components/CaseStudy.vue';
 import AppHeader from './components/AppHeader.vue';
 import AppFooter from './components/AppFooter.vue';
+import MenuButton from './components/MenuButton.vue';
 import CreateArticleForm from './admin/components/CreateArticleForm.vue';
 
 const app = new Vue({
@@ -21,12 +22,13 @@ const app = new Vue({
     components: {
         AppContainer,
         JoinTheConversation,
-        AppHeader,
-        AppFooter,
     	Masthead,
     	SectionRow,
         BlockQuote,
         CaseStudy,
+        AppHeader,
+        AppFooter,
+        MenuButton,
     	CreateArticleForm
     },
     mounted() {

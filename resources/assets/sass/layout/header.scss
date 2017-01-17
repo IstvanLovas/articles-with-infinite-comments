@@ -5,20 +5,20 @@
 	width:100% !important;
 	z-index:1000;
 	color:#fff;
-	.navbar-toggle {
-    	border: 0;
-    	float:none;
-    	margin-left:0;
-    	margin-right:0;
-    	&:hover, &:focus {
-		    background:0;
-		}
-    }
 	.menu {
 		font-size:16px;
 		display: flex;
 		align-items:center;
 		justify-content:space-between;
+		.navbar-toggle {
+	    	border: 0;
+	    	float:none;
+	    	margin-left:0;
+	    	margin-right:0;
+	    	&:hover, &:focus {
+			    background:0;
+			}
+	    }
 	    .toggle {
 	    	margin-right: 5px;
 		    width: 18px;
@@ -105,6 +105,27 @@
 			    color: $brand-blue;
 			}
 	    }
+	}
+}
+
+.open #main-header .primary-nav .menu {
+	.navbar-toggle {
+		color:$brand-yellow;
+	}
+	.toggle span {
+		background-color: $brand-yellow;
+	}
+	.toggle span:nth-child(1) {
+		top: 6px;
+    	transform: rotate(135deg);
+	}
+	.toggle span:nth-child(2) {
+		opacity: 0;
+		left: -60px;
+	}
+	.toggle span:nth-child(3) {
+		top: 6px;
+    	transform: rotate(-135deg);
 	}
 }
 

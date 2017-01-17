@@ -77,10 +77,9 @@
     }
 }
 
-.some-fact {
-    h2 {
-        margin-bottom: 0;
-    }
+.fact {
+    background-color: $brand-pink;
+    color:#fff;
 }
 
 @media (min-width: 768px) {
@@ -104,74 +103,6 @@
 
 textarea {
 	max-width: 100%;
-}
-
-// Stay up to date and why
-.stay-updated-and-why {
-    .form, .cta-button {
-        padding-bottom: $margin *2;
-    }
-}
-
-@media (min-width: 992px) {
-    .stay-updated-and-why {
-        .form {
-            padding-bottom:0;
-        }
-    }
-}
-
-// Stay up to date and get in touch
-.stay-updated-and-get-in-touch {
-	position: relative;
-	.left {
-		position: absolute;
-		top:0;
-		left:0;
-		width:50%;
-		height:100%;
-		background: #141414;
-	}
-	.right {
-		position: absolute;
-		top:0;
-		right:0;
-		width:50%;
-		height:100%;
-		background: #e5e5e5;
-	}
-	.flex-wrapper {
-        display: flex;
-        flex-direction: column;
-        .section {
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-			padding-top:$margin *2;
-			padding-bottom: $margin *2;
-			.contact-links {
-				margin-bottom: $margin;
-			}
-			footer {
-		    	font-size: 10px;
-		    }
-		}
-		.stay-updated {
-			background: #141414;
-		}
-		.get-in-touch {
-			background: #e5e5e5;
-			padding-bottom: $margin;
-		}
-    }
-}
-
-@media (min-width: 768px) {
-	.stay-updated-and-get-in-touch {
-	    .flex-wrapper {
-			flex-direction: row;
-	    }
-	}
 }
 
 // Join the conversation

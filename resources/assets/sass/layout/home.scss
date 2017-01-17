@@ -3,7 +3,22 @@
    =======================================*/
 
 #home {
+    .fact {
+        .triangle-wrapper .triangle {
+            border-color: $brand-pink transparent transparent transparent;
+        }
+    }
+    .why-it-matters {
+        padding-top: 0;
+        .triangle-wrapper .triangle {
+            border-color: #fff transparent transparent transparent;
+        }
+    }
    	.our-goals {
+        background-color:$brand-gray;
+        .triangle-wrapper .triangle {
+            border-color: $brand-gray transparent transparent transparent;
+        }
         .list-of-goals {
             display: flex;
             align-items: center;

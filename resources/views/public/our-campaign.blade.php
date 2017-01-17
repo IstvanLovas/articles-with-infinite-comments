@@ -1,14 +1,15 @@
 @extends('layouts.app')
 
-@section('title')Home @endsection
+@section('title')Our Campaign @endsection
 @section('meta_description')CQC is ... @endsection
 
 @section('content')
 
 <section id="home">
+
 	<masthead>
-		<h1 slot="header">Every life<br>matters</h1>
-		<p class="lead" slot="text">Help us give the<br>gift of opportunity</p>
+		<h1 slot="header">{{ $page->banner_header }}</h1>
+		<p class="lead" slot="text">{{ $page->banner_subheader }}</p>
 		<a href="#newsletter-sign-up" slot="button" class="btn btn-primary btn-large text-uppercase">Get involved</a>
 
 		<template slot="main-header">
@@ -16,10 +17,12 @@
 		</template>
 	</masthead>
 
-	<section-row class="over-1-million-people">
+	<section-row class="fact fact-1">
 		<template slot="header">
 			<div class="col-xs-12 section">
-				<h2>Over 1 million people... <br> illustrated key facts</h2>
+				<p class="lead">{{ $page->fact }} <br> <strong>{{ $page->fact_bold }}</strong></p>
+
+				<a href="#newsletter-sign-up" class="btn btn-primary btn-large text-uppercase">Learn more</a>
 			</div>
 		</template>
 
@@ -33,8 +36,8 @@
 	<section-row class="the-issue">
 		<template slot="header">
 			<div class="col-xs-12 section">
-				<h2>The Issue</h2>
-				<h4>Why we are campaigning</h4>
+				<h2>{{ $page->the_issue_header }}</h2>
+				<h4>{{ $page->the_issue_subheader }}</h4>
 			</div>
 		</template>
 
@@ -42,11 +45,11 @@
 			<div class="col-xs-12">
 				<div class="row">
 					<div class="col-sm-6">
-						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim</p>
+						<p>{!! nl2br($page->the_issue_text_left) !!}</p>
 					</div>
 					
 					<div class="col-sm-6">
-						<p>tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo conse- quat. Duis autem vel eum.tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo conse- quat. Duis autem vel eum.</p>
+						<p>{!! nl2br($page->the_issue_text_right) !!}</p>
 					</div>
 				</div>
 
@@ -58,8 +61,8 @@
 	<section-row class="why-it-matters">
 		<template slot="header">
 			<div class="col-xs-12 section">
-				<h2>Why it matters</h2>
-				<h4>Meet John</h4>
+				<h2>{{ $page->why_it_matters_header }}</h2>
+				<h4>{{ $page->why_it_matters_subheader }}</h4>
 			</div>
 		</template>
 
@@ -70,13 +73,11 @@
 					<div class="col-xs-12">
 						<div class="row">
 							<block-quote class="col-xs-12 col-md-6">
-								<p slot="text">A asdwdsasa wdd s asd asdasdasd a asd a
-								asd ssd asd wdsasawdd sasdad asd asdasdasd a asd a
-								asd sad sa as ad</p>
+								<p slot="text">{!! nl2br($page->why_it_matters_text) !!}</p>
 							</block-quote>
 
 							<div class="col-xs-12 col-md-3 facts">
-								<p>IMPACT FACT ABOUT JOHN’S LIFE AND HOW AFFECTS HIM.</p>
+								<p>{{ $page->why_it_matters_fact }}</p>
 							</div>
 						</div>
 
@@ -99,14 +100,17 @@
 
 				</div>
 			</div>
+			<div class="triangle-wrapper">
+				<div class="triangle"></div>
+			</div>
 		</template>
 	</section-row>
 
 	<section-row class="our-goals">
 		<template slot="header">
 			<div class="col-xs-12 section">
-				<h2>Our goals</h2>
-				<h4>What we are going to do about it</h4>
+				<h2>{{ $page->our_goals_header }}</h2>
+				<h4>{{ $page->our_goals_subheader }}</h4>
 			</div>
 		</template>
 
@@ -116,19 +120,26 @@
 					<li>
 						<div class="circle"></div>
 						<span class="goal goal-1">
-							1. ASd ad asdasda  dasd ada
+							{{ $page->our_goals_goal_1 }}
 						</span>
 					</li>
 					<li>
 						<div class="circle"></div>
 						<span class="goal goal-2">
-							2. ASd ad asdadsaad sadasd ada
+							{{ $page->our_goals_goal_2 }}
 						</span>
 					</li>
 					<li>
 						<div class="circle"></div>
 						<span class="goal goal-3">
-							3. ASd asasddadasda  dasd ada
+							{{ $page->our_goals_goal_3 }}
+						</span>
+					</li>
+
+					<li>
+						<div class="circle"></div>
+						<span class="goal goal-4">
+							{{ $page->our_goals_goal_4 }}
 						</span>
 					</li>
 
@@ -137,18 +148,21 @@
 					</li>
 				</ul>
 			</div>
-		</template>
-	</section-row>
-
-	<section-row class="some-fact">
-		<template slot="header">
-			<div class="col-xs-12">
-				<h2>234,578 people are already involved.<br>Are You?</h2>
+			<div class="triangle-wrapper">
+				<div class="triangle"></div>
 			</div>
 		</template>
 	</section-row>
 
-	@include('partials.stay-updated-and-why')
+	<section-row class="fact fact-2">
+		<template slot="header">
+			<div class="col-xs-12 section">
+				<p class="lead">2,432 people are already involved. <strong>Are You?</strong></p>
+
+				<a href="#newsletter-sign-up" class="btn btn-primary btn-large text-uppercase">Get involved</a>
+			</div>
+		</template>
+	</section-row>
 
 	<section-row class="get-the-latest">
 		<template slot="header">
@@ -182,6 +196,7 @@
 			</div>
 		</template>
 	</section-row>
+
 </section>
 
 @endsection

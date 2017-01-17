@@ -139,8 +139,9 @@
   margin-bottom: 30px;
 }
 
-.some-fact h2 {
-  margin-bottom: 0;
+.fact {
+  background-color: #E74675;
+  color: #fff;
 }
 
 @media (min-width: 768px) {
@@ -155,83 +156,6 @@
 
 textarea {
   max-width: 100%;
-}
-
-.stay-updated-and-why .form, .stay-updated-and-why .cta-button {
-  padding-bottom: 60px;
-}
-
-@media (min-width: 992px) {
-  .stay-updated-and-why .form {
-    padding-bottom: 0;
-  }
-}
-
-.stay-updated-and-get-in-touch {
-  position: relative;
-}
-
-.stay-updated-and-get-in-touch .left {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  background: #141414;
-}
-
-.stay-updated-and-get-in-touch .right {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50%;
-  height: 100%;
-  background: #e5e5e5;
-}
-
-.stay-updated-and-get-in-touch .flex-wrapper {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  flex-direction: column;
-}
-
-.stay-updated-and-get-in-touch .flex-wrapper .section {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  flex-direction: column;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-.stay-updated-and-get-in-touch .flex-wrapper .section .contact-links {
-  margin-bottom: 30px;
-}
-
-.stay-updated-and-get-in-touch .flex-wrapper .section footer {
-  font-size: 10px;
-}
-
-.stay-updated-and-get-in-touch .flex-wrapper .stay-updated {
-  background: #141414;
-}
-
-.stay-updated-and-get-in-touch .flex-wrapper .get-in-touch {
-  background: #e5e5e5;
-  padding-bottom: 30px;
-}
-
-@media (min-width: 768px) {
-  .stay-updated-and-get-in-touch .flex-wrapper {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    flex-direction: row;
-  }
 }
 
 @media (min-width: 992px) {
@@ -8128,14 +8052,20 @@ main > footer {
 }
 
 .section h2 {
+  color: #E74675;
   font-size: 26px;
   margin: 0 0 10px;
 }
 
 .section h4 {
+  color: #0F3455;
   font-size: 16px;
   text-transform: uppercase;
   margin-bottom: 30px;
+}
+
+.section p {
+  color: #fff;
 }
 
 .section hr {
@@ -8145,6 +8075,10 @@ main > footer {
 
 .social-icons a {
   font-size: 40px;
+}
+
+.scrollmagic-pin-spacer {
+  min-height: auto;
 }
 
 /*# sourceMappingURL=admin.css.map */

@@ -1,5 +1,5 @@
 <template>
-	<div id="masthead">
+	<div id="masthead" :class="{open: headerIsOpen}">
 		<div class="container">
 			<div class="row">
 				
@@ -17,5 +17,13 @@
 
 <script>
 	export default {
+		data() {
+			return {
+				headerIsOpen: false
+			}
+		},
+		created() {
+	        Event.$on('headerIsOpen', response => this.headerIsOpen = ! this.headerIsOpen )
+	    },
 	}
 </script>

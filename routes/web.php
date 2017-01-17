@@ -1,26 +1,9 @@
 <?php
 
-Route::get('/', function () {
-    // \App\Tag::create(['name' => 'law']);
-    // \App\Tag::create(['name' => 'discussion']);
-    // \App\Tag::create(['name' => 'person']);
-    // \App\Tag::create(['name' => 'other']);
-    // \App\Role::create(['name' => 'admin']);
- //    $role = \App\Role::whereName('admin')->first();
- //    $user = \App\User::create([
- //     'name' => 'Istvan Lovas',
- //     'email' => 'loleves@gmail.com',
- //     'password' => Hash::make('jujuka')
- //    ]);
- //    $user = \App\User::where('email', 'loleves@gmail.com')->first();
- //    $user->roles()->attach($role);
- //    return \App\User::with('roles')->find(1);
-
-    return view('public.our-campaign');
-});
-
+Route::get('/', 'PublicPagesController@showOurCampaign');
 Route::get('/the-facts', 'PublicPagesController@showTheFacts');
 Route::get('/meet-those-affected', 'PublicPagesController@showMeetThoseAffected');
+Route::get('/thank-you', 'PublicPagesController@showThankYou');
 
 Route::resource('articles', 'ArticlesController');
 
@@ -53,32 +36,42 @@ Route::group(['namespace' => 'Admin'], function () {
 
     Route::get('/admin/our-campaign/edit', [
         'as' => 'edit-our-campaign',
-        'uses' => 'WelcomePageDetailController@edit'
+        'uses' => 'OurCampaignPageDetailController@edit'
     ]);
 
     Route::patch('/admin/our-campaign/update', [
         'as' => 'update-our-campaign',
-        'uses' => 'WelcomePageDetailController@update'
+        'uses' => 'OurCampaignPageDetailController@update'
     ]);
 
     Route::get('/admin/the-facts/edit', [
         'as' => 'edit-the-facts',
-        'uses' => 'GetTheFactsPageDetailController@edit'
+        'uses' => 'TheFactsPageDetailController@edit'
     ]);
 
     Route::patch('/admin/the-facts/update', [
         'as' => 'update-the-facts',
-        'uses' => 'GetTheFactsPageDetailController@update'
+        'uses' => 'TheFactsPageDetailController@update'
     ]);
 
     Route::get('/admin/meet-those-affected/edit', [
         'as' => 'edit-meet-those-affected',
-        'uses' => 'MeetThoseMostImpactedPageDetailController@edit'
+        'uses' => 'MeetThoseAffectedPageDetailController@edit'
     ]);
 
     Route::get('/admin/meet-those-affected/update', [
         'as' => 'update-meet-those-affected',
-        'uses' => 'MeetThoseMostImpactedPageDetailController@update'
+        'uses' => 'MeetThoseAffectedPageDetailController@update'
+    ]);
+
+    Route::get('/admin/thank-you/edit', [
+        'as' => 'edit-thank-you',
+        'uses' => 'ThankYouPageDetailController@edit'
+    ]);
+
+    Route::get('/admin/thank-you/update', [
+        'as' => 'update-thank-you',
+        'uses' => 'ThankYouPageDetailController@update'
     ]);
 
     Route::get('/admin/case-studies/index', [
