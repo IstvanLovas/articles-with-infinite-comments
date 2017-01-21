@@ -26,13 +26,58 @@ class CaseStudyController extends Controller
      */
     public function create()
     {
-        return view('admin.case-studies.create', compact('caseStudies'));
+        return view('admin.case-studies.create');
+    }
+
+    /**
+     * Edit Case Study.
+     * @param  CaseStudy $caseStudy
+     * @return Response
+     */
+    public function edit(CaseStudy $case_study)
+    {
+        return view('admin.case-studies.edit', compact('case_study'));
+    }
+
+    /**
+     * Update specified resource.
+     * @param  CaseStudy $case_study
+     * @param  CaseStudyRequest $request
+     * @return Response
+     */
+    public function update(CaseStudy $case_study, CaseStudyRequest $request)
+    {
+        $case_study->update($request->all());
+
+        return response()->json([
+            'success' => [
+                'message' => 'You have successfully updated the Case Study.'
+            ]
+        ]);
     }
 
     public function store(CaseStudyRequest $request)
     {
-        $caseStudy = CaseStudy::create($request->all());
+        $case_study = CaseStudy::create($request->all());
 
-        return $caseStudy;
+        return response()->json([
+            'id' => $case_study->id,
+            'success' => [
+                'message' => 'You have successfully created a new Case Study.'
+            ]
+        ]);
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  CaseStudy $case_study
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(CaseStudy $case_study)
+    {
+        $case_study->delete();
+
+        return redirect()->route('case-study-index');
     }
 }

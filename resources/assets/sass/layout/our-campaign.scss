@@ -1,0 +1,90 @@
+/* =======================================
+   Home
+   =======================================*/
+
+#home {
+    .fact {
+        .triangle-wrapper .triangle {
+            border-color: $brand-pink transparent transparent transparent;
+        }
+    }
+    .the-issue {
+        padding-bottom:49px; // Due to <p>'s 10px margin-bottom
+    }
+    .why-it-matters {
+        .triangle-wrapper .triangle {
+            border-color: #fff transparent transparent transparent;
+        }
+    }
+   	.our-goals {
+        background-color:$brand-gray;
+        .triangle-wrapper .triangle {
+            border-color: $brand-gray transparent transparent transparent;
+        }
+        .list-of-goals {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            li {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                text-align: center;
+                margin-bottom:$margin;
+                .circle {
+                    width:80px;
+                    height:80px;
+                    border-radius: 50%;
+                    background:#333;
+                    margin-bottom:10px;
+                }
+            }
+            li:last-child {
+                margin-bottom:0;
+            }
+        }
+    }
+    .get-the-latest {
+        .latest-news {
+            margin-bottom: $margin;
+            article {
+                padding:$margin 15px;
+            }
+            .cta-button {
+                margin-top:$margin;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    #home {
+        .why-it-matters {
+            .nav-buttons {
+                ul {
+                    li {
+                        display: inline-block;
+                        margin-right:10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    #home {
+        .our-goals {
+            .list-of-goals {
+                flex-direction: row;
+                justify-content: space-around;
+                li {
+                    flex-direction: column;
+                    margin-bottom:0;
+                }
+            }
+        }
+    }
+}

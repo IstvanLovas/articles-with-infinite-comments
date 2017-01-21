@@ -4,8 +4,10 @@ Route::get('/', 'PublicPagesController@showOurCampaign');
 Route::get('/the-facts', 'PublicPagesController@showTheFacts');
 Route::get('/meet-those-affected', 'PublicPagesController@showMeetThoseAffected');
 Route::get('/thank-you', 'PublicPagesController@showThankYou');
+Route::get('/privacy-policy', 'PublicPagesController@showPrivacyPolicy');
 
-Route::resource('articles', 'ArticlesController');
+Route::resource('articles', 'ArticlesController',
+                ['only' => ['index', 'show']]);
 
 Route::post('articles/{article}/comments', [
     'middleware' => 'auth',
@@ -74,18 +76,37 @@ Route::group(['namespace' => 'Admin'], function () {
         'uses' => 'ThankYouPageDetailController@update'
     ]);
 
-    Route::get('/admin/case-studies/index', [
-        'as' => 'case-studies-index',
-        'uses' => 'CaseStudyController@index'
+    Route::get('/admin/privacy-policy/edit', [
+        'as' => 'edit-privacy-policy',
+        'uses' => 'PrivacyPolicyPageDetailController@edit'
     ]);
 
-    Route::get('/admin/case-studies/create', [
-        'as' => 'case-studies-create',
-        'uses' => 'CaseStudyController@create'
+    Route::get('/admin/privacy-policy/update', [
+        'as' => 'update-privacy-policy',
+        'uses' => 'PrivacyPolicyPageDetailController@update'
     ]);
 
-    Route::post('/admin/case-studies/store', [
-        'as' => 'case-studies-store',
-        'uses' => 'CaseStudyController@store'
+    Route::resource('/admin/articles', 'ArticlesController', [
+        'names' => [
+            'index' => 'article-index',
+            'show' => 'article-show',
+            'create' => 'article-create',
+            'edit' => 'article-edit',
+            'update' => 'article-update',
+            'store' => 'article-store',
+            'delete' => 'article-delete',
+        ]
+    ]);
+
+    Route::resource('/admin/case-study', 'CaseStudyController', [
+        'names' => [
+            'index' => 'case-study-index',
+            'show' => 'case-study-show',
+            'create' => 'case-study-create',
+            'edit' => 'case-study-edit',
+            'update' => 'case-study-update',
+            'store' => 'case-study-store',
+            'delete' => 'case-study-delete',
+        ]
     ]);
 });

@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
             'why_it_matters_text' => "Dummy quote. This has really a ected me. It's not fair. I'm not happy. consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut.",
             'why_it_matters_fact' => "IMPACT FACT ABOUT MATTHEW’S LIFE AND HOW THIS AFFECTS HIM.",
             'our_goals_header' => "Our goals",
-            'our_goals_subheader' => "What we are going to achieve",
+            'our_goals_subheader' => "What we're going to do about it",
             'our_goals_goal_1' => "Provide a voice to families and all involved",
             'our_goals_goal_2' => "Increase awareness of the issue",
             'our_goals_goal_3' => "Compel CQC to change its guidance",
@@ -92,6 +92,15 @@ class DatabaseSeeder extends Seeder
             'but_it_does_not_stop_there_header' => "But it doesn’t stop there...",
             'but_it_does_not_stop_there_sign' => "1. SIGN OUR GOVERNMENT PETITION",
             'but_it_does_not_stop_there_text' => "Dummy text. Giving hint to potential content. You can sign up to a government petition. 10,000 gets us noticed. 100,000 gets us talked about.",
+        ]);
+
+        DB::table('privacy_policy_page_details')->insert([
+            'banner_background_image_path' => "Text",
+            'banner_background_image_path_thumbnail' => "Text",
+            'banner_header' => "First short 6 word key statement",
+            'privacy_policy_header' => "But it doesn’t stop there...",
+            'privacy_policy_text_left' => "Text Left",
+            'privacy_policy_text_right' => "Text Right",
         ]);
     }
 }

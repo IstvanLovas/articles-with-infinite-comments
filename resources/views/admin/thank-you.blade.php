@@ -11,10 +11,10 @@
             </h1>
             <ol class="breadcrumb">
                 <li>
-                    <i class="fa fa-dashboard"></i>  <a href="{{ route('dashboard') }}">Dashboard</a>
+                    <i class="fa fa-tachometer" aria-hidden="true"></i>  <a href="{{ route('dashboard') }}">Dashboard</a>
                 </li>
                 <li>
-                    <i class="fa fa-fw fa-file"></i> Pages
+                    <i class="fa fa-file" aria-hidden="true"></i> Pages
                 </li>
                 <li class="active"> Thank You</li>
             </ol>

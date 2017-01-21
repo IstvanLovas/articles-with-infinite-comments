@@ -9,10 +9,10 @@
 					<div class="form">
 						<form>
 							<div class="form-group">
-								<input type="text" name="name">
+								<input type="text" placeholder="Name" name="name">
 							</div>
 							<div class="form-group">
-								<input type="email" name="name">
+								<input type="email" placeholder="Email" name="name">
 							</div>
 							<div class="form-group">
 								<input type="submit" value="Sign me up">

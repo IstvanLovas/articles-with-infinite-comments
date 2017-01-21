@@ -14,8 +14,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
-    <!-- Custom CSS -->
+    <!-- Lib CSS -->
     <link href="{{ asset('css/sb-admin.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/sweetalert.css') }}" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">

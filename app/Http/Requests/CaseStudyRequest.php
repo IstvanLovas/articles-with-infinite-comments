@@ -30,7 +30,6 @@ class CaseStudyRequest extends FormRequest
             'fact' => 'required|min:5',
             'text_left' => 'required|min:5',
             'text_right' => 'required|min:5',
-            'active' => 'required'
         ];
     }
 }

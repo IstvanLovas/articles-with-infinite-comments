@@ -79,6 +79,7 @@
 }
 
 #masthead .container h1 {
+  color: #DBDC3F;
   font-size: 56px;
   text-transform: uppercase;
 }
@@ -103,17 +104,13 @@
 }
 
 @media (max-width: 991px) {
-  #get-the-facts .list-box {
+  #the-facts .list-box {
     margin-top: 30px;
   }
 }
 
-.the-issue {
-  padding-bottom: 0;
-}
-
-.the-issue hr {
-  margin: 50px 0 0;
+.form .error {
+  color: #E74675;
 }
 
 .quote {
@@ -124,6 +121,7 @@
   position: absolute;
   left: 15px;
   top: -5px;
+  color: #EFEFEF;
   font-family: Georgia, serif;
   content: "\201C";
   font-size: 40px;
@@ -135,19 +133,9 @@
   border-left: 0;
 }
 
-.our-current-challenge .section h2 {
-  margin-bottom: 30px;
-}
-
 .fact {
   background-color: #E74675;
   color: #fff;
-}
-
-@media (min-width: 768px) {
-  .the-issue p {
-    margin-bottom: 0;
-  }
 }
 
 .form form .form-group input {
@@ -8043,8 +8031,8 @@ main > footer {
   -webkit-transform: rotate(360deg);
 }
 
-.border-bottom {
-  border-bottom: 1px solid #767676;
+hr {
+  margin: 0;
 }
 
 .uppercase {
@@ -8390,8 +8378,8 @@ main > footer {
   border-color: #E74675 transparent transparent transparent;
 }
 
-#home .why-it-matters {
-  padding-top: 0;
+#home .the-issue {
+  padding-bottom: 49px;
 }
 
 #home .why-it-matters .triangle-wrapper .triangle {
@@ -8479,20 +8467,39 @@ main > footer {
 }
 
 /* =======================================
-   Get the facts
+   The facts
    =======================================*/
-#get-the-facts .key-facts .flex-horizontal {
+#the-facts .key-facts {
+  position: relative;
+}
+
+#the-facts .key-facts .flex-horizontal {
   display: block;
 }
 
-#get-the-facts .key-facts .fact {
+#the-facts .key-facts .fact {
   text-align: center;
   width: 100%;
   height: 180px;
   padding: 60px;
+  background-color: #0F3455;
 }
 
-#get-the-facts .our-aims .list-of-aims {
+#the-facts .key-facts .fact .number {
+  font-size: 30px;
+  margin-bottom: 3px;
+  color: #E74675;
+}
+
+#the-facts .key-facts .fact .fact-text {
+  text-transform: uppercase;
+}
+
+#the-facts .key-facts .triangle-wrapper .triangle {
+  border-color: #0F3455 transparent transparent transparent;
+}
+
+#the-facts .our-progress .list-of-progress {
   position: relative;
   display: -webkit-box;
   display: flex;
@@ -8503,7 +8510,7 @@ main > footer {
   flex-direction: column;
 }
 
-#get-the-facts .our-aims .list-of-aims li {
+#the-facts .our-progress .list-of-progress li {
   display: -webkit-box;
   display: flex;
   -webkit-box-align: center;
@@ -8513,7 +8520,7 @@ main > footer {
   margin-bottom: 30px;
 }
 
-#get-the-facts .our-aims .list-of-aims li .circle {
+#the-facts .our-progress .list-of-progress li .circle {
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -8521,16 +8528,27 @@ main > footer {
   margin-right: 30px;
 }
 
-#get-the-facts .our-aims .list-of-aims li:last-child {
+#the-facts .our-progress .list-of-progress li:last-child {
   margin-bottom: 0;
 }
 
+#the-facts .our-current-challenge .triangle-wrapper .triangle,
+#the-facts .why-us .triangle-wrapper .triangle {
+  border-color: #fff transparent transparent transparent;
+}
+
+#the-facts .list-box {
+  padding: 30px 30px 70px;
+  background-color: #0F3455;
+  color: #fff;
+}
+
 @media (min-width: 768px) {
-  #get-the-facts .key-facts .flex-horizontal {
+  #the-facts .key-facts .flex-horizontal {
     display: -webkit-box;
     display: flex;
   }
-  #get-the-facts .our-aims .list-of-aims {
+  #the-facts .our-progress .list-of-progress {
     -webkit-box-align: center;
     align-items: center;
     -webkit-box-orient: horizontal;
@@ -8540,20 +8558,21 @@ main > footer {
     justify-content: space-between;
     padding-top: 30px;
   }
-  #get-the-facts .our-aims .list-of-aims li {
+  #the-facts .our-progress .list-of-progress li {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     flex-direction: column;
     text-align: center;
+    margin-bottom: 0;
   }
-  #get-the-facts .our-aims .list-of-aims li span {
+  #the-facts .our-progress .list-of-progress li span {
     padding: 0 5px;
   }
-  #get-the-facts .our-aims .list-of-aims li .circle {
+  #the-facts .our-progress .list-of-progress li .circle {
     margin-right: 0;
     margin-bottom: 10px;
   }
-  #get-the-facts .our-aims .list-of-aims li:last-child {
+  #the-facts .our-progress .list-of-progress li:last-child {
     margin-bottom: 30px;
   }
 }
@@ -8564,6 +8583,10 @@ main > footer {
 /* =======================================
    Case Study
    =======================================*/
+.case-study h2 {
+  color: #E74675;
+}
+
 /* =======================================
    Articles
    =======================================*/
@@ -8612,10 +8635,6 @@ main > footer {
   color: #0F3455 !important;
 }
 
-#app-footer hr {
-  margin: 0;
-}
-
 #app-footer .join-the-conversation {
   margin-top: 30px;
   color: #fff !important;
@@ -8627,6 +8646,14 @@ main > footer {
 
 #app-footer .form {
   padding-bottom: 60px;
+}
+
+#app-footer .form .form-group {
+  margin-bottom: 5px;
+}
+
+#app-footer .newsletter-sign-up {
+  padding-bottom: 49px;
 }
 
 #app-footer .get-involved-and-query {

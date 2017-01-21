@@ -6,29 +6,19 @@
 @section('content')
 <section id="meet-those-most-impacted">
 	<masthead>
-		<h1 slot="header">{{ Auth::check() ? Auth::user()->name : 'Not logged in' }}</h1>
-		<a href="#newsletter-sign-up" slot="button" class="btn btn-primary btn-large text-uppercase">Stay updated</a>
+		<h1 slot="header">{{ $page->banner_header }}</h1>
+		<a href="#newsletter-sign-up" slot="button" class="btn btn-primary btn-large text-uppercase">Get involved</a>
 
 		<template slot="main-header">
 			@include('partials.header')
 		</template>
 	</masthead>
 
-	<div class="case-studies">
-		{{-- @foreach($caseStudies as $caseStudy) --}}
-			<case-study>
-				<h2 slot="case-header">Johns having to move</h2>
-				<p slot="quote">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-				<p slot="fact">IMPACT FACT ABOUT JOHN’S LIFE AND HOW AFFECTS HIM.</p>
-				<button slot="button" class="btn btn-primary btn-large text-uppercase">Read Johns story</button>
-		{{-- @endforeach --}}
-	</div>
-
-	<section-row class="the-issue">
+	<section-row class="the-impact-is-huge">
 		<template slot="header">
 			<div class="col-xs-12 section">
-				<h2>The impact is huge</h2>
-				<h4>Can we prevent it?</h4>
+				<h2>{{ $page->the_impact_is_huge_header }}</h2>
+				<h4>{{ $page->the_impact_is_huge_subheader }}</h4>
 			</div>
 		</template>
 
@@ -36,26 +26,43 @@
 			<div class="col-xs-12">
 				<div class="row">
 					<div class="col-sm-6">
-						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo conse- quat. Duis autem vel eum.</p>
+						<p>
+							{!! nl2br($page->the_impact_is_huge_text_left) !!}
+						</p>
 					</div>
 					
 					<div class="col-sm-6">
-						<p>Nullam quis risus eget urna mollis ornare vel eu leo. Mae- cenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Etiam porta sem malesuada magna mollis euismod. Donec ullamcorper nulla non metus auctor fringilla. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+						<p>
+							{!! nl2br($page->the_impact_is_huge_text_right) !!}
+						</p>
 					</div>
 				</div>
 			</div>
 		</template>
 	</section-row>
 
-	<section-row class="some-fact">
+	<div class="case-studies">
+		@foreach($caseStudies as $caseStudy)
+			<case-study>
+				<h2 slot="case-header">{{ $caseStudy->header }}</h2>
+
+				<p slot="quote">{!! nl2br($caseStudy->intro) !!}</p>
+                <p slot="fact">{!! nl2br($caseStudy->fact) !!}</p>
+
+				<button slot="button" class="btn btn-primary btn-large text-uppercase">Read Johns story</button>
+			</case-study>
+		@endforeach
+	</div>
+
+	<section-row class="fact fact-1">
 		<template slot="header">
-			<div class="col-xs-12">
-				<h2>Incredible fact about how important this issue is. <br class="hidden-xs hidden-sm">Don’t you want to hear more?</h2>
+			<div class="col-xs-12 section">
+				<p class="lead">{{ $page->fact }} <br> <strong>{{ $page->fact_bold }}</strong></p>
+
+				<a href="#newsletter-sign-up" class="btn btn-primary btn-large text-uppercase">Learn more</a>
 			</div>
 		</template>
 	</section-row>
-
-	@include('partials.stay-updated-and-why')
 
 </section>
 @endsection

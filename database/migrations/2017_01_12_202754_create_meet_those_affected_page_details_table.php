@@ -17,15 +17,15 @@ class CreateMeetThoseAffectedPageDetailsTable extends Migration
             $table->increments('id');
             $table->string('banner_background_image_path')->nullable();
             $table->string('banner_background_image_path_thumbnail')->nullable();
-            $table->string('banner_header')->nullable();
+            $table->string('banner_header');
 
-            $table->string('the_impact_is_huge_header')->nullable();
-            $table->string('the_impact_is_huge_subheader')->nullable();
-            $table->text('the_impact_is_huge_text_left')->nullable();
-            $table->text('the_impact_is_huge_text_right')->nullable();
+            $table->string('the_impact_is_huge_header');
+            $table->string('the_impact_is_huge_subheader');
+            $table->text('the_impact_is_huge_text_left');
+            $table->text('the_impact_is_huge_text_right');
 
-            $table->text('fact')->nullable();
-            $table->text('fact_bold')->nullable();
+            $table->text('fact');
+            $table->text('fact_bold');
 
             $table->timestamps();
         });

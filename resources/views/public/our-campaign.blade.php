@@ -52,11 +52,17 @@
 						<p>{!! nl2br($page->the_issue_text_right) !!}</p>
 					</div>
 				</div>
-
-				<hr>
 			</div>
 		</template>
 	</section-row>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<hr>
+			</div>
+		</div>
+	</div>
 
 	<section-row class="why-it-matters">
 		<template slot="header">
@@ -120,26 +126,26 @@
 					<li>
 						<div class="circle"></div>
 						<span class="goal goal-1">
-							{{ $page->our_goals_goal_1 }}
+							{!! nl2br($page->our_goals_goal_1) !!}
 						</span>
 					</li>
 					<li>
 						<div class="circle"></div>
 						<span class="goal goal-2">
-							{{ $page->our_goals_goal_2 }}
+							{!! nl2br($page->our_goals_goal_2) !!}
 						</span>
 					</li>
 					<li>
 						<div class="circle"></div>
 						<span class="goal goal-3">
-							{{ $page->our_goals_goal_3 }}
+							{!! nl2br($page->our_goals_goal_3) !!}
 						</span>
 					</li>
 
 					<li>
 						<div class="circle"></div>
 						<span class="goal goal-4">
-							{{ $page->our_goals_goal_4 }}
+							{!! nl2br($page->our_goals_goal_4) !!}
 						</span>
 					</li>
 

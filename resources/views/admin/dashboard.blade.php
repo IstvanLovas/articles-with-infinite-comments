@@ -14,7 +14,7 @@
             </h1>
             <ol class="breadcrumb">
                 <li class="active">
-                    <i class="fa fa-dashboard"></i> Dashboard
+                    <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
                 </li>
             </ol>
         </div>

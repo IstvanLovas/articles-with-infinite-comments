@@ -1,0 +1,98 @@
+/* =======================================
+   The facts
+   =======================================*/
+
+#the-facts {
+	.key-facts {
+		position: relative;
+		.flex-horizontal {
+			display: block;
+		}
+		.fact {
+			text-align: center;
+			width:100%;
+			height:180px;
+			padding:$margin *2;
+			background-color: $brand-blue;
+			.number {
+				font-size:30px;
+				margin-bottom:3px;
+				color:$brand-pink;
+			}
+			.fact-text {
+				text-transform: uppercase;
+			}
+		}
+        .triangle-wrapper .triangle {
+            border-color: $brand-blue transparent transparent transparent;
+        }
+	}
+	.our-progress {
+	    .list-of-progress {
+	    	position: relative;
+	        display: flex;
+	        justify-content: center;
+	        flex-direction: column;
+	        li {
+	            display: flex;
+	            align-items: center;
+	            justify-content: flex-start;
+	            margin-bottom:$margin;
+	            .circle {
+	                width:80px;
+	                height:80px;
+	                border-radius: 50%;
+	                background:#333;
+	                margin-right:$margin;
+	            }
+	        }
+	        li:last-child {
+	            margin-bottom:0;
+	        }
+	    }
+	}
+	.our-current-challenge,
+	.why-us {
+		 .triangle-wrapper .triangle {
+            border-color: #fff transparent transparent transparent;
+        }
+	}
+	.list-box {
+		padding:$margin $margin 70px;
+		background-color:$brand-blue;
+		color:#fff;
+	}
+}
+
+@media (min-width: 768px) {
+	#the-facts {
+		.key-facts {
+			.flex-horizontal {
+				display: flex;
+			}
+		}
+		.our-progress {
+		    .list-of-progress {
+		        align-items:center;
+		        flex-direction: row;
+		        justify-content:space-between;
+		        padding-top:$margin;
+		        li {
+		            flex-direction: column;
+		            text-align:center;
+		            margin-bottom: 0;
+		            span {
+		            	padding:0 5px;
+		            }
+		            .circle {
+		                margin-right:0;
+		                margin-bottom:10px;
+		            }
+		        }
+		        li:last-child {
+		        	margin-bottom: $margin;
+		        }
+		    }
+		}
+	}
+}

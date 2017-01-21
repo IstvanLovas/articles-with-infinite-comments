@@ -48,7 +48,7 @@ class CreateTheFactsPageDetailsTable extends Migration
 
             $table->string('our_current_challenge_header');
             $table->string('our_current_challenge_subheader');
-            $table->string('our_current_challenge_lead');
+            $table->text('our_current_challenge_lead');
             $table->text('our_current_challenge_text_left');
             $table->text('our_current_challenge_text_right');
 

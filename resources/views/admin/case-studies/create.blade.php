@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title')Case Studies @endsection
+@section('title')Create Case Study @endsection
 
 @section('content')
 <section id="meet-those-most-impacted">
@@ -11,10 +11,10 @@
             </h1>
             <ol class="breadcrumb">
                 <li>
-                    <i class="fa fa-dashboard"></i>  <a href="{{ route('dashboard') }}">Dashboard</a>
+                    <i class="fa fa-tachometer" aria-hidden="true"></i> <a href="{{ route('dashboard') }}">Dashboard</a>
                 </li>
                 <li>
-                    <i class="fa fa-fw fa-file"></i> Case Studies
+                    <i class="fa fa-file" aria-hidden="true"></i> <a href="{{ route('case-study-index') }}">Case Studies</a>
                 </li>
                 <li class="active"> Add new</li>
             </ol>

@@ -11,7 +11,7 @@ class MeetThoseAffectedPageDetail extends Model
     	'banner_background_image_path_thumbnail',
     	'banner_header',
     	'the_impact_is_huge_header',
-    	'the_impact_is_huge_subheader',
+        'the_impact_is_huge_subheader',
     	'the_impact_is_huge_text_left',
     	'the_impact_is_huge_text_right',
     	'fact',

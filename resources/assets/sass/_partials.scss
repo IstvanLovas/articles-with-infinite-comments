@@ -14,6 +14,7 @@
         margin-top: auto;
         margin-bottom: auto;
         h1 {
+        	color:$brand-yellow;
             font-size:56px;
             text-transform: uppercase;
         }
@@ -37,18 +38,17 @@
 }
 
 @media (max-width: 991px) {
-	#get-the-facts {
+	#the-facts {
 		.list-box {
 			margin-top: $margin;
 		}
 	}
 }
 
-// The Issue
-.the-issue {
-    padding-bottom: 0;
-    hr {
-        margin:50px 0 0; // Consider last <p>'s 10px margin-bottom
+// Forms
+.form  {
+    .error {
+        color: $brand-pink;
     }
 }
 
@@ -59,6 +59,7 @@
         position: absolute;
         left:15px;
         top: -5px;
+        color:$brand-gray;
         font-family: Georgia, serif;
         content: "\201C";
         font-size: 40px;
@@ -70,24 +71,9 @@
     }
 }
 
-// Our current challenge
-.our-current-challenge {
-    .section h2 {
-    	margin-bottom: $margin;
-    }
-}
-
 .fact {
     background-color: $brand-pink;
     color:#fff;
-}
-
-@media (min-width: 768px) {
-	.the-issue {
-        p {
-            margin-bottom:0;
-        }
-    }
 }
 
 // Forms

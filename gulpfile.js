@@ -8,6 +8,9 @@ elixir((mix) => {
     	.styles([
 	        'sb-admin.css'
 	    ], 'public/css/sb-admin.css')
+	    .styles([
+	        'sweetalert.css'
+	    ], 'public/css/sweetalert.css')
    		.webpack('app.js')
    		.webpack('admin.js');
 });

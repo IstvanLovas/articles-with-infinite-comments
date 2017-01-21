@@ -12,10 +12,8 @@ import Masthead from './components/Masthead.vue';
 import SectionRow from './components/SectionRow.vue';
 import BlockQuote from './components/BlockQuote.vue';
 import CaseStudy from './components/CaseStudy.vue';
-import AppHeader from './components/AppHeader.vue';
 import AppFooter from './components/AppFooter.vue';
 import MenuButton from './components/MenuButton.vue';
-import CreateArticleForm from './admin/components/CreateArticleForm.vue';
 
 const app = new Vue({
     el: '#app',
@@ -26,10 +24,8 @@ const app = new Vue({
     	SectionRow,
         BlockQuote,
         CaseStudy,
-        AppHeader,
         AppFooter,
-        MenuButton,
-    	CreateArticleForm
+        MenuButton
     },
     mounted() {
         this.$nextTick(() => {

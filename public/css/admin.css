@@ -79,6 +79,7 @@
 }
 
 #masthead .container h1 {
+  color: #DBDC3F;
   font-size: 56px;
   text-transform: uppercase;
 }
@@ -103,17 +104,13 @@
 }
 
 @media (max-width: 991px) {
-  #get-the-facts .list-box {
+  #the-facts .list-box {
     margin-top: 30px;
   }
 }
 
-.the-issue {
-  padding-bottom: 0;
-}
-
-.the-issue hr {
-  margin: 50px 0 0;
+.form .error {
+  color: #E74675;
 }
 
 .quote {
@@ -124,6 +121,7 @@
   position: absolute;
   left: 15px;
   top: -5px;
+  color: #EFEFEF;
   font-family: Georgia, serif;
   content: "\201C";
   font-size: 40px;
@@ -135,19 +133,9 @@
   border-left: 0;
 }
 
-.our-current-challenge .section h2 {
-  margin-bottom: 30px;
-}
-
 .fact {
   background-color: #E74675;
   color: #fff;
-}
-
-@media (min-width: 768px) {
-  .the-issue p {
-    margin-bottom: 0;
-  }
 }
 
 .form form .form-group input {
@@ -8043,8 +8031,8 @@ main > footer {
   -webkit-transform: rotate(360deg);
 }
 
-.border-bottom {
-  border-bottom: 1px solid #767676;
+hr {
+  margin: 0;
 }
 
 .uppercase {
@@ -8079,6 +8067,46 @@ main > footer {
 
 .scrollmagic-pin-spacer {
   min-height: auto;
+}
+
+/* =======================================
+   Admin / Header
+   =======================================*/
+.side-nav li.active > a {
+  color: #fff;
+  background-color: #090909;
+}
+
+/* =======================================
+   Admin / Template
+   =======================================*/
+#admin .page-header-wrapper {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  margin: 44px 0 22px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+#admin .page-header-wrapper h1 {
+  margin: 0;
+}
+
+/* =======================================
+   Admin / Case Studies
+   =======================================*/
+#case-studies .case-study-wrapper {
+  position: relative;
+  padding: 15px;
+}
+
+#case-studies .case-study-wrapper article {
+  padding: 15px;
+  border: 1px solid #000;
 }
 
 /*# sourceMappingURL=admin.css.map */

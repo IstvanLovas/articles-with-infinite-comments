@@ -1,5 +1,6 @@
 require('./bootstrap');
 
+import BlockQuote from './components/BlockQuote.vue';
 import Banner from './admin/components/Banner.vue';
 import Fact from './admin/components/Fact.vue';
 import TheIssue from './admin/components/TheIssue.vue';
@@ -11,6 +12,9 @@ import WhyUs from './admin/components/WhyUs.vue';
 import GetTheLatest from './admin/components/GetTheLatest.vue';
 import KeyFactsAboutIssue from './admin/components/KeyFactsAboutIssue.vue';
 import CreateCaseStudyForm from './admin/partials/CreateCaseStudyForm.vue';
+import EditCaseStudyForm from './admin/partials/EditCaseStudyForm.vue';
+import CreateArticleForm from './admin/partials/CreateArticleForm.vue';
+import EditArticleForm from './admin/partials/EditArticleForm.vue';
 
 window.Event = new Vue();
 
@@ -20,6 +24,7 @@ autosize(document.querySelectorAll('textarea'));
 
 const admin = new Vue({
     components:{
+        BlockQuote,
         Banner,
         Fact,
         TheIssue,
@@ -30,7 +35,10 @@ const admin = new Vue({
         WhyUs,
         GetTheLatest,
         KeyFactsAboutIssue,
-        CreateCaseStudyForm
+        CreateCaseStudyForm,
+        EditCaseStudyForm,
+        CreateArticleForm,
+        EditArticleForm
     },
     el: '#admin',
     mounted() {

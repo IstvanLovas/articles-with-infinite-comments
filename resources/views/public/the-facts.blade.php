@@ -5,22 +5,22 @@
 
 @section('content')
 
-<section id="get-the-facts">
+<section id="the-facts">
 
 	<masthead>
-		<h1 slot="header">Every life<br>matters</h1>
-		<a href="#newsletter-sign-up" slot="button" class="btn btn-primary btn-large text-uppercase">Stay updated</a>
+		<h1 slot="header">{{ $page->banner_header }}</h1>
+		<a href="#newsletter-sign-up" slot="button" class="btn btn-primary btn-large text-uppercase">Get involved</a>
 
 		<template slot="main-header">
 			@include('partials.header')
 		</template>
 	</masthead>
 
-	<section-row class="the-issue" id="why-this-matters">
+	<section-row id="why-this-matters">
 		<template slot="header">
 			<div class="col-xs-12 section">
-				<h2>The Issue</h2>
-				<h4>Why we are campaigning</h4>
+				<h2>{{ $page->why_this_matters_header }}</h2>
+				<h4>{{ $page->why_this_matters_subheader }}</h4>
 			</div>
 		</template>
 
@@ -28,11 +28,18 @@
 			<div class="col-xs-12">
 				<div class="row">
 					<div class="col-sm-6">
-						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo conse- quat. Duis autem vel eum.</p>
+						<p class="lead">
+							{!! nl2br($page->why_this_matters_lead) !!}
+						</p>
+						<p>
+							{!! nl2br($page->why_this_matters_text_left) !!}
+						</p>
 					</div>
 					
 					<div class="col-sm-6">
-						<p>Nullam quis risus eget urna mollis ornare vel eu leo. Mae- cenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Etiam porta sem malesuada magna mollis euismod. Donec ullamcorper nulla non metus auctor fringilla. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+						<p>
+							{!! nl2br($page->why_this_matters_text_right) !!}
+						</p>
 					</div>
 				</div>
 			</div>
@@ -47,15 +54,15 @@
 					<div class="flex-horizontal row">
 
 						<div class="flex-vertical fact fact-1">
-							<span class="number">2346423</span>
-							<span class="fact-text">Key facts goes here</span>
+							<span class="number"><strong>{{ $page->key_fact_1_number }}</strong></span>
+							<span class="fact-text">{{ $page->key_fact_1_header }}</span>
 						</div>
 						
 						<div class="hidden-xs col-sm-4 fact"></div>
 						
 						<div class="flex-vertical fact fact-2">
-							<span class="number">2346423</span>
-							<span class="fact-text">Key facts goes here</span>
+							<span class="number"><strong>{{ $page->key_fact_2_number }}</strong></span>
+							<span class="fact-text">{{ $page->key_fact_2_header }}</span>
 						</div>
 
 					</div>
@@ -67,8 +74,8 @@
 						<div class="hidden-xs col-sm-4 fact"></div>
 						
 						<div class="flex-vertical fact fact-3">
-							<span class="number">2346423</span>
-							<span class="fact-text">Key facts goes here</span>
+							<span class="number"><strong>{{ $page->key_fact_3_number }}</strong></span>
+							<span class="fact-text">{{ $page->key_fact_3_header }}</span>
 						</div>
 						
 						<div class="hidden-xs col-sm-4 fact"></div>
@@ -78,42 +85,46 @@
 
 			</div>
 		</div>
+
+		<div class="triangle-wrapper">
+			<div class="triangle"></div>
+		</div>
 	</div>
 
-	<section-row class="our-aims" id="our-aims">
+	<section-row class="our-progress" id="our-progress">
 		<template slot="header">
 			<div class="col-xs-12 section">
-				<h2>Our aims</h2>
-				<h4>Goals and progress</h4>
+				<h2>{{ $page->our_progress_header }}</h2>
+				<h4>{{ $page->our_progress_subheader }}</h4>
 			</div>
 		</template>
 
 		<template slot="body">
 			<div class="col-xs-12">
-				<ul class="list-of-aims">
+				<ul class="list-of-progress">
 					<li>
 						<div class="circle"></div>
-						<span class="aim aim-1">
-							1. ASd ad asdasda  dasd ada
+						<span class="phase phase-1">
+							{!! nl2br($page->our_progress_1_text) !!}
 						</span>
 					</li>
 					<li>
 						<div class="circle"></div>
-						<span class="aim aim-2">
-							2. ASd ad asdadsaad sadasd ada
+						<span class="phase phase-2">
+							{!! nl2br($page->our_progress_2_text) !!}
 						</span>
 					</li>
 					<li>
 						<div class="circle"></div>
-						<span class="aim aim-3">
-							3. ASd asasddadasda  dasd ada
+						<span class="phase phase-3">
+							{!! nl2br($page->our_progress_3_text) !!}
 						</span>
 					</li>
 
 					<li>
 						<div class="circle"></div>
-						<span class="aim aim-4">
-							4. ASd asasddadasda  dasd ada
+						<span class="phase phase-4">
+							{!! nl2br($page->our_progress_4_text) !!}
 						</span>
 					</li>
 				</ul>
@@ -121,10 +132,19 @@
 		</template>
 	</section-row>
 
-	<section-row class="the-issue our-current-challenge">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<hr>
+			</div>
+		</div>
+	</div>
+
+	<section-row class="our-current-challenge">
 		<template slot="header">
 			<div class="col-xs-12 section">
-				<h2>OUR CURRENT CHALLENGE</h2>
+				<h2>{{ $page->our_current_challenge_header }}</h2>
+				<h4>{{ $page->our_current_challenge_subheader }}</h4>
 			</div>
 		</template>
 
@@ -132,32 +152,43 @@
 			<div class="col-xs-12">
 				<div class="row">
 					<div class="col-sm-6">
-						<p>Lorem ipsum dolor sit amet, consec- tetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum.</p>
+						<p class="lead">
+							{!! nl2br($page->our_current_challenge_lead) !!}
+						</p>
+
+						<p>
+							{!! nl2br($page->our_current_challenge_text_left) !!}
+						</p>
 					</div>
 					
 					<div class="col-sm-6">
-						<p>Nullam quis risus eget urna mollis ornare vel eu leo. Mae- cenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Etiam porta sem malesuada magna mollis euismod. Donec ullamcorper nulla non metus auctor fringilla. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+						<p>
+							{!! nl2br($page->our_current_challenge_text_right) !!}
+						</p>
 					</div>
 				</div>
 			</div>
-		</template>
-	</section-row>
-
-	<section-row class="some-fact">
-		<template slot="header">
-			<div class="col-xs-12">
-				<h2>This issue affects over 10,000 people. <br class="hidden-xs hidden-sm">Don’t you want to hear more?</h2>
+			<div class="triangle-wrapper">
+				<div class="triangle"></div>
 			</div>
 		</template>
 	</section-row>
 
-	@include('partials.stay-updated-and-why')
+	<section-row class="fact fact-1">
+		<template slot="header">
+			<div class="col-xs-12 section">
+				<p class="lead">{{ $page->fact }} <br> <strong>{{ $page->fact_bold }}</strong></p>
+
+				<a href="#newsletter-sign-up" class="btn btn-primary btn-large text-uppercase">Learn more</a>
+			</div>
+		</template>
+	</section-row>
 
 	<section-row class="why-us" id="why-trust-us">
 		<template slot="header">
 			<div class="col-xs-12 section">
-				<h2>Why us?</h2>
-				<h4>The de savary family</h4>
+				<h2>{{ $page->why_us_header }}</h2>
+				<h4>{{ $page->why_us_subheader }}</h4>
 			</div>
 		</template>
 
@@ -165,8 +196,9 @@
 			<div class="col-xs-12">
 				<div class="row">
 					<div class="col-xs-12 col-md-6 left">
-						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo conse- quat. Duis autem vel eum.</p>
-						<p>Nullam quis risus eget urna mollis ornare vel eu leo. Mae- cenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Etiam porta sem malesuada magna mollis euismod. Donec ullamcorper nulla non metus auctor fringilla. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+						<p>
+							{!! nl2br($page->why_us_text) !!}
+						</p>
 						
 						<button class="btn btn-primary btn-large text-uppercase">Visit the HFCH website</button>
 					</div>
@@ -187,6 +219,9 @@
 						</div>
 					</div>
 				</div>
+			</div>
+			<div class="triangle-wrapper">
+				<div class="triangle"></div>
 			</div>
 		</template>
 	</section-row>

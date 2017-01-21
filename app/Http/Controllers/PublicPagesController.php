@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\CaseStudy;
 use App\ThankYouPageDetail;
 use App\TheFactsPageDetail;
 use Illuminate\Http\Request;
 use App\OurCampaignPageDetail;
+use App\PrivacyPolicyPageDetail;
 use App\MeetThoseAffectedPageDetail;
 
 class PublicPagesController extends Controller
@@ -17,15 +19,15 @@ class PublicPagesController extends Controller
             // \App\Tag::create(['name' => 'person']);
             // \App\Tag::create(['name' => 'other']);
             // \App\Role::create(['name' => 'admin']);
-         //    $role = \App\Role::whereName('admin')->first();
-         //    $user = \App\User::create([
-         //     'name' => 'Istvan Lovas',
-         //     'email' => 'loleves@gmail.com',
-         //     'password' => Hash::make('jujuka')
-         //    ]);
-         //    $user = \App\User::where('email', 'loleves@gmail.com')->first();
-         //    $user->roles()->attach($role);
-         //    return \App\User::with('roles')->find(1);
+            // $role = \App\Role::whereName('admin')->first();
+            // $user = \App\User::create([
+            //  'name' => 'Istvan Lovas',
+            //  'email' => 'loleves@gmail.com',
+            //  'password' => \Hash::make('jujuka')
+            // ]);
+            // $user = \App\User::where('email', 'loleves@gmail.com')->first();
+            // $user->roles()->attach($role);
+            // return \App\User::with('roles')->find(1);
 
     	$page = OurCampaignPageDetail::first();
 
@@ -41,9 +43,11 @@ class PublicPagesController extends Controller
 
     public function showMeetThoseAffected()
     {
+        $caseStudies = CaseStudy::latest()->get();
+
     	$page = MeetThoseAffectedPageDetail::first();
 
-        return view('public.meet-those-affected',compact('page'));
+        return view('public.meet-those-affected',compact('page', 'caseStudies'));
     }
 
     public function showThankYou()
@@ -51,5 +55,12 @@ class PublicPagesController extends Controller
     	$page = ThankYouPageDetail::first();
 
         return view('public.thank-you',compact('page'));
+    }
+
+    public function showPrivacyPolicy()
+    {
+        $page = PrivacyPolicyPageDetail::first();
+
+        return view('public.privacy-policy',compact('page'));
     }
 }

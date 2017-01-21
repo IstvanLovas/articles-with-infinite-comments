@@ -3,6 +3,7 @@
         <div class="panel-body">
             <form   @submit.prevent="onSubmit"
                     @keydown="form.errors.clear($event.target.name)"
+                    class="form"
             >
                 <div class="form-group">
                     <label for="name" class="control-label">Name:</label>
@@ -104,20 +105,27 @@
         },
         methods: {
             onSubmit() {
-                this.form.post('/admin/case-studies/store')
-                    .then(response => this.updateInputs(response));
+                this.form.post('/admin/case-study')
+                    .then(response => this.onSuccess(response.success.message));
             },
-            updateInputs(response) {
-                this.form.name = response.name
-                this.form.header = response.header
-                this.form.intro = response.intro
-                this.form.fact = response.fact
-                this.form.text_left = response.text_left
-                this.form.text_right = response.text_right
-                this.form.active = response.active
+            onSuccess(message) {
+                swal({
+                    title: 'Congratulations!',
+                    text: message,
+                    type: 'success',
+                    timer: 3000
+                }).then(
+                    function () {},
+                    // handling the promise rejection
+                    function (dismiss) {
+                        if (dismiss === 'timer') {
+                            console.log('I was closed by the timer')
+                        }
+                    }
+                )
             },
             changeActiveState() {
-                this.form.active = ! this.form.active
+                this.form.active = !this.form.active
             }
         }
     }
@@ -136,6 +144,7 @@
   background: #f47070;
   border-radius: 100px;
   cursor: pointer;
+  z-index:100;
   transition: all 0.3s ease;
 }
 .lbl:after {
@@ -153,6 +162,14 @@
 }
 .lbl:active:after {
   transform: scale(1.15, 0.85);
+}
+.cbx {
+    margin:0 !important;
+    width: 53px;
+    position: absolute;
+    opacity: 0;
+    z-index: 200;
+    cursor:pointer;
 }
 .cbx:checked ~ label {
   background: #6fbeb5;

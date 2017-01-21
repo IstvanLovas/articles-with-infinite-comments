@@ -6,9 +6,6 @@
 	p {
 		color:$brand-blue !important;
 	}
-	hr {
-		margin:0;
-	}
 	.join-the-conversation {
 		margin-top:$margin;
 		color:#fff !important;
@@ -18,6 +15,12 @@
 	}
 	.form {
         padding-bottom: $margin *2;
+        .form-group {
+		    margin-bottom: 5px;
+		}
+    }
+    .newsletter-sign-up {
+    	padding-bottom:49px; // Due to <p>'s 10px margin-bottom
     }
     .get-involved-and-query {
 		position: relative;
