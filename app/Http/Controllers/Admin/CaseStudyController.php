@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\CaseStudy;
+use App\CaseStudyPhoto;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CaseStudyRequest;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class CaseStudyController extends Controller
 {
@@ -66,6 +68,37 @@ class CaseStudyController extends Controller
                 'message' => 'You have successfully created a new Case Study.'
             ]
         ]);
+    }
+
+    public function addPhoto(Request $request, CaseStudy $case_study)
+    {
+        $this->validate($request, [
+            'photo' => 'required|mimes:jpg,jpeg,png'
+        ]);
+        
+        $photo = $this->makePhoto($request->file('photo'));
+
+        // Delete exisign photo from storage
+        if($case_study->case_study_photo) {
+            $case_study->case_study_photo->delete();
+        }
+
+        // Save and associate photo with Case Study
+        $case_study->addPhoto($photo);
+
+        return response()->json([
+            'photo_path' => $photo->thumbnail_path,
+            'id' => $case_study->id,
+            'success' => [
+                'message' => 'Photo uploaded.'
+            ]
+        ]);
+    }
+
+    protected function makePhoto(UploadedFile $file)
+    {
+        return CaseStudyPhoto::named($file->getClientOriginalName())
+            ->move($file);
     }
 
     /**

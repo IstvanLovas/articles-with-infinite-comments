@@ -30,7 +30,7 @@
 
     <div class="row">
         @foreach($caseStudies as $caseStudy)
-            <div class="col-xs-12 col-sm-6 col-md-4 case-study-wrapper">
+            <div class="col-xs-12 col-md-6 case-study-wrapper">
                 <article>
                     <h3>{{ $caseStudy->header }}</h3>
                     

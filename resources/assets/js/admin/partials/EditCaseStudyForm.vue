@@ -34,6 +34,8 @@
                         id="intro"
                         name="intro"
                         v-model="form.intro"
+                        cols="100"
+                        rows="4"
                     ></textarea>
                     <span v-if="form.errors.has('intro')" class="error" v-text="form.errors.get('intro')"></span>
                 </div>
@@ -44,6 +46,8 @@
                         class="form-control"
                         id="fact"
                         name="fact"
+                        cols="100"
+                        rows="2"
                         v-model="form.fact"
                     ></textarea>
                     <span v-if="form.errors.has('fact')" class="error" v-text="form.errors.get('fact')"></span>
@@ -55,6 +59,8 @@
                         class="form-control"
                         id="text_left"
                         name="text_left"
+                        cols="100"
+                        rows="20"
                         v-model="form.text_left"
                     ></textarea>
                     <span v-if="form.errors.has('text_left')" class="error" v-text="form.errors.get('text_left')"></span>
@@ -66,6 +72,8 @@
                         class="form-control"
                         id="text_right"
                         name="text_right"
+                        cols="100"
+                        rows="20"
                         v-model="form.text_right"
                     ></textarea>
                     <span v-if="form.errors.has('text_right')" class="error" v-text="form.errors.get('text_right')"></span>

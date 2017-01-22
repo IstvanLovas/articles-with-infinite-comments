@@ -8089,10 +8089,28 @@ hr {
   justify-content: space-between;
   padding-bottom: 10px;
   margin: 44px 0 22px;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #EFEFEF;
 }
 
 #admin .page-header-wrapper h1 {
+  margin: 0;
+}
+
+#admin .panel-default {
+  border-color: #EFEFEF;
+}
+
+#admin .dropzone {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  border: 1px solid #EFEFEF;
+}
+
+#admin .dropzone .dz-message {
   margin: 0;
 }
 
@@ -8107,6 +8125,16 @@ hr {
 #case-studies .case-study-wrapper article {
   padding: 15px;
   border: 1px solid #000;
+}
+
+#edit-meet-those-most-impacted .panel-heading {
+  padding: 0 0 15px;
+  font-size: 16px;
+}
+
+#edit-meet-those-most-impacted .panel-heading i {
+  font-size: 20px;
+  padding-right: 5px;
 }
 
 /*# sourceMappingURL=admin.css.map */

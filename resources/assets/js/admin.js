@@ -13,6 +13,8 @@ import GetTheLatest from './admin/components/GetTheLatest.vue';
 import KeyFactsAboutIssue from './admin/components/KeyFactsAboutIssue.vue';
 import CreateCaseStudyForm from './admin/partials/CreateCaseStudyForm.vue';
 import EditCaseStudyForm from './admin/partials/EditCaseStudyForm.vue';
+import CaseStudyPhoto from './admin/partials/CaseStudyPhoto.vue';
+import CaseStudyPhotoUploadForm from './admin/partials/CaseStudyPhotoUploadForm.vue';
 import CreateArticleForm from './admin/partials/CreateArticleForm.vue';
 import EditArticleForm from './admin/partials/EditArticleForm.vue';
 
@@ -37,8 +39,10 @@ const admin = new Vue({
         KeyFactsAboutIssue,
         CreateCaseStudyForm,
         EditCaseStudyForm,
+        CaseStudyPhoto,
         CreateArticleForm,
-        EditArticleForm
+        EditArticleForm,
+        CaseStudyPhotoUploadForm
     },
     el: '#admin',
     mounted() {

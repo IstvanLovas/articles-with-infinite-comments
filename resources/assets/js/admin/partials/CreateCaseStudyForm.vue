@@ -106,20 +106,22 @@
         methods: {
             onSubmit() {
                 this.form.post('/admin/case-study')
-                    .then(response => this.onSuccess(response.success.message));
+                    .then(response => this.onSuccess(response));
             },
-            onSuccess(message) {
+            onSuccess(response) {
                 swal({
                     title: 'Congratulations!',
-                    text: message,
+                    text: response.success.message,
                     type: 'success',
                     timer: 3000
                 }).then(
-                    function () {},
+                    function () {
+                        window.location.href = '/admin/case-study/' + response.id + '/edit';
+                    },
                     // handling the promise rejection
                     function (dismiss) {
                         if (dismiss === 'timer') {
-                            console.log('I was closed by the timer')
+                            window.location.href = '/admin/case-study/' + response.id + '/edit';
                         }
                     }
                 )

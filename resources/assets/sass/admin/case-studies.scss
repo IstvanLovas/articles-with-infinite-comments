@@ -1,7 +1,6 @@
 /* =======================================
    Admin / Case Studies
    =======================================*/
-
 #case-studies {
 	.case-study-wrapper {
 		position: relative;
@@ -9,6 +8,17 @@
 		article {
 			padding:15px;
 			border:1px solid #000;
+		}
+	}
+}
+
+#edit-meet-those-most-impacted {
+	.panel-heading {
+		padding:0 0 15px;
+		font-size: 16px;
+		i {
+			font-size: 20px;
+			padding-right:5px;
 		}
 	}
 }

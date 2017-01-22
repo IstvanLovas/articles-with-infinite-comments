@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "autosize": "^3.0.20",
+    "dropzone": "^4.3.0",
     "gsap": "^1.19.0",
     "moment": "^2.17.1",
     "sweetalert2": "^6.3.2",

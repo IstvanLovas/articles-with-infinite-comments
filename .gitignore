@@ -1,6 +1,7 @@
 /node_modules
 /public/storage
 /public/articles
+/public/images/*
 /storage/*.key
 /vendor
 /.idea

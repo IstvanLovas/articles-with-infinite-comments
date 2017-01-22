@@ -29,7 +29,7 @@ class PublicPagesController extends Controller
             // $user->roles()->attach($role);
             // return \App\User::with('roles')->find(1);
 
-    	$page = OurCampaignPageDetail::first();
+    	$page = OurCampaignPageDetail::findOrFail(1);
 
         return view('public.our-campaign',compact('page'));
     }

@@ -1,5 +1,5 @@
 <template>
-	<article class="case-study">
+	<article>
 		<div class="container">
 			<div class="row">
 

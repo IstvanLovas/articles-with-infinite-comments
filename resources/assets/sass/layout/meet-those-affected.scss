@@ -1,3 +1,8 @@
 /* =======================================
    Meet those most impacted
    =======================================*/
+.case-studies {
+	.case-study:nth-child(odd) {
+		background-color:$brand-gray;
+	}
+}

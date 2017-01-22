@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\CaseStudyPhoto;
 use Illuminate\Database\Eloquent\Model;
 
 class CaseStudy extends Model
@@ -13,7 +14,22 @@ class CaseStudy extends Model
     	'fact',
     	'text_left',
     	'text_right',
-    	'image_path',
     	'active'
     ];
+
+    /**
+     * A Case Study is comprises of one photo
+     * @return Illuminate\Database\Eloquent\Relationships\HasOne
+     */
+    public function case_study_photo()
+    {
+        return $this->hasOne(CaseStudyPhoto::class);
+    }
+
+    public function addPhoto(CaseStudyPhoto $photo)
+    {
+        $this->case_study_photo()->delete();
+        
+        return $this->case_study_photo()->save($photo);
+    }
 }

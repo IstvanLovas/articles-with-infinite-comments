@@ -43,13 +43,15 @@
 
 	<div class="case-studies">
 		@foreach($caseStudies as $caseStudy)
-			<case-study>
+			<case-study class="case-study">
 				<h2 slot="case-header">{{ $caseStudy->header }}</h2>
 
 				<p slot="quote">{!! nl2br($caseStudy->intro) !!}</p>
                 <p slot="fact">{!! nl2br($caseStudy->fact) !!}</p>
 
 				<button slot="button" class="btn btn-primary btn-large text-uppercase">Read Johns story</button>
+
+				<img slot="case-image" src="{{ $caseStudy->image_path }}" alt="Photo relevant to the case" class="img-responsive">
 			</case-study>
 		@endforeach
 	</div>

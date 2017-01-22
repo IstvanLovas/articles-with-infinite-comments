@@ -3,7 +3,7 @@
 @section('title')Edit Case Study @endsection
 
 @section('content')
-<section id="meet-those-most-impacted">
+<section id="edit-meet-those-most-impacted">
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">
@@ -22,7 +22,27 @@
     </div>
 
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col-xs-12">
+            <div class="row">
+                @if($case_study->case_study_photo)
+                    <div class="col-xs-6">
+                        <case-study-photo
+                            :photo-path="{{ json_encode($case_study->case_study_photo->thumbnail_path) }}"
+                        >
+                        </case-study-photo>
+                    </div>
+                @endif
+
+                <div class="col-xs-{{ $case_study->case_study_photo ? '6' : '12' }}">
+                    <case-study-photo-upload-form 
+                        :case-id="{{ $case_study->id }}"
+                    >
+                    </case-study-photo-upload-form>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-xs-12">
             <edit-case-study-form :case-study="{{ $case_study }}"></edit-case-study-form>
         </div>
     </div>

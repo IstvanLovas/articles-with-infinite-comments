@@ -21,7 +21,6 @@ class CreateCaseStudiesTable extends Migration
             $table->text('fact');
             $table->text('text_left');
             $table->text('text_right');
-            $table->string('image_path')->nullable();
             $table->boolean('active')->default(false);
             $table->timestamps();
         });

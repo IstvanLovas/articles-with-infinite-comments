@@ -109,4 +109,6 @@ Route::group(['namespace' => 'Admin'], function () {
             'delete' => 'case-study-delete',
         ]
     ]);
+
+    Route::put('/admin/case-study/{case_study}/photo', 'CaseStudyController@addPhoto');
 });
