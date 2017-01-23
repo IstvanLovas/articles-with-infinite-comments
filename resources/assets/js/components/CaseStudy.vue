@@ -1,9 +1,9 @@
 <template>
 	<article>
 		<div class="container">
-			<div class="row">
+			<div class="row flex-align-bottom">
 
-				<div class="col-xs-12 col-md-6 col-lg-8">
+				<div class="col-xs-12 col-md-6 col-lg-8 case-content">
 					<div class="row">
 						<div class="col-md-6">
 							<slot name="case-header"></slot>
@@ -24,7 +24,7 @@
 					</div>
 				</div>
 
-				<div class="col-xs-12 col-md-6 col-lg-4">
+				<div class="col-xs-12 col-md-6 col-lg-4 case-image">
 					<slot name="case-image"></slot>
 				</div>
 

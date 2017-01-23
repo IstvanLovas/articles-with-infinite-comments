@@ -50,8 +50,9 @@
                 <p slot="fact">{!! nl2br($caseStudy->fact) !!}</p>
 
 				<button slot="button" class="btn btn-primary btn-large text-uppercase">Read Johns story</button>
-
-				<img slot="case-image" src="{{ $caseStudy->image_path }}" alt="Photo relevant to the case" class="img-responsive">
+				@if($caseStudy->case_study_photo)
+					<img slot="case-image" src="/{{ $caseStudy->case_study_photo->thumbnail_path }}" alt="Photo relevant to the case" class="img-responsive">
+				@endif
 			</case-study>
 		@endforeach
 	</div>

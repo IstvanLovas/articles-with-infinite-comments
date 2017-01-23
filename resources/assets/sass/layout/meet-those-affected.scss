@@ -2,7 +2,78 @@
    Meet those most impacted
    =======================================*/
 .case-studies {
+	.case-study {
+		padding-bottom:0;
+	}
 	.case-study:nth-child(odd) {
 		background-color:$brand-gray;
+		.case-image {
+			position: relative;
+		    left: -15px;
+		}
+	}
+	.case-study:nth-child(even) {
+		background-color:#fff;
+		.case-image {
+			position: relative;
+		    right: -15px;
+		    img {
+		    	display: inline-block;
+		    }
+		}
+	}
+}
+
+@media (max-width: 991px) {
+	.case-studies {
+		.case-fact {
+			.btn {
+				margin-bottom:$margin;
+			}
+		}
+		.case-image {
+		    img {
+		    	width:70%;
+		    }
+		}
+		.case-study:nth-child(even) {
+			.case-image {
+			    text-align:right;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.case-studies {
+		.case-content {
+			padding-bottom:60px;
+		}
+		.case-study:nth-child(odd) {
+			.case-image {
+			    left: 0px;
+			}
+		}
+		.case-study:nth-child(even) {
+			.case-image {
+			    right: 0px;
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.case-studies {
+		.case-study {
+			.flex-align-bottom {
+				display: flex;
+				align-items: flex-end;
+			}
+		}
+		.case-study:nth-child(odd) {
+			.flex-align-bottom {
+				flex-direction: row-reverse;
+			}
+		}
 	}
 }

@@ -67,7 +67,7 @@ class CaseStudyPhoto extends Model
     protected function makeThumbnail()
     {
         Image::make($this->path)
-            ->resize(600, null, function ($constraint) {
+            ->resize(480, null, function ($constraint) {
                 $constraint->aspectRatio();
             })
             ->save($this->thumbnail_path); // save() is an Image Intervention method, not Laravels.

@@ -26,7 +26,7 @@
                 url: '/admin/case-study/' + that.caseId + '/photo',
                 paramName: 'photo',
                 maxFiles: 1,
-                maxFilesize: 6,
+                maxFilesize: 10,
                 acceptedFiles: '.jpg, .jpeg, .png',
                 accept(file, done) {
                     done();

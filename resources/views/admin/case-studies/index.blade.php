@@ -55,6 +55,5 @@
             {{ $caseStudies->links() }}
         </div>
     </div>
-
 </section>
 @endsection
