@@ -45,11 +45,12 @@
 		@foreach($caseStudies as $caseStudy)
 			<case-study class="case-study">
 				<h2 slot="case-header">{{ $caseStudy->header }}</h2>
-
 				<p slot="quote">{!! nl2br($caseStudy->intro) !!}</p>
                 <p slot="fact">{!! nl2br($caseStudy->fact) !!}</p>
-
-				<button slot="button" class="btn btn-primary btn-large text-uppercase">Read Johns story</button>
+                <p slot="case-text-left">{!! nl2br($caseStudy->text_left) !!}</p>
+                <p slot="case-text-right">{!! nl2br($caseStudy->text_right) !!}</p>
+				<span slot="button-text-read">Read {{ $caseStudy->name }}'s story</span>
+				<span slot="button-text-close">Close {{ $caseStudy->name }}'s story</span>
 				@if($caseStudy->case_study_photo)
 					<img slot="case-image" src="/{{ $caseStudy->case_study_photo->thumbnail_path }}" alt="Photo relevant to the case" class="img-responsive">
 				@endif
@@ -66,6 +67,5 @@
 			</div>
 		</template>
 	</section-row>
-
 </section>
 @endsection
