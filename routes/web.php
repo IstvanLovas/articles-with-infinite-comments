@@ -1,10 +1,19 @@
 <?php
 
+// Development Only
+Route::get('/test/AfterMigrationRefresh','DevelopmentController@testAfterMigrationRefresh');
+Route::get('/test/SendingWelcomeEmail','DevelopmentController@testSendingWelcomeEmail');
+Route::get('/test/NotifyUserWhenArticlePublished','DevelopmentController@testNotifyUserWhenArticlePublished');
+
 Route::get('/', 'PublicPagesController@showOurCampaign');
+
 Route::get('/the-facts', 'PublicPagesController@showTheFacts');
 Route::get('/meet-those-affected', 'PublicPagesController@showMeetThoseAffected');
 Route::get('/thank-you', 'PublicPagesController@showThankYou');
 Route::get('/privacy-policy', 'PublicPagesController@showPrivacyPolicy');
+
+Route::resource('subscribers', 'SubscribersController',
+                ['except' => ['index','create','show','edit']]);
 
 Route::resource('articles', 'ArticlesController',
                 ['only' => ['index', 'show']]);

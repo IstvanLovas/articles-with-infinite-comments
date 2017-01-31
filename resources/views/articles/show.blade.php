@@ -5,10 +5,14 @@
 
 @section('content')
 <section id="article-page">
-
+	
 	<masthead>
 		<h1 slot="header">Short key<br>Statements 2</h1>
 		<button slot="button" class="btn btn-primary btn-large text-uppercase">Stay updated</button>
+
+		<template slot="main-header">
+			@include('partials.header')
+		</template>
 	</masthead>
 
 	<div class="article">

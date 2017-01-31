@@ -164,6 +164,26 @@ textarea {
   }
 }
 
+.query {
+  background: #E74675;
+  padding-bottom: 30px;
+}
+
+.query h2 {
+  color: #fff !important;
+}
+
+.query h4 {
+  margin-bottom: 0;
+}
+
+.query .email-us {
+  font-size: 26px;
+  color: #fff;
+  display: inline-block;
+  margin: 30px 0;
+}
+
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.

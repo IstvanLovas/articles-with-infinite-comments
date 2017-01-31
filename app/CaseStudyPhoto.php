@@ -9,11 +9,10 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class CaseStudyPhoto extends Model
 {
-    /*
-	 * Fillable fields for a photo.
-	 *
-	 * @var array
-	 */
+    /**
+     * The attributes that are mass assignable.
+     * @var array
+     */
     protected $fillable = [
     	'name',
         'path',

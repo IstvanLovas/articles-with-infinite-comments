@@ -6,19 +6,8 @@
 					<h2>Get involved</h2>
 					<h4>Be brave, stand up and be heard</h4>
 
-					<div class="form">
-						<form>
-							<div class="form-group">
-								<input type="text" placeholder="Name" name="name">
-							</div>
-							<div class="form-group">
-								<input type="email" placeholder="Email" name="name">
-							</div>
-							<div class="form-group">
-								<input type="submit" value="Sign me up">
-							</div>
-						</form>
-					</div>
+					<newsletter-sign-up-form></newsletter-sign-up-form>
+					
 				</div>
 			</template>
 
@@ -104,21 +93,24 @@
 </template>
 
 <script>
+	import NewsletterSignUpForm from './NewsletterSignUpForm.vue'
 	import SectionRow from './SectionRow.vue'
 	import JoinTheConversation from './JoinTheConversation.vue'
 
 	export default {
 		components:{
+			NewsletterSignUpForm,
 			SectionRow,
 			JoinTheConversation
 		},
 		mounted() {
             this.$nextTick(() => {
-               this.setOffset()
-                $(window).on('resize',() => {
-                    this.setOffset()
-                })
-            })
+            	this.setOffset()
+
+        		$(window).on('resize',() => {
+                	this.setOffset()
+            	})
+           	})
         },
         methods: {
         	setOffset() {

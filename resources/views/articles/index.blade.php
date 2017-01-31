@@ -74,8 +74,5 @@
 			</div>
 		</template>
 	</section-row>
-
-	@include('partials.stay-updated-and-why')
-
 </section>
 @endsection

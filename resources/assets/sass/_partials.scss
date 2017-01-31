@@ -106,3 +106,20 @@ textarea {
 	    }
 	}
 }
+
+.query {
+    background: $brand-pink;
+    padding-bottom: $margin;
+    h2 {
+        color:#fff !important;
+    }
+    h4 {
+        margin-bottom:0;
+    }
+    .email-us {
+        font-size:26px;
+        color:#fff;
+        display: inline-block;
+        margin:$margin 0;
+    }
+}

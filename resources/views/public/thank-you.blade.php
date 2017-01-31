@@ -78,5 +78,26 @@
 			</div>
 		</template>
 	</section-row>
+
+	<section-row class="query">
+		<template slot="header">
+			<div class="col-xs-12 col-md-8 section">
+				<h2>Query?</h2>
+				<h4>Get in touch</h4>
+			</div>
+			<div class="col-xs-12">
+				<a 	href="mailto:info@createdbyparents.com"
+                	title="info@createdbyparents.com"
+                	class="email-us"
+                >info@createdbyparents.com</a>
+                
+                <footer>
+                    <span>View our privacy policy / </span>
+                    <span>© Created By Parents 2017 / </span>
+                    <span>Designed by Jake Jennings </span>
+                </footer>
+			</div>
+		</template>
+	</section-row>
 </section>
 @endsection

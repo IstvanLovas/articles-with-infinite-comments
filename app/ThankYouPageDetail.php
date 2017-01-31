@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class ThankYouPageDetail extends Model
 {
+	/**
+     * The attributes that are mass assignable.
+     * @var array
+     */
     protected $fillable = [
     	'banner_background_image_path',
     	'banner_background_image_path_thumbnail',

@@ -181,11 +181,15 @@
 		<template slot="body">
 			<div class="col-xs-12 list-latest-news">
 				<div class="row">
-					@foreach(App\Article::latest('published_at')->published()->take(3)->get() as $article)
+					@foreach($articles as $article)
 						<div class="col-xs-12 col-sm-6 col-md-4 latest-news">
 							<article>
 								<div class="wrapper">
-									<h3 class="title">{{ $article->title }}</h3>
+									<h3 class="title">
+										<a href="/articles/{{ $article->id }}">
+										{{ $article->title }}
+										</a>
+									</h3>
 									<div class="body-text">{{ $article->lead }}</div>
 									<div class="cta-button text-center text-uppercase">
 										<a href="/articles/{{ $article->id }}">Read Article</a>

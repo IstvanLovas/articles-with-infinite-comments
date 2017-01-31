@@ -18,11 +18,7 @@ class CommentsController extends Controller
      */
     public function store(CommentRequest $request, Article $article)
     {
-        $comment = new Comment(['text' => request('text')]);
-        $comment->user_id = $request->user()->id;
-        $comment->parent_id = request('parent_id', null);
-
-        $article->comments()->save($comment);
+        $article->addComment($request);
 
         return back();
     }

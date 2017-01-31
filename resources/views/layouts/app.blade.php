@@ -31,8 +31,10 @@
             <template slot="content">
             
                 @yield('content')
-
-                <app-footer></app-footer>
+                
+                @if(! Request::is('thank-you'))
+                    <app-footer></app-footer>
+                @endif
                 
             </template>
         </app-container>

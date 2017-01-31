@@ -4,9 +4,16 @@ namespace App;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 
 class Article extends Model
 {
+    use Notifiable;
+
+    /**
+     * The attributes that are mass assignable.
+     * @var array
+     */
     protected $fillable = [
     	'title',
         'lead',
@@ -70,5 +77,14 @@ class Article extends Model
     public function scopeUnpublished($query)
     {
     	$query->where('published_at', '>', Carbon::now());
+    }
+
+    public function addComment($request)
+    {
+        $this->comments()->create([
+            'text' => request('text'),
+            'user_id' => $request->user()->id,
+            'parent_id' => request('parent_id', null)
+        ]);
     }
 }

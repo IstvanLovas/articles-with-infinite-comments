@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Article;
 use App\CaseStudy;
+use App\Subscriber;
 use App\ThankYouPageDetail;
 use App\TheFactsPageDetail;
 use Illuminate\Http\Request;
@@ -14,24 +16,15 @@ class PublicPagesController extends Controller
 {
     public function showOurCampaign()
     {
-            // \App\Tag::create(['name' => 'law']);
-            // \App\Tag::create(['name' => 'discussion']);
-            // \App\Tag::create(['name' => 'person']);
-            // \App\Tag::create(['name' => 'other']);
-            // \App\Role::create(['name' => 'admin']);
-            // $role = \App\Role::whereName('admin')->first();
-            // $user = \App\User::create([
-            //  'name' => 'Istvan Lovas',
-            //  'email' => 'loleves@gmail.com',
-            //  'password' => \Hash::make('jujuka')
-            // ]);
-            // $user = \App\User::where('email', 'loleves@gmail.com')->first();
-            // $user->roles()->attach($role);
-            // return \App\User::with('roles')->find(1);
+        //$subscriber = \Auth::user();
+        // $subscriber = Subscriber::first();
 
+        // return view('test.updateSubscriber',compact('subscriber'));
     	$page = OurCampaignPageDetail::findOrFail(1);
 
-        return view('public.our-campaign',compact('page'));
+        $articles = Article::orderBy('published_at', 'desc')->published()->take(3)->get();
+
+        return view('public.our-campaign',compact('page', 'articles'));
     }
 
     public function showTheFacts()

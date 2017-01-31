@@ -8,9 +8,8 @@ elixir((mix) => {
     	.styles([
 	        'sb-admin.css'
 	    ], 'public/css/sb-admin.css')
-	    .styles([
-	        'sweetalert.css'
-	    ], 'public/css/sweetalert.css')
+	    .copy('node_modules/sweetalert2/dist/sweetalert2.css','public/css/sweetalert2.css')
+	    .copy('node_modules/dropzone/dist/min/dropzone.min.css','public/css/dropzone.css')
    		.webpack('app.js')
    		.webpack('admin.js');
 });
