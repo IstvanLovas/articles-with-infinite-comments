@@ -15,7 +15,7 @@ class ArticlePublishedNotifierCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'created-by-parents:notify-article-subscribers';
+    protected $signature = 'created-by-parents:notify-article-subscribers {article}';
 
     /**
      * The console command description.
@@ -43,15 +43,8 @@ class ArticlePublishedNotifierCommand extends Command
      */
     public function handle()
     {
-        $article = $this->getArticle();
+        $article = Article::find($this->argument('article'));
 
-        $this->articlePublishedNotifier->notify($article['title'], $article['body']);
-    }
-
-    public function getArticle()
-    {
-        $article = Article::first();
-
-        return $article;
+        $this->articlePublishedNotifier->notify($article['title'], $article['lead']);
     }
 }

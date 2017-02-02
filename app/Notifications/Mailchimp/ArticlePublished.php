@@ -31,19 +31,19 @@ class ArticlePublished implements ArticlePublishedInterface
      * @param $body
      * @return mixed
      */
-    public function notify($title, $body)
+    public function notify($title, $lead)
     {
         $options = [
             'list_id' => self::ARTICLE_SUBSCRIBERS_ID,
-            'subject' => 'New article on Created by parents' . $title,
+            'subject' => 'New article on Created by parents',
             'from_name' => env('APP_NAME'),
             'from_email' => env('MAIL_FROM_ADDRESS'),
             'to_name' => env('APP_NAME') . 'Subscriber',
         ];
 
         $content = [
-            'html' => $body,
-            'text' => strip_tags($body)
+            'html' => $lead,
+            'text' => strip_tags($lead)
         ];
 
         $campaign = $this->mailchimp->campaigns->create('regular', $options, $content);

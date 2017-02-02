@@ -10,5 +10,5 @@ interface ArticlePublished {
 	 * @param $body
 	 * @return mixed
 	 */
-	public function notify($title, $body);
+	public function notify($title, $lead);
 }

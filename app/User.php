@@ -73,9 +73,7 @@ class User extends Authenticatable
      */
     public function assignRole($role)
     {
-        if (is_string($role)) {
-            return $this->roles()->attach($role);
-        }
+        $this->roles()->attach($role);
     }
 
     /**

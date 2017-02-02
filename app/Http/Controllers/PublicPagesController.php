@@ -16,10 +16,7 @@ class PublicPagesController extends Controller
 {
     public function showOurCampaign()
     {
-        //$subscriber = \Auth::user();
-        // $subscriber = Subscriber::first();
 
-        // return view('test.updateSubscriber',compact('subscriber'));
     	$page = OurCampaignPageDetail::findOrFail(1);
 
         $articles = Article::orderBy('published_at', 'desc')->published()->take(3)->get();

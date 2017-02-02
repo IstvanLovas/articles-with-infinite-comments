@@ -7,18 +7,20 @@ import autosize from 'autosize';
 autosize(document.querySelectorAll('textarea'));
 
 import AppContainer from './AppContainer.vue';
-import JoinTheConversation from './components/JoinTheConversation.vue';
+import ArticleRow from './components/ArticleRow.vue';
 import Masthead from './components/Masthead.vue';
 import SectionRow from './components/SectionRow.vue';
 import BlockQuote from './components/BlockQuote.vue';
 import CaseStudy from './components/CaseStudy.vue';
 import AppFooter from './components/AppFooter.vue';
 import MenuButton from './components/MenuButton.vue';
+import JoinTheConversation from './components/JoinTheConversation.vue';
 
 const app = new Vue({
     el: '#app',
     components: {
         AppContainer,
+        ArticleRow,
         JoinTheConversation,
     	Masthead,
     	SectionRow,

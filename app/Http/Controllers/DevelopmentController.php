@@ -15,7 +15,7 @@ class DevelopmentController extends Controller
 {
     public function testSendingWelcomeEmail(WelcomeEmail $email)
     {
-    	// Sending Test Email
+        // Sending Test Email
         Mail::to('loleves@gmail.com')->send($email);
 
         return "Email Successfully sent";
@@ -23,25 +23,20 @@ class DevelopmentController extends Controller
 
     public function testNotifyUserWhenArticlePublished()
     {
-    	$subscriber = Subscriber::first();
-    	$article = Article::first();
-    	
-    	$subscriber->notify(new ArticlePublished($article));
+        $subscriber = Subscriber::first();
+        $article = Article::first();
+        
+        $subscriber->notify(new ArticlePublished($article));
 
         return "NotificationEmail Successfully sent";
     }
 
     public function testAfterMigrationRefresh()
     {
-        Role::create(['name' => 'admin']);
+        $user = User::whereEmail('loleves@gmail.com')->first();
         $role = Role::whereName('admin')->first();
-        $user = User::create([
-        	'name' => 'Istvan Lovas',
-        	'email' => 'loleves@gmail.com',
-        	'password' => \Hash::make('jujuka')
-        ]);
-        $user = User::where('email', 'loleves@gmail.com')->first();
-        $user->roles()->attach($role);
+
+        $user->assignRole($role);
         
         return User::with('roles')->find(1);
     }

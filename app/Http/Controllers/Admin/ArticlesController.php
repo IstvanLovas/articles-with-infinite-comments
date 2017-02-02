@@ -6,6 +6,7 @@ use App\Tag;
 use App\Article;
 use App\Comment;
 use Illuminate\Http\Request;
+use App\Events\ArticleCreated;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ArticleRequest;
@@ -60,6 +61,10 @@ class ArticlesController extends Controller
         $tagIds = [];
         $tags = $request->input('tagList');
         $article = Auth::user()->articles()->create($request->all());
+
+        if($article) {
+            event(new ArticleCreated($article));
+        }
         
         if(count($tags) > 0)
         {

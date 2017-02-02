@@ -26,6 +26,8 @@ class SubscribersController extends Controller
     {
         $subscriber = Subscriber::create($request->all());
 
+        $this->newsletterList->subscribeTo('articleSubscribers', $subscriber->email);
+
         return response()->json([
             'subscriber_name' => $subscriber->name,
             'success' => [

@@ -50,10 +50,10 @@
 		methods: {
 			submitForm() {
                 this.form.post('/subscribers',this.form)
-                    .then(response => this.onSuccess(response));
+                    .then(response => this.onSuccess(response))
             },
             onSuccess(response) {
-                 window.location.href = '/thank-you'
+                window.location.href = '/thank-you'
             }
 		}
 	}

@@ -19,7 +19,6 @@ class CreateArticleTagPivotTable extends Migration
             $table->integer('tag_id')->unsigned()->index();
             $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
             $table->primary(['article_id', 'tag_id']);
-            $table->timestamps();
         });
     }
 

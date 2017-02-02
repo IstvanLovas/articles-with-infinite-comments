@@ -15,44 +15,39 @@
 		</template>
 	</masthead>
 
-	<div class="article">
-		<div class="container">
-			<div class="row">
-				<article class="col-xs-12">
-					<h2>{{ $article->title }}</h2>
-					<h6>Created by <span>{{ $article->user->name }}</span>
-					{{ $article->updated_at->diffForHumans() }}</h6>
-					<p class="lead">{!! nl2br($article->lead) !!}</p>
-					<div>{!! nl2br($article->body) !!}</div>
+	<article-row>
+		<h2 slot="article-title" class="article-title">{{ $article->title }}</h2>
+		<p slot="article-lead" class="lead">{!! nl2br($article->lead) !!}</p>
+		<div slot="article-body" class="article-body">{!! nl2br($article->body) !!}</div>
 
+		<template slot="article-comments">
+			<div class="article-comments section">
+				<hr>
+				<div class="leave-comment">
+					<h2>Leave a comment:</h2>
+					@include('comments.form')
+				</div>
 
-
-					<div class="leave-comment">
-						<h2>Leave a comment:</h2>
-						<hr>
-						@include('comments.form')
-					</div>
-
+				@unless( count($article->comments) == 0 )
 					<div class="comments">
-						@unless( count($article->comments) == 0 )
-							<h2>Comments:</h2>
-							<hr>
-							
-							@include('comments.list', ['collection' => $comments['root']])
-						@endunless
+						<h2>Your Thoughts:</h2>
+						@include('comments.list', ['collection' => $comments['root']])
 					</div>
-
-				</article>
-
-				<aside class="col-xs-12 col-md-4">
-					<div class="letter-download">
-						
-					</div>
-				</aside>
-
+				@endunless
 			</div>
-		</div>
-	</div>
+		</template>
+
+		{{-- <h6>Created by <span>{{ $article->user->name }}</span>
+		{{ $article->updated_at->diffForHumans() }}</h6>
+
+		@if(count($article->tags) > 0)
+			<ul>
+				@foreach($article->tags as $tag)
+					<li>{{ $tag->name }}</li>
+				@endforeach
+			</ul>
+		@endif --}}
+	</article-row>
 
 </section>
 
