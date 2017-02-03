@@ -17,8 +17,10 @@
 	<section-row class="the-impact-is-huge">
 		<template slot="header">
 			<div class="col-xs-12 section">
-				<h2>{{ $page->the_impact_is_huge_header }}</h2>
-				<h4>{{ $page->the_impact_is_huge_subheader }}</h4>
+				<header>
+					<h2>{{ $page->the_impact_is_huge_header }}</h2>
+					<h4>{{ $page->the_impact_is_huge_subheader }}</h4>
+				</header>
 			</div>
 		</template>
 

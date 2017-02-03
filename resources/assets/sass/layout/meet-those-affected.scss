@@ -5,11 +5,8 @@
 	.case-study {
 		padding-bottom:0;
 		position: relative;
-		h2 {
-			margin-bottom:$margin;
-		}
-		blockquote {
-			padding-top:0;
+		.quote:before {
+			color: #fff;
 		}
 		.case-fact p {
 			margin-bottom:0;
@@ -124,7 +121,6 @@
 					padding:0 0 60px;
 				}
 				.case-image {
-					width:100%;
 					img {
 						max-width: 100%;
 					}
@@ -148,6 +144,23 @@
 			.flex{
 				.case-content {
 					padding:0 60px 0 0;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.case-studies {
+		.case-study {
+			.case-fact {
+				padding-top:10px;
+			}
+			.flex {
+				width:1170px;
+				justify-content: space-between;
+				.case-content {
+					width:100%;
 				}
 			}
 		}

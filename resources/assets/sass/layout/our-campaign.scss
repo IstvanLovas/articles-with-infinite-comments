@@ -50,10 +50,40 @@
         .latest-news {
             margin-bottom: $margin;
             article {
-                padding:$margin 15px;
+                height:320px;
+                padding:$margin $margin /2;
+                background-color: $brand-gray;
+                color:$brand-blue;
+                .wrapper {
+                    position: relative;
+                    height:100%;
+                    .title {
+                        margin:0;
+                        &:after {
+                            content:'';
+                            display:block;
+                            height:1px;
+                            background:$brand-blue;
+                            margin:$margin /2 0;
+                        }
+                        a {
+                            color:$brand-blue;
+                        }
+                    }
+                    .cta-button {
+                        position: absolute;
+                        bottom:0;
+                        left:0;
+                        a {
+                            color:$brand-yellow;
+                        }
+                    }
+                }
             }
-            .cta-button {
-                margin-top:$margin;
+            article:nth-child(2) {
+                height: 350px;
+                position: relative;
+                top:-15px;
             }
         }
     }

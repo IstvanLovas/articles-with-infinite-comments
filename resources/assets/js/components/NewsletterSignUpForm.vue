@@ -5,29 +5,29 @@
     			class="form-horizontal"
     			role="form"
     	>
-            <div class="form-group">
-                <label for="name" class="control-label">Name:</label>
+            <div>
                 <input  class="form-control"
                         id="name"
                         name="name"
+                        placeholder="NAME"
                         type="text"
                         v-model="form.name"
                 >
                 <span v-if="form.errors.has('name')" class="error" v-text="form.errors.get('name')"></span>
             </div>
 
-            <div class="form-group">
-                <label for="email" class="control-label">Email:</label>
+            <div>
                 <input  class="form-control"
                         id="email"
                         name="email"
+                        placeholder="EMAIL"
                         type="text"
                         v-model="form.email"
                 >
                 <span v-if="form.errors.has('email')" class="error" v-text="form.errors.get('email')"></span>
             </div>
 
-            <div class="form-group">
+            <div>
                 <button class="btn btn-primary" :disabled="form.errors.any()">
                 Sign me up
                 </button>

@@ -4,19 +4,21 @@
 
 			<div class="case-content">
 				<div class="row">
-					<div class="col-md-12">
-						<slot name="case-header"></slot>
+					<div class="col-md-12 section">
+						<header>
+							<slot name="case-header"></slot>
+						</header>
 					</div>
 				</div>
 				
 				<div class="row">
-					<block-quote class="col-xs-12 col-sm-10 col-md-12">
+					<block-quote class="col-xs-12 col-sm-10 col-md-12 col-lg-8">
 						<template slot="text">
 							<slot name="quote"></slot>
 						</template>
 					</block-quote>
 				
-					<div class="col-xs-8 col-sm-7 case-fact">
+					<div class="col-xs-8 col-sm-7 col-lg-4 case-fact">
 						<slot name="fact"></slot>
 							<button
 								v-show="! isOpen"

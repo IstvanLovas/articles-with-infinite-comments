@@ -6,7 +6,6 @@
 @section('content')
 
 <section id="home">
-
 	<masthead>
 		<h1 slot="header">{{ $page->banner_header }}</h1>
 		<p class="lead" slot="text">{{ $page->banner_subheader }}</p>
@@ -36,8 +35,10 @@
 	<section-row class="the-issue">
 		<template slot="header">
 			<div class="col-xs-12 section">
-				<h2>{{ $page->the_issue_header }}</h2>
-				<h4>{{ $page->the_issue_subheader }}</h4>
+				<header>
+					<h2>{{ $page->the_issue_header }}</h2>
+					<h4>{{ $page->the_issue_subheader }}</h4>
+				</header>
 			</div>
 		</template>
 
@@ -67,8 +68,10 @@
 	<section-row class="why-it-matters">
 		<template slot="header">
 			<div class="col-xs-12 section">
-				<h2>{{ $page->why_it_matters_header }}</h2>
-				<h4>{{ $page->why_it_matters_subheader }}</h4>
+				<header>
+					<h2>{{ $page->why_it_matters_header }}</h2>
+					<h4>{{ $page->why_it_matters_subheader }}</h4>
+				</header>
 			</div>
 		</template>
 
@@ -115,8 +118,10 @@
 	<section-row class="our-goals">
 		<template slot="header">
 			<div class="col-xs-12 section">
-				<h2>{{ $page->our_goals_header }}</h2>
-				<h4>{{ $page->our_goals_subheader }}</h4>
+				<header>
+					<h2>{{ $page->our_goals_header }}</h2>
+					<h4>{{ $page->our_goals_subheader }}</h4>
+				</header>
 			</div>
 		</template>
 
@@ -163,7 +168,7 @@
 	<section-row class="fact fact-2">
 		<template slot="header">
 			<div class="col-xs-12 section">
-				<p class="lead">2,432 people are already involved. <strong>Are You?</strong></p>
+				<p class="lead">{{ App\Subscriber::all()->count() }} people are already involved. <strong>Are You?</strong></p>
 
 				<a href="#newsletter-sign-up" class="btn btn-primary btn-large text-uppercase">Get involved</a>
 			</div>
@@ -173,8 +178,10 @@
 	<section-row class="get-the-latest">
 		<template slot="header">
 			<div class="col-xs-12 section">
-				<h2>Get the latest</h2>
-				<h4>news, correspondence and updates</h4>
+				<header>
+					<h2>Get the latest</h2>
+					<h4>news, correspondence and updates</h4>
+				</header>
 			</div>
 		</template>
 
@@ -191,7 +198,7 @@
 										</a>
 									</h3>
 									<div class="body-text">{{ $article->lead }}</div>
-									<div class="cta-button text-center text-uppercase">
+									<div class="cta-button text-uppercase">
 										<a href="/articles/{{ $article->id }}">Read Article</a>
 									</div>
 								</div>
@@ -206,7 +213,6 @@
 			</div>
 		</template>
 	</section-row>
-
 </section>
 
 @endsection

@@ -67,10 +67,12 @@
 		</template>
 	</section-row>
 
-	<section-row class="some-fact">
+	<section-row class="fact fact-1">
 		<template slot="header">
-			<div class="col-xs-12">
-				<h2>Incredible fact about how important this issue is. <br class="hidden-xs hidden-sm">Don’t you want to hear more?</h2>
+			<div class="col-xs-12 section">
+				<p class="lead">Incredible fact about how important this issue is.  <br> <strong>Don’t you want to hear more?</strong></p>
+
+				<a href="#newsletter-sign-up" class="btn btn-primary btn-large text-uppercase">Learn more</a>
 			</div>
 		</template>
 	</section-row>

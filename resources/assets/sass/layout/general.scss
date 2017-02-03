@@ -113,16 +113,27 @@ hr {
 }
 
 .section {
-    h2 {
-        color:$brand-pink;
-        font-size:26px;
-        margin:0 0 10px;
-    }
-    h4 {
-        color:$brand-blue;
-        font-size:16px;
-        text-transform: uppercase;
-        margin-bottom: $margin;
+    header {
+        &:after {
+            content:'';
+            display:block;
+            width: 70px;
+            height:2px;
+            background:$brand-blue;
+            margin:$margin /2 0;
+        }
+        h2 {
+            color:$brand-pink;
+            font-size:26px;
+            margin:0;
+            line-height: 1.5;
+        }
+        h4 {
+            color:$brand-blue;
+            font-size:15px;
+            text-transform: uppercase;
+            margin:0;
+        }
     }
     p {
         color:#fff;

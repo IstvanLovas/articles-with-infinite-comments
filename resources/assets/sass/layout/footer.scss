@@ -3,24 +3,35 @@
    =======================================*/
 #app-footer {
 	background-color:$brand-yellow;
-	p {
-		color:$brand-blue !important;
+	#newsletter-sign-up {
+	    p {
+			color:$brand-blue !important;
+		}
 	}
-	.join-the-conversation {
-		margin-top:$margin;
-		color:#fff !important;
-		.h4 {
+	#other-ways-to-help {
+		p {
+			color:$brand-blue !important;
+		}
+		.join-the-conversation {
+			margin-top:$margin;
 			color:#fff !important;
+			.h4 {
+				color:$brand-blue !important;
+			}
 		}
 	}
 	.form {
         padding-bottom: $margin *2;
-        .form-group {
-		    margin-bottom: 5px;
+        .form-control {
+		    margin-bottom: $margin /2;
+		    border-color:#fff;
+		    box-shadow: none;
+		    border-radius:2px;
 		}
-    }
-    .newsletter-sign-up {
-    	padding-bottom:49px; // Due to <p>'s 10px margin-bottom
+		.error {
+	        position: relative;
+	        top:-13px;
+	    }
     }
     .get-involved-and-query {
 		position: relative;
@@ -58,6 +69,9 @@
 			}
 			.get-involved {
 				background: $brand-blue;
+				h2 {
+					color:$brand-pink;
+				}
 				h4 {
 					color:#fff;
 				}
@@ -74,6 +88,14 @@
 		    }
 		}
 	}
+}
+
+@media (max-width: 991px) {
+    #app-footer {
+        #newsletter-sign-up {
+	    	padding-bottom:49px; // Due to <p>'s 10px margin-bottom
+	    }
+    }
 }
 
 @media (min-width: 992px) {

@@ -3,8 +3,10 @@
 		<section-row id="newsletter-sign-up">
 			<template slot="header">
 				<div class="col-xs-12 col-md-6 section">
-					<h2>Get involved</h2>
-					<h4>Be brave, stand up and be heard</h4>
+					<header>
+						<h2>Get involved</h2>
+						<h4>Be brave, stand up and be heard</h4>
+					</header>
 
 					<newsletter-sign-up-form></newsletter-sign-up-form>
 					
@@ -13,8 +15,10 @@
 
 			<template slot="body">
 				<div class="col-xs-12 col-md-6 section">
-					<h2>Why?</h2>
-					<h4>What this means for you</h4>
+					<header>
+						<h2>Why?</h2>
+						<h4>What this means for you</h4>
+					</header>
 
 					<p>A fortnightly e–newsletter that keeps you up to date with our progress, correspondance and the latest in our  ght to combat the CQC guidance.</p>
 					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
@@ -33,7 +37,9 @@
 		<section-row id="other-ways-to-help">
 			<template slot="header">
 				<div class="col-xs-12 col-md-6 section">
-					<h2>Other ways to help</h2>
+					<header>
+						<h2>Other ways to help</h2>
+					</header>
 
 					<p>Dummy text. Giving hint to potential content.
 					You can sign up to a government petition. 10,000 gets us noticed. 100,000 gets us talked about.</p>
@@ -69,10 +75,10 @@
 	                </div>
 	    
 	                <div class="col-xs-12 col-md-6 query section">
-	                    <div>
+	                    <header>
 	                    	<h2>Query?</h2>
 	                    	<h4>Get in touch</h4>
-	                    </div>
+	                    </header>
 	                    
 	                    <a 	href="mailto:info@createdbyparents.com"
 	                    	title="info@createdbyparents.com"

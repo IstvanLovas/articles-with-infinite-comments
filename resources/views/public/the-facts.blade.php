@@ -6,7 +6,6 @@
 @section('content')
 
 <section id="the-facts">
-
 	<masthead>
 		<h1 slot="header">{{ $page->banner_header }}</h1>
 		<a href="#newsletter-sign-up" slot="button" class="btn btn-primary btn-large text-uppercase">Get involved</a>
@@ -19,8 +18,10 @@
 	<section-row id="why-this-matters">
 		<template slot="header">
 			<div class="col-xs-12 section">
-				<h2>{{ $page->why_this_matters_header }}</h2>
-				<h4>{{ $page->why_this_matters_subheader }}</h4>
+				<header>
+					<h2>{{ $page->why_this_matters_header }}</h2>
+					<h4>{{ $page->why_this_matters_subheader }}</h4>
+				</header>
 			</div>
 		</template>
 
@@ -28,8 +29,8 @@
 			<div class="col-xs-12">
 				<div class="row">
 					<div class="col-sm-6">
-						<p class="lead">
-							{!! nl2br($page->why_this_matters_lead) !!}
+						<p>
+							<strong>{!! nl2br($page->why_this_matters_lead) !!}</strong>
 						</p>
 						<p>
 							{!! nl2br($page->why_this_matters_text_left) !!}
@@ -94,8 +95,10 @@
 	<section-row class="our-progress" id="our-progress">
 		<template slot="header">
 			<div class="col-xs-12 section">
-				<h2>{{ $page->our_progress_header }}</h2>
-				<h4>{{ $page->our_progress_subheader }}</h4>
+				<header>
+					<h2>{{ $page->our_progress_header }}</h2>
+					<h4>{{ $page->our_progress_subheader }}</h4>
+				</header>
 			</div>
 		</template>
 
@@ -143,8 +146,10 @@
 	<section-row class="our-current-challenge">
 		<template slot="header">
 			<div class="col-xs-12 section">
-				<h2>{{ $page->our_current_challenge_header }}</h2>
-				<h4>{{ $page->our_current_challenge_subheader }}</h4>
+				<header>
+					<h2>{{ $page->our_current_challenge_header }}</h2>
+					<h4>{{ $page->our_current_challenge_subheader }}</h4>
+				</header>
 			</div>
 		</template>
 
@@ -152,8 +157,8 @@
 			<div class="col-xs-12">
 				<div class="row">
 					<div class="col-sm-6">
-						<p class="lead">
-							{!! nl2br($page->our_current_challenge_lead) !!}
+						<p>
+							<strong>{!! nl2br($page->our_current_challenge_lead) !!}</strong>
 						</p>
 
 						<p>
@@ -187,8 +192,10 @@
 	<section-row class="why-us" id="why-trust-us">
 		<template slot="header">
 			<div class="col-xs-12 section">
-				<h2>{{ $page->why_us_header }}</h2>
-				<h4>{{ $page->why_us_subheader }}</h4>
+				<header>
+					<h2>{{ $page->why_us_header }}</h2>
+					<h4>{{ $page->why_us_subheader }}</h4>
+				</header>
 			</div>
 		</template>
 
@@ -206,11 +213,11 @@
 					<div class="col-xs-12 col-md-6 right">
 						<div class="list-box">
 							<ul>
-								<li>Key facts</li>
-								<li>Info prove credibility</li>
-								<li>For those short on time</li>
-								<li>Prove credibility</li>
-								<li>In 10 seconds</li>
+								<li><span>Key facts</span></li>
+								<li><span>Info prove credibility</span></li>
+								<li><span>For those short on time</span></li>
+								<li><span>Prove credibility</span></li>
+								<li><span>In 10 seconds</span></li>
 							</ul>
 						</div>
 
@@ -225,7 +232,6 @@
 			</div>
 		</template>
 	</section-row>
-
 </section>
 
 @endsection

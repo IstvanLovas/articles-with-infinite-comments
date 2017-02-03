@@ -8059,17 +8059,27 @@ hr {
   text-transform: uppercase;
 }
 
-.section h2 {
-  color: #E74675;
-  font-size: 26px;
-  margin: 0 0 10px;
+.section header:after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 2px;
+  background: #0F3455;
+  margin: 15px 0;
 }
 
-.section h4 {
+.section header h2 {
+  color: #E74675;
+  font-size: 26px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.section header h4 {
   color: #0F3455;
-  font-size: 16px;
+  font-size: 15px;
   text-transform: uppercase;
-  margin-bottom: 30px;
+  margin: 0;
 }
 
 .section p {
