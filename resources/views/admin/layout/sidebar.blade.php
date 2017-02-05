@@ -43,5 +43,14 @@
                 </li>
             </ul>
         </li>
+        <li>
+            <a href="javascript:;" data-toggle="collapse" data-target="#comments">
+                <i class="fa fa-comments" aria-hidden="true"></i> Comments <i class="fa fa-fw fa-caret-down" aria-hidden="true"></i></a>
+            <ul id="comments" class="collapse">
+                <li class="{{ setActiveNavigation('admin/comments') }}">
+                    <a href="{{ route('comment-index') }}">All</a>
+                </li>
+            </ul>
+        </li>
     </ul>
 </div>

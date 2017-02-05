@@ -120,4 +120,15 @@ Route::group(['namespace' => 'Admin'], function () {
     ]);
 
     Route::put('/admin/case-study/{case_study}/photo', 'CaseStudyController@addPhoto');
+
+    Route::resource('/admin/comments', 'CommentsController', [
+        'except' => ['create','store'],
+        'names' => [
+            'index' => 'comment-index',
+            'show' => 'comment-show',
+            'edit' => 'comment-edit',
+            'update' => 'comment-update',
+            'delete' => 'comment-delete',
+        ]
+    ]);
 });

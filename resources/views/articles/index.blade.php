@@ -32,14 +32,14 @@
 			<div class="col-xs-12" id="filters">
 				<h4>Showing news for:</h4>
 				<ul class="list-inline">
-					<li><button>All</button></li>
-					<li><button>CQC Correspondence</button></li>
-					<li><button>Filter 3</button></li>
-					<li><button>Filter 4</button></li>
-					<li><button>Filter 5</button></li>
-					<li><button>Filter 6</button></li>
-					<li><button>Fitler 7</button></li>
-					<li><button>Fitler 7</button></li>
+					<li><button class="btn btn-brand-yellow brand-white-bg text-uppercase">All</button></li>
+					<li><button class="btn btn-brand-yellow brand-white-bg text-uppercase">CQC Correspondence</button></li>
+					<li><button class="btn btn-brand-yellow brand-white-bg text-uppercase">Filter 3</button></li>
+					<li><button class="btn btn-brand-yellow brand-white-bg text-uppercase">Filter 4</button></li>
+					<li><button class="btn btn-brand-yellow brand-white-bg text-uppercase">Filter 5</button></li>
+					<li><button class="btn btn-brand-yellow brand-white-bg text-uppercase">Filter 6</button></li>
+					<li><button class="btn btn-brand-yellow brand-white-bg text-uppercase">Fitler 7</button></li>
+					<li><button class="btn btn-brand-yellow brand-white-bg text-uppercase">Fitler 7</button></li>
 				</ul>
 			</div>
 		</template>
@@ -50,12 +50,12 @@
 			<div class="col-xs-12">
 				<div class="row">
 					@foreach($articles as $article)
-						<div class="col-xs-12 col-sm-6 col-lg-4 article-wrapper">
-							<article>
-								<h3><a href="{{ url('/articles', $article->id) }}" title="Link to read more about the article">{{ $article->title }}</a></h3>
-								<p>{{ $article->lead }}</p>
-								<a href="{{ url('/articles', $article->id) }}" title="Link to read more about the article">Read article</a>
-							</article>
+						<div class="col-xs-12 col-sm-6 col-md-4 latest-news">
+							<article-tile>
+								<a slot="article-title" href="/articles/{{ $article->id }}" title="Link to read more about article">{{ $article->title }}</a>
+								<div slot="article-lead" class="body-text">{{ $article->lead }}</div>
+								<a slot="article-link" href="/articles/{{ $article->id }}" class="btn btn-brand-yellow brand-white-bg text-uppercase" title="Link to read more about article">Read Article</a>
+							</article-tile>
 						</div>
 					@endforeach
 				</div>

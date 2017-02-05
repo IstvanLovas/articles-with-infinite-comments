@@ -207,7 +207,7 @@
 							{!! nl2br($page->why_us_text) !!}
 						</p>
 						
-						<button class="btn btn-primary btn-large text-uppercase">Visit the HFCH website</button>
+						<a href="/" class="btn btn-brand-yellow brand-white-bg text-uppercase">Visit the HFCH website</a>
 					</div>
 
 					<div class="col-xs-12 col-md-6 right">

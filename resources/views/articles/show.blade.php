@@ -8,7 +8,7 @@
 	
 	<masthead>
 		<h1 slot="header">Short key<br>Statements 2</h1>
-		<button slot="button" class="btn btn-primary btn-large text-uppercase">Stay updated</button>
+		<a href="#newsletter-sign-up" slot="button" class="btn btn-primary btn-large text-uppercase">Get involved</a>
 
 		<template slot="main-header">
 			@include('partials.header')
@@ -17,20 +17,19 @@
 
 	<article-row>
 		<h2 slot="article-title" class="article-title">{{ $article->title }}</h2>
-		<p slot="article-lead" class="lead">{!! nl2br($article->lead) !!}</p>
+		<p slot="article-lead"><strong>{!! nl2br($article->lead) !!}</strong></p>
 		<div slot="article-body" class="article-body">{!! nl2br($article->body) !!}</div>
 
 		<template slot="article-comments">
-			<div class="article-comments section">
+			<div id="article-comments" class="section">
 				<hr>
-				<div class="leave-comment">
-					<h2>Leave a comment:</h2>
+				<div class="leave-a-comment">
+					<h2>Your Thoughts:</h2>
 					@include('comments.form')
 				</div>
 
-				@unless( count($article->comments) == 0 )
+				@unless(count($comments) == 0)
 					<div class="comments">
-						<h2>Your Thoughts:</h2>
 						@include('comments.list', ['collection' => $comments['root']])
 					</div>
 				@endunless

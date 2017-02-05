@@ -25,7 +25,7 @@ class Article extends Model
 
     public function getComments()
     {
-        return $this->comments()->with('user')->get()->threaded();
+        return $this->comments()->approved()->with('user')->get()->threaded();
     }
 
     /**
@@ -81,10 +81,12 @@ class Article extends Model
 
     public function addComment($request)
     {
-        $this->comments()->create([
+        $comment = $this->comments()->create([
             'text' => request('text'),
             'user_id' => $request->user()->id,
             'parent_id' => request('parent_id', null)
         ]);
+
+        return $comment;
     }
 }

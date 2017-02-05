@@ -13,7 +13,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        view()->composer('admin.layout.admin-header', function ($view) {
+            $view->with('notifications', \App\Notification::latest()->unread()->get());
+        });
+
+        view()->composer('admin.dashboard', function ($view) {
+            $view->with('notifications', \App\Notification::latest()->unread()->get());
+        });
     }
 
     /**

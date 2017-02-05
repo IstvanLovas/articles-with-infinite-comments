@@ -15,6 +15,9 @@
         .triangle-wrapper .triangle {
             border-color: #fff transparent transparent transparent;
         }
+        .facts {
+            margin-top:10px;
+        }
     }
    	.our-goals {
         background-color:$brand-gray;
@@ -22,11 +25,7 @@
             border-color: $brand-gray transparent transparent transparent;
         }
         .list-of-goals {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            li {
+            .goal-item {
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -40,8 +39,11 @@
                     background:#333;
                     margin-bottom:10px;
                 }
+                .goal {
+                    padding:0 40px;
+                }
             }
-            li:last-child {
+            .goal-item:last-child {
                 margin-bottom:0;
             }
         }
@@ -49,42 +51,6 @@
     .get-the-latest {
         .latest-news {
             margin-bottom: $margin;
-            article {
-                height:320px;
-                padding:$margin $margin /2;
-                background-color: $brand-gray;
-                color:$brand-blue;
-                .wrapper {
-                    position: relative;
-                    height:100%;
-                    .title {
-                        margin:0;
-                        &:after {
-                            content:'';
-                            display:block;
-                            height:1px;
-                            background:$brand-blue;
-                            margin:$margin /2 0;
-                        }
-                        a {
-                            color:$brand-blue;
-                        }
-                    }
-                    .cta-button {
-                        position: absolute;
-                        bottom:0;
-                        left:0;
-                        a {
-                            color:$brand-yellow;
-                        }
-                    }
-                }
-            }
-            article:nth-child(2) {
-                height: 350px;
-                position: relative;
-                top:-15px;
-            }
         }
     }
 }

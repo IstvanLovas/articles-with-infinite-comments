@@ -11,7 +11,7 @@ class Comment extends Model
      * @var array
      */
     protected $fillable = [
-    	'text', 'user_id', 'parent_id'
+    	'text', 'approved', 'user_id', 'parent_id'
     ];
 
     /**
@@ -30,6 +30,16 @@ class Comment extends Model
     public function article()
     {
     	return $this->belongsTo(Article::class);
+    }
+
+    public function scopeApproved($query)
+    {
+        $query->where('approved', '=', 1);
+    }
+
+    public function scopeUnapproved($query)
+    {
+        $query->where('approved', '=', 0);
     }
 
     public function newCollection(array $models = [])

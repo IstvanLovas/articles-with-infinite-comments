@@ -22,7 +22,7 @@
 						<slot name="fact"></slot>
 							<button
 								v-show="! isOpen"
-								class="btn btn-primary text-uppercase"
+								class="btn btn-brand-yellow brand-white-bg text-uppercase"
 								@click="toggleIsOpen"
 							>
 								<slot name="button-text-read"></slot>
@@ -40,7 +40,7 @@
 						</div>
 						<div class="col-xs-12">
 							<button
-								class="btn btn-primary text-uppercase"
+								class="btn btn-brand-yellow brand-white-bg text-uppercase"
 								@click="toggleIsOpen"
 							>
 								<slot name="button-text-close"></slot>

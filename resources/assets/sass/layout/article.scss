@@ -2,6 +2,15 @@
    Article
    =======================================*/
 
-#article {
-	
+#article-page {
+	.article {
+		.section {
+			p {
+				color:$brand-blue;
+			}
+			hr {
+				margin-bottom:$margin;
+			}
+		}
+	}
 }

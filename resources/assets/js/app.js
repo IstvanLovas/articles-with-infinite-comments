@@ -7,6 +7,7 @@ import autosize from 'autosize';
 autosize(document.querySelectorAll('textarea'));
 
 import AppContainer from './AppContainer.vue';
+import ArticleTile from './components/ArticleTile.vue';
 import ArticleRow from './components/ArticleRow.vue';
 import Masthead from './components/Masthead.vue';
 import SectionRow from './components/SectionRow.vue';
@@ -20,6 +21,7 @@ const app = new Vue({
     el: '#app',
     components: {
         AppContainer,
+        ArticleTile,
         ArticleRow,
         JoinTheConversation,
     	Masthead,

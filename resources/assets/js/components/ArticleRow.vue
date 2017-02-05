@@ -3,7 +3,9 @@
 		<template slot="body">
 
 			<article class="col-xs-12 col-md-8 section">
-				<slot name="article-title"></slot>
+				<header>
+					<slot name="article-title"></slot>
+				</header>
 				<slot name="article-lead"></slot>
 				<slot name="article-body"></slot>
 				<slot name="article-comments"></slot>

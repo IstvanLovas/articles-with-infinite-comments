@@ -38,6 +38,7 @@ ul, ul li {
 }
 
 // Background Colors
+.brand-white-bg { background:#fff; }
 .brand-blue-bg { background:$brand-blue; }
 .brand-yellow-bg { background:$brand-yellow; }
 .brand-pink-bg { background:$brand-pink; }
@@ -48,6 +49,44 @@ ul, ul li {
 .brand-yellow { color:$brand-yellow; }
 .brand-pink { color:$brand-pink; }
 .brand-gray { color:$brand-gray; }
+
+// Buttons
+.btn-brand-blue {
+    color:$brand-blue;
+    border:2px solid $brand-blue;
+    &:hover, &:focus {
+        color: $brand-yellow;
+        border-color:$brand-yellow;
+    }
+}
+
+.btn-brand-yellow {
+    color:$brand-yellow;
+    border:2px solid $brand-yellow;
+    &:hover, &:focus {
+        color:#fff;
+        border-color:$brand-pink;
+        background-color:$brand-pink;
+    }
+}
+
+.btn-brand-pink {
+    color:$brand-pink;
+    border:2px solid $brand-pink;
+    &:hover, &:focus {
+        color: $brand-blue;
+        border-color:$brand-blue;
+    }
+}
+
+.btn-brand-gray {
+    color:$brand-gray;
+    border:2px solid $brand-gray;
+    &:hover, &:focus {
+        color: $brand-pink;
+        border-color:$brand-pink;
+    }
+}
 
 .flex-vertical {
     display: flex;
@@ -120,7 +159,7 @@ hr {
             width: 70px;
             height:2px;
             background:$brand-blue;
-            margin:$margin /2 0;
+            margin:20px 0;
         }
         h2 {
             color:$brand-pink;

@@ -1,6 +1,38 @@
 /* =======================================
    Admin / Header
    =======================================*/
+#admin-nav {
+	.top-nav {
+		.notifications {
+			p {
+				margin-bottom:0;
+			}
+			.media-body {
+				h5 {
+					color:$brand-blue;
+				}
+			}
+		}
+		.bell-wrapper {
+			position: relative;
+			.tota-number-of-notifications {
+				width:16px;
+				height:16px;
+				position: absolute;
+			    top: -8px;
+			    right: -8px;
+			    font-size: 8px;
+				display: inline-block;
+				border-radius: 50%;
+				display: flex;
+				align-items:center;
+				justify-content:center;
+				background: $brand-pink;
+				color:#fff;
+			}
+		}
+	}
+}
 
 .side-nav li.active>a {
 	color: #fff;

@@ -16,6 +16,9 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\ArticleCreated' => [
             'App\Listeners\NotifySubscribers',
         ],
+        'App\Events\NewComment' => [
+            'App\Listeners\AddCommentToNotifications',
+        ],
     ];
 
     /**

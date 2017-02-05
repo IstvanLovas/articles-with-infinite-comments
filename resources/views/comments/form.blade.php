@@ -1,14 +1,14 @@
-<form method="POST" action="/articles/{{ $article->id }}/comments">
+<form method="POST" class="form" action="/articles/{{ $article->id }}/comments">
 
 	{{ csrf_field() }}
 
 	@if(isset($parentId))
-
 		<input type="hidden" name="parent_id" value="{{ $parentId }}">
-
 	@endif
+	
+	<textarea name="text" class="form-control" placeholder="WRITE YOUR RESPONSE..."></textarea> <br>
 
-	<textarea name="text"></textarea> <br>
-
-	<button type="submit">Reply</button>
+	<div class="form-group">
+		<button type="submit" class="btn btn-primary text-uppercase">Submit comment</button>
+	</div>
 </form>

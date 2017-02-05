@@ -46,6 +46,5 @@
     </div>
 
     <script src="/js/admin.js"></script>
-    @yield('customJS')
 </body>
 </html>

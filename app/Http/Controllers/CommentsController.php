@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Article;
 use App\Comment;
+use App\Events\NewComment;
 use Illuminate\Http\Request;
 use App\Http\Requests\CommentRequest;
 
@@ -18,19 +19,10 @@ class CommentsController extends Controller
      */
     public function store(CommentRequest $request, Article $article)
     {
-        $article->addComment($request);
+        $comment = $article->addComment($request);
+
+        event(new NewComment($comment));
 
         return back();
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }
