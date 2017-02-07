@@ -16,6 +16,7 @@ import CaseStudy from './components/CaseStudy.vue';
 import AppFooter from './components/AppFooter.vue';
 import MenuButton from './components/MenuButton.vue';
 import JoinTheConversation from './components/JoinTheConversation.vue';
+import LeaveCommentForm from './admin/partials/LeaveCommentForm.vue';
 
 const app = new Vue({
     el: '#app',
@@ -29,7 +30,8 @@ const app = new Vue({
         BlockQuote,
         CaseStudy,
         AppFooter,
-        MenuButton
+        MenuButton,
+        LeaveCommentForm
     },
     mounted() {
         this.$nextTick(() => {

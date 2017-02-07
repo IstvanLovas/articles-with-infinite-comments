@@ -11,59 +11,7 @@
     </div>
     <!-- Top Menu Items -->
     <ul class="nav navbar-right top-nav">
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
-            <ul class="dropdown-menu message-dropdown">
-                <li class="message-preview">
-                    <a href="#">
-                        <div class="media">
-                            <span class="pull-left">
-                                <img class="media-object" src="http://placehold.it/50x50" alt="">
-                            </span>
-                            <div class="media-body">
-                                <h5 class="media-heading"><strong>blabla</strong>
-                                </h5>
-                                <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li class="message-preview">
-                    <a href="#">
-                        <div class="media">
-                            <span class="pull-left">
-                                <img class="media-object" src="http://placehold.it/50x50" alt="">
-                            </span>
-                            <div class="media-body">
-                                <h5 class="media-heading"><strong>John Smith</strong>
-                                </h5>
-                                <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li class="message-preview">
-                    <a href="#">
-                        <div class="media">
-                            <span class="pull-left">
-                                <img class="media-object" src="http://placehold.it/50x50" alt="">
-                            </span>
-                            <div class="media-body">
-                                <h5 class="media-heading"><strong>John Smith</strong>
-                                </h5>
-                                <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li class="message-footer">
-                    <a href="#">Read All New Messages</a>
-                </li>
-            </ul>
-        </li>
+        @if(count($notifications) > 0)
         <li class="dropdown">
             <a  href="#"
                 class="dropdown-toggle"
@@ -79,12 +27,12 @@
             <ul class="dropdown-menu message-dropdown notifications">
                 @foreach($notifications as $notification)
                     <li class="message-preview">
-                        <a href="/articles/{{ \App\Article::find($notification->article_id)->id }}">
+                        <a href="{{ route('comment-show', $notification->comment_id) }}">
                             <div class="media">
                                 <span class="pull-left">
                                     <i class="fa fa-comments" aria-hidden="true"></i>
                                 </span>
-                                <div class="media-body">
+                                <div>
                                     <h5 class="media-heading"><strong>{{ $notification->title }}</strong>
                                     <small>on </small><strong>{{ \App\Article::find($notification->article_id)->title }}</strong>
                                     </h5>
@@ -94,11 +42,14 @@
                         </a>
                     </li>
                 @endforeach
+                @if(count($notifications) > 1)
                 <li>
-                    <a href="#">View All</a>
+                    <a href="{{ route('comment-index') }}">View All</a>
                 </li>
+                @endif
             </ul>
         </li>
+        @endif
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {{ Auth::user()->name }} <b class="caret"></b></a>
             <ul class="dropdown-menu">

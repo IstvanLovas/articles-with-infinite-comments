@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Comment;
+use App\Notification;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,7 +16,7 @@ class CommentsController extends Controller
      */
     public function index()
     {
-        $comments = Comment::latest()->unapproved()->get();
+        $comments = Comment::latest()->get();
 
         return view('admin.comments.index', compact('comments'));
     }
@@ -26,20 +27,11 @@ class CommentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Comment $comment)
     {
-        //
-    }
+        $this->checkNotification($comment->id);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        return view('admin.comments.show', compact('comment'));
     }
 
     /**
@@ -49,9 +41,30 @@ class CommentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Comment $comment, Request $request)
     {
-        //
+        $comment->update($request->only('approved'));
+
+        $this->checkNotification($comment->id);
+
+        if($request->ajax())
+        {
+            return response()->json([
+                'message' => 'Status modified!',
+            ]);
+        }
+
+        return back();
+    }
+
+    public function checkNotification($id)
+    {
+        $notification = Notification::where('comment_id', $id)->first();
+
+        if($notification)
+        {
+            $notification->delete();
+        }
     }
 
     /**
@@ -60,7 +73,7 @@ class CommentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Comment $comment)
     {
         //
     }

@@ -13,6 +13,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <link href="{{ asset('css/sweetalert2.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <script src="https://use.fontawesome.com/546d72fa3b.js"></script>

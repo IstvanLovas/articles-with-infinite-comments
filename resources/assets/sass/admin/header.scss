@@ -2,14 +2,29 @@
    Admin / Header
    =======================================*/
 #admin-nav {
+	ul.message-dropdown {
+	    max-height: 380px !important;
+	}
 	.top-nav {
 		.notifications {
-			p {
-				margin-bottom:0;
-			}
-			.media-body {
-				h5 {
-					color:$brand-blue;
+			.message-preview {
+				width:320px;
+				.media {
+					display: flex;
+					span {
+						i {
+							display: flex;
+							font-size: 16px;
+						}
+					}
+					.media-heading {
+						strong:first-child {
+							color:$brand-pink;
+						}
+					}
+					p {
+						margin-bottom:0;
+					}
 				}
 			}
 		}

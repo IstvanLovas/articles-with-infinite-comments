@@ -17,11 +17,11 @@ class Notification extends Model
 
     public function scopeRead($query)
     {
-        $query->where('read', '=', 1);
+        $query->where('read', 1);
     }
 
     public function scopeUnread($query)
     {
-        $query->where('read', '=', 0);
+        $query->where('read', 0);
     }
 }

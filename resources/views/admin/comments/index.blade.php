@@ -3,7 +3,7 @@
 @section('title')Comments @endsection
 
 @section('content')
-<section id="case-studies">
+<section id="comments">
     <div class="row">
         <div class="col-lg-12">
             <div class="page-header-wrapper">
@@ -23,14 +23,28 @@
         </div>
     </div>
 
-    <div class="row">
-        @foreach($comments as $comment)
-            <div class="col-xs-12 col-md-6 comments-wrapper">
-                <div class="list-of-unapproved-comments">
-                    <p>{!! nl2br($comment->text) !!}</p>
-                </div>
+    @if(count($comments) > 0)
+{{--         <div class="row">
+            <div class="col-xs-12">
+                <ul class="comments-filters">
+                    <li>
+                        <button class="btn btn-brand-yellow brand-white-bg text-uppercase">All</button>
+                    </li>
+                    <li>
+                        <button class="btn btn-brand-yellow brand-white-bg text-uppercase">Unread</button>
+                    </li>
+                    <li>
+                        <button class="btn btn-brand-yellow brand-white-bg text-uppercase">Read</button>
+                    </li>
+                </ul>
             </div>
-        @endforeach
-    </div>
+        </div> --}}
+
+        <div class="row">
+            <div class="col-xs-12">
+                @include('admin.comments.partials.comments')
+            </div>
+        </div>
+    @endif
 </section>
 @endsection

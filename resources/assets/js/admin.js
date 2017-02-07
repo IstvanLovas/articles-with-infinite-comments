@@ -17,6 +17,8 @@ import CaseStudyPhoto from './admin/partials/CaseStudyPhoto.vue';
 import CaseStudyPhotoUploadForm from './admin/partials/CaseStudyPhotoUploadForm.vue';
 import CreateArticleForm from './admin/partials/CreateArticleForm.vue';
 import EditArticleForm from './admin/partials/EditArticleForm.vue';
+import StatusButton from './admin/components/StatusButton.vue';
+import CommentsFilters from './admin/partials/CommentsFilters.vue';
 
 window.Event = new Vue();
 
@@ -42,7 +44,9 @@ const admin = new Vue({
         CaseStudyPhoto,
         CreateArticleForm,
         EditArticleForm,
-        CaseStudyPhotoUploadForm
+        CaseStudyPhotoUploadForm,
+        StatusButton,
+        CommentsFilters
     },
     el: '#admin',
     mounted() {

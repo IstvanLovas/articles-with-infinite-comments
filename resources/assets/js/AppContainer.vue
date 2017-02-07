@@ -11,11 +11,6 @@
 	export default {
 		components:{
 			LoginPanel
-		},
-	    methods: {
-	        openLoginWindow() {
-	            Event.$emit('loginWindowIsOpen');
-	        }
-	    }
+		}
 	}
 </script>

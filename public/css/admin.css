@@ -8147,12 +8147,31 @@ hr {
 /* =======================================
    Admin / Header
    =======================================*/
-#admin-nav .top-nav .notifications p {
-  margin-bottom: 0;
+#admin-nav ul.message-dropdown {
+  max-height: 380px !important;
 }
 
-#admin-nav .top-nav .notifications .media-body h5 {
-  color: #0F3455;
+#admin-nav .top-nav .notifications .message-preview {
+  width: 320px;
+}
+
+#admin-nav .top-nav .notifications .message-preview .media {
+  display: -webkit-box;
+  display: flex;
+}
+
+#admin-nav .top-nav .notifications .message-preview .media span i {
+  display: -webkit-box;
+  display: flex;
+  font-size: 16px;
+}
+
+#admin-nav .top-nav .notifications .message-preview .media .media-heading strong:first-child {
+  color: #E74675;
+}
+
+#admin-nav .top-nav .notifications .message-preview .media p {
+  margin-bottom: 0;
 }
 
 #admin-nav .top-nav .bell-wrapper {
@@ -8186,6 +8205,47 @@ hr {
 /* =======================================
    Admin / Template
    =======================================*/
+#admin {
+  min-height: 100vh;
+  background: #fff;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+  #admin {
+    min-height: 1024px;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+  #admin {
+    min-height: 768px;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
+  #admin {
+    min-height: 480px;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
+  #admin {
+    min-height: 320px;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
+  #admin {
+    min-height: 568px;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
+  #admin {
+    min-height: 320px;
+  }
+}
+
 #admin .page-header-wrapper {
   display: -webkit-box;
   display: flex;
@@ -8241,6 +8301,68 @@ hr {
 #edit-meet-those-most-impacted .panel-heading i {
   font-size: 20px;
   padding-right: 5px;
+}
+
+/* =======================================
+   Admin / Comments
+   =======================================*/
+#comments .comments-filters {
+  display: -webkit-box;
+  display: flex;
+  margin-bottom: 15px;
+}
+
+#comments .comments-filters li {
+  margin-right: 15px;
+}
+
+#comments .comments-filters li:last-child {
+  margin-right: 0;
+}
+
+#comments .comments-wrapper .comment-item {
+  padding: 15px;
+}
+
+#comments .comments-wrapper .comment-item .outer-wrapper {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+}
+
+#comments .comments-wrapper .comment-item .outer-wrapper .comment-wrapper {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+#comments .comments-wrapper .comment-item .outer-wrapper .comment-wrapper .emoji {
+  padding-right: 15px;
+}
+
+#comments .comments-wrapper .comment-item .outer-wrapper .comment-wrapper .content {
+  padding-right: 60px;
+}
+
+#comments .comments-wrapper .comment-item .outer-wrapper .comment-wrapper .content .article-title {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+#comments .comments-wrapper .comment-item .outer-wrapper .comment-wrapper .content .article-title a {
+  color: #E74675;
+}
+
+#comments .comments-wrapper .comment-item .outer-wrapper .comment-wrapper .content .article-title a:hover, #comments .comments-wrapper .comment-item .outer-wrapper .comment-wrapper .content .article-title a:focus {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=admin.css.map */

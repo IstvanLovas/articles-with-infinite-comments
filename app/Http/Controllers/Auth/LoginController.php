@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
@@ -22,11 +23,14 @@ class LoginController extends Controller
     use AuthenticatesUsers;
 
     /**
-     * Where to redirect users after login.
+     * Create a new controller instance.
      *
-     * @var string
+     * @return void
      */
-    // protected $redirectTo = '/account';
+    public function __construct()
+    {
+        $this->middleware('guest', ['except' => 'logout']);
+    }
 
     /**
      * The user has been authenticated.
@@ -37,25 +41,19 @@ class LoginController extends Controller
      */
     protected function authenticated(Request $request, $user)
     {
-        if (! $user->hasRole('admin'))
+        if($request->ajax())
         {
-            if($request->ajax()){
-                return $user;
-            }
-
-            return back();
+            return response()->json([
+                'authenticated' => true,
+                'user' => Auth::user()
+            ]);
         }
 
-        return redirect()->intended('admin');
-    }
+        if($user->hasRole('admin'))
+        {
+            return redirect()->intended('admin');
+        }
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('guest', ['except' => 'logout']);
+        return back();
     }
 }

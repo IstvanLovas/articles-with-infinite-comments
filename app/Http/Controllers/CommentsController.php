@@ -23,6 +23,13 @@ class CommentsController extends Controller
 
         event(new NewComment($comment));
 
+        if($request->ajax())
+        {
+            return response()->json([
+                'message' => 'You have succesfully submitted a comment!',
+            ]);
+        }
+
         return back();
     }
 }

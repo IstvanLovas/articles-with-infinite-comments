@@ -83,6 +83,7 @@ class Article extends Model
     {
         $comment = $this->comments()->create([
             'text' => request('text'),
+            'emoji' => request('emoji'),
             'user_id' => $request->user()->id,
             'parent_id' => request('parent_id', null)
         ]);

@@ -3,6 +3,8 @@
    =======================================*/
 
 #admin {
+	@include viewport-unit(min-height, 100vh);
+	background:#fff;
 	.page-header-wrapper {
 		display: flex;
 		align-items:center;

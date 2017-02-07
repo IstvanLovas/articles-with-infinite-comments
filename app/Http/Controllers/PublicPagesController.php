@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use App\OurCampaignPageDetail;
 use App\PrivacyPolicyPageDetail;
 use App\MeetThoseAffectedPageDetail;
+use Illuminate\Support\Facades\Auth;
 
 class PublicPagesController extends Controller
 {
@@ -52,5 +53,19 @@ class PublicPagesController extends Controller
         $page = PrivacyPolicyPageDetail::first();
 
         return view('public.privacy-policy',compact('page'));
+    }
+
+    public function checkIfAuthenticated()
+    {
+        if(Auth::check()) {
+            return response()->json([
+                'authenticated' => true,
+                'user' => Auth::user()
+            ]);
+        };
+
+        return response()->json([
+            'authenticated' => false
+        ]); 
     }
 }
