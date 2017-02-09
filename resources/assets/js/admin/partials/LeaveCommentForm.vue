@@ -1,5 +1,22 @@
 <template>
 	<div>
+        <ul class="list-of-emojis">
+            <li>
+                <button @click="pickEmoji('happy')">
+                    <img src="/img/emojis/happy.svg" width="25" height="25" alt="Emoji grin" title="Emoji grin">
+                </button>
+            </li>
+            <li>
+                <button @click="pickEmoji('frown')">
+                    <img src="/img/emojis/frown.svg" width="25" height="25" alt="Emoji frown" title="Emoji frown">
+                </button>
+            </li>
+            <li>
+                <button @click="pickEmoji('neutral')">
+                    <img src="/img/emojis/neutral.svg" width="25" height="25" alt="Emoji neutral" title="Emoji neutral">
+                </button>
+            </li>
+        </ul>
 		<form 	@submit.prevent="onSubmit"
                 @keydown="form.errors.clear($event.target.name)"
                 class="form"
@@ -16,9 +33,10 @@
 			</div>
 		
 			<div class="form-group">
-				<button 	type="submit"
-							class="btn btn-primary text-uppercase"
-							:disabled="form.errors.any()"
+				<button 
+                    type="submit"
+					class="btn brand-pink-bg brand-yellow text-uppercase"
+					:disabled="form.errors.any()"
 				>Submit comment</button>
 			</div>
 		</form>
@@ -45,6 +63,9 @@
         	this.checkIfAuthenticated()
         },
         methods: {
+            pickEmoji(emoji) {
+                this.form.emoji = emoji
+            },
         	checkIfAuthenticated() {
         		axios
         			.get('/api/isAuth')
@@ -57,15 +78,25 @@
 
         			return
         		}
-
+                
                 this.form.post('/articles/' + this.articleId + '/comments',this.form)
                     .then(response => this.onSuccess(response.message))
             },
             onSuccess(message) {
-                swal(
-                    'Congratulations!',
-                    message,
-                    'success'
+                swal({
+                    title: 'Congratulations!',
+                    text: message,
+                    type: 'success',
+                    timer: 3000
+                }).then(
+                    function () {
+                        window.location.reload()
+                    },
+                    function (dismiss) {
+                        if (dismiss === 'timer') {
+                            window.location.reload()
+                        }
+                    }
                 )
             }
         }

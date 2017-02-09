@@ -2,32 +2,35 @@
 
 namespace App\Http\Controllers\Auth;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use App\User;
 use Socialite;
+use App\Socialiteuser;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class SocialAuthController extends Controller
 {
-    public function redirectToProvider()
+    public function redirectToProvider($provider)
     {
-        return Socialite::driver('facebook')->redirect();   
+        return Socialite::driver($provider)->redirect();   
     }   
 
-    public function handleProviderCallback()
+    public function handleProviderCallback($provider)
     {
-    	$user = Socialite::driver('facebook')->user();
-    	try {
-    		$user = Socialite::driver('facebook')->user();
-    	} catch (Exception $e) {
-    		return redirect('auth/facebook');
-    	}
+    	$user = Socialite::driver($provider)->user();
 
-    	$authUser = $this->findOrCreate($user);
-
+    	$authUser = $this->findOrCreateUser($user);
     	Auth::login($authUser,true);
 
-    	return redirect('/account');
+    	return redirect('/');
+    }
+
+    public function findOrCreateUser($userData)
+    {
+        return User::firstOrCreate([
+            'name' => $userData->name,
+            'email' => $userData->email,
+            'avatar' => $userData->avatar
+        ]);
     }
 }

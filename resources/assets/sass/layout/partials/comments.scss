@@ -6,18 +6,19 @@
 		textarea {
 			border:0;
 			background-color: $brand-gray;
+			min-height:80px;
 		}
 		::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-			color:darken($brand-gray,30%);
+		    color:darken($brand-gray,30%);
 		}
 		::-moz-placeholder { /* Firefox 19+ */
-			color:darken($brand-gray,30%);
+		    color:darken($brand-gray,30%);
 		}
 		:-ms-input-placeholder { /* IE 10+ */
-			color:darken($brand-gray,30%);
+		    color:darken($brand-gray,30%);
 		}
 		:-moz-placeholder { /* Firefox 18- */
-			color:darken($brand-gray,30%);
+		    color:darken($brand-gray,30%);
 		}
 	}
 	.leave-a-comment {
@@ -25,14 +26,30 @@
 			color:$brand-pink;
 			margin:0 0 $margin;
 		}
+		.list-of-emojis {
+			display: flex;
+			margin-bottom:15px;
+			li {
+				margin-right:5px;
+				button {
+					border:0;
+					background:0;
+				}
+			}
+			li:last-child {
+				margin-right:0;
+			}
+		}
 	}
 	.comments {
-		margin-top:$margin;
+		margin:$margin 0;
+		padding-bottom:$margin;
+		border-bottom:$brand-border;
 		.list-of-comments {
 			li {
 				.wrapper {
 					display: flex;
-					margin-bottom:$margin /2;
+					margin-bottom:$margin;
 					.emoji {
 						.circle {
 							width:60px;

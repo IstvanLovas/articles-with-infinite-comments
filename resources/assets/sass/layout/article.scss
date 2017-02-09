@@ -1,7 +1,6 @@
 /* =======================================
    Article
    =======================================*/
-
 #article-page {
 	.article {
 		.section {
@@ -10,6 +9,29 @@
 			}
 			hr {
 				margin-bottom:$margin;
+			}
+		}
+		aside {
+			.share-links {
+				margin-bottom:$margin;
+				ul {
+					display: inline-block;
+					padding-bottom:15px;
+					border-bottom:$brand-border;
+				}
+			}
+			.list-of-recommended-articles {
+				
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+    #article-page {
+		.article {
+			article {
+				border-right:$brand-border;
 			}
 		}
 	}

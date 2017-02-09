@@ -15,7 +15,9 @@
 		</template>
 	</masthead>
 
-	<article-row>
+	<article-row
+		:similar-articles="'similarArticles'"
+	>
 		<h2 slot="article-title" class="article-title">{{ $article->title }}</h2>
 		<p slot="article-lead"><strong>{!! nl2br($article->lead) !!}</strong></p>
 		<div slot="article-body" class="article-body">{!! nl2br($article->body) !!}</div>
@@ -49,5 +51,4 @@
 	</article-row>
 
 </section>
-
 @endsection

@@ -11,7 +11,11 @@ class Comment extends Model
      * @var array
      */
     protected $fillable = [
-    	'text', 'approved', 'user_id', 'parent_id'
+    	'text',
+        'approved',
+        'emoji',
+        'user_id',
+        'parent_id'
     ];
 
     /**

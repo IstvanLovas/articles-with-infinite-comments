@@ -24,20 +24,11 @@ Route::post('articles/{article}/comments', [
 
 Route::get('/api/isAuth', 'PublicPagesController@checkIfAuthenticated');
 
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Auth::routes();
 
-Route::get('auth/facebook', 'Auth\SocialAuthController@redirectToProvider');
-Route::get('auth/facebook/callback', 'Auth\SocialAuthController@handleProviderCallback');
-
-Route::get('/api/authUser', function () {
-    if (Auth::check()) {
-        return response()->json(['authUser' => Auth::user()]);
-    }
-
-    return response()->json(['authUser' => false]);
-});
-
-Route::get('/account', 'AccountController@index');
+Route::get('auth/{provider}', 'Auth\SocialAuthController@redirectToProvider');
+Route::get('auth/{provider}/callback', 'Auth\SocialAuthController@handleProviderCallback');
 
 Route::group(['namespace' => 'Admin'], function () {
 

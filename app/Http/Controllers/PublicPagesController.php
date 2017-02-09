@@ -17,7 +17,6 @@ class PublicPagesController extends Controller
 {
     public function showOurCampaign()
     {
-
     	$page = OurCampaignPageDetail::findOrFail(1);
 
         $articles = Article::orderBy('published_at', 'desc')->published()->take(3)->get();

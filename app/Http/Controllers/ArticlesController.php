@@ -33,6 +33,9 @@ class ArticlesController extends Controller
     {
         $comments = $article->getComments();
 
+
+        // $similarArticles = Article::where();
+
         return view('articles.show',compact('article', 'comments'));
     }
 }

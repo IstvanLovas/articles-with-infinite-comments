@@ -5,7 +5,7 @@
 		</div>
 		
 		<div class="content">
-			<h3>{{ $comment->user->name }}</h3>
+			<h3 class="text-uppercase">{{ $comment->user->name }}</h3>
 			<div class="comment-text">{{ $comment->text }}</div>
 		</div>
 	</div>

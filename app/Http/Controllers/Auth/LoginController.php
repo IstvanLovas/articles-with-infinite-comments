@@ -54,6 +54,6 @@ class LoginController extends Controller
             return redirect()->intended('admin');
         }
 
-        return back();
+        return redirect()->intended('/');
     }
 }

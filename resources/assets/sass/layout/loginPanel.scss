@@ -10,13 +10,26 @@
 	right:0;
 	bottom:0;
 	z-index:-1;
+	::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	    color:darken($brand-gray,30%) !important;
+	}
+	::-moz-placeholder { /* Firefox 19+ */
+	    color:darken($brand-gray,30%) !important;
+	}
+	:-ms-input-placeholder { /* IE 10+ */
+	    color:darken($brand-gray,30%) !important;
+	}
+	:-moz-placeholder { /* Firefox 18- */
+	    color:darken($brand-gray,30%) !important;
+	}
 	.panel {
+		width:320px;
 		position: relative;
 		opacity:0;
 		margin-bottom: 0;
 	    background-color: #fff;
 	    border-radius: 0;
-	    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
+	    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
 		transform: translateY(40px);
 		transition: opacity .3s ease-in-out .2s,
 					transform .15 ease-in-out 0s;
@@ -37,6 +50,11 @@
 		}
 		.form-wrapper {
 			padding-top:15px;
+			.form-control {
+				border: 0;
+				box-shadow: none;
+    			background-color: #EFEFEF;
+			}
 		}
 		.btn-cancel {
 			position: absolute;
@@ -70,7 +88,7 @@
 					transform .15 ease-in-out 0s;
 	}
 	.overlay {
-	    opacity: .5;
+	    opacity: .65;
 	    transition: opacity .3s ease-in-out 0s;
 	}
 }

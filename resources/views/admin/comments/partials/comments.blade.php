@@ -4,7 +4,7 @@
             <div class="outer-wrapper">
                 <div class="comment-wrapper">
                     <div class="emoji">
-                        <img src="/img/emojis/{{ $comment->emoji }}.svg">
+                        <img src="/img/emojis/{{ $comment->emoji }}.svg" width="25" height="25" alt="Emoji" title="Emoji">
                     </div>
                     <div class="content">
                         <h3 class="article-title">

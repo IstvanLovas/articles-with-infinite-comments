@@ -3,6 +3,7 @@
 	    <div class="overlay" @click="isOpen = false"></div>
 	    <div class="panel">
 	        <div class="panel-heading text-uppercase">Please login to comment</div>
+            
             <ul class="auth-type">
                 <li class="type-facebook">
                     <a  href="/auth/facebook"
@@ -35,10 +36,10 @@
                         class="form"
 	        	>
                     <div class="form-group">
-                        <label for="email" class="control-label">Email Address:</label>
                         <input  class="form-control"
                                 id="email"
                                 name="email"
+                                placeholder="Email"
                                 type="text"
                                 v-model="form.email"
                                 autofocus
@@ -47,10 +48,10 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="password" class="control-label">Password:</label>
                         <input  class="form-control"
                                 id="password"
                                 name="password"
+                                placeholder="Password"
                                 type="password"
                                 v-model="form.password"
                         >
@@ -66,14 +67,15 @@
                     </div>
                     
                     <div class="form-group">
-                        <button     type="submit"
-                                    class="btn btn-brand-pink btn-bg-pink text-uppercase"
-                                    :disabled="form.errors.any()"
+                        <button     
+                            type="submit"
+                            class="btn brand-yellow brand-pink-bg text-uppercase"
+                            :disabled="form.errors.any()"
                         >Sign in</button>
 
-                        <a class="btn btn-link" href="/password/reset">
+<!--                         <a class="btn btn-link" href="/password/reset">
                             Forgot Your Password?
-                        </a>
+                        </a> -->
                     </div>
                 </form>
 	        </div>
