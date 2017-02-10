@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')Thank You @endsection
-@section('meta_description')CQC is ... @endsection
+@section('meta_description')Thank You for signing up for our newsletter @endsection
 
 @section('content')
 <section id="thank-you">

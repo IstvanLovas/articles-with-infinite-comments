@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title')Comments @endsection
+@section('title')List of Comments @endsection
 
 @section('content')
 <section id="comments">

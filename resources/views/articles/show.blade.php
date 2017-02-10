@@ -1,7 +1,17 @@
 @extends('layouts.app')
 
 @section('title'){{ $article->title }} @endsection
-@section('meta_description')CQC is ... @endsection
+@section('meta_description')Title od article: {{ $article->title }} @endsection
+
+@section('og')
+<meta property="og:site_name" content="Created by parents">
+<meta property="og:title" content="{{ $article->title }}" />
+<meta property="og:description" content="{{ $article->lead }}">
+<meta property="og:image" content="{{ $article->social_image or null }}">
+<meta property="og:url" content="{{ request()->url() }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image:alt" content="Picture relevant to the article">
+@endsection
 
 @section('content')
 <section id="article-page">

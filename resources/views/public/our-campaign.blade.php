@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')Our Campaign @endsection
-@section('meta_description')CQC is ... @endsection
+@section('meta_description')Home page @endsection
 
 @section('content')
 

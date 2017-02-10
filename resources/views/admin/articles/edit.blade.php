@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title')Edit an article @endsection
+@section('title')Edit article @endsection
 
 @section('content')
 <section id="edit-article">

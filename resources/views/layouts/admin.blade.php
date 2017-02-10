@@ -7,8 +7,6 @@
     <title>@yield('title') | CQC</title>
 
     <meta name="description" content="Admin Dashboard">
-    <meta name="keywords" content="@yield('meta_keywords')">
-    <meta name="author" content="Istvan Lovas">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">

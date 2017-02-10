@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')Privacy policy @endsection
-@section('meta_description')CQC is ... @endsection
+@section('meta_description')Privacy policy @endsection
 
 @section('content')
 <section id="privacy-policy">

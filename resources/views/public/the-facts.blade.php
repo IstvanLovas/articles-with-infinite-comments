@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')The facts @endsection
-@section('meta_description')CQC is ... @endsection
+@section('meta_description')The facts @endsection
 
 @section('content')
 

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title')Meet those ost impacted @endsection
-@section('meta_description')CQC is ... @endsection
+@section('title')Meet those most impacted @endsection
+@section('meta_description')Meet those most affected @endsection
 
 @section('content')
 <section id="meet-those-most-impacted">

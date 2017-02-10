@@ -1,7 +1,6 @@
 @extends('layouts.admin')
 
 @section('title')Admin Dashboard @endsection
-@section('meta_description')Admin Dashboard ... @endsection
 
 @section('content')
 
