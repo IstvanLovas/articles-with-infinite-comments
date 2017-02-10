@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'avatar', 'provider', 'provider_id', 'password',
+        'name', 'email', 'password',
     ];
 
     /**
@@ -43,6 +43,15 @@ class User extends Authenticatable
     public function articles()
     {
         return $this->hasMany(Article::class);
+    }
+
+    /**
+     * A user can have many social accounts
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function socialAccounts()
+    {
+        return $this->hasMany(SocialAccount::class);
     }
 
     /**

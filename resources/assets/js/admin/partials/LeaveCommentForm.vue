@@ -26,6 +26,9 @@
 					name="text"
 					id="text"
 					class="form-control"
+                    @focus="toggleFocus"
+                    @blur="toggleFocus"
+                    v-focus="focused"
 					placeholder="WRITE YOUR RESPONSE..."
 					v-model="form.text"
 				></textarea>
@@ -44,13 +47,17 @@
 </template>
 
 <script>
+    import focus from 'vue-focus'
+
 	export default {
 		props:[
 			'articleId',
 			'parentId'
 		],
+        directives: { focus: focus },
 		data() {
             return {
+                focused: false,
             	authenticated:false,
                 form: new Form({
                     text:'',
@@ -63,6 +70,13 @@
         	this.checkIfAuthenticated()
         },
         methods: {
+             toggleFocus() {
+                this.focused = !this.focused
+
+                if (! this.authenticated && this.focused) {
+                    Event.$emit('openLoginWindow')
+                }
+            },
             pickEmoji(emoji) {
                 this.form.emoji = emoji
             },
@@ -74,7 +88,7 @@
         	onSubmit() {
         		if (! this.authenticated) {
         			
-        			Event.$emit('openLoginWindow');
+        			Event.$emit('openLoginWindow')
 
         			return
         		}
